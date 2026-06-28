@@ -2077,7 +2077,7 @@ a.param-doc-link::before {
   justify-content: center;
   margin-top: 0.5em;
 }
-</style><body><div id="sk-container-id-1" tabindex="0" class="sk-top-container sk-global"><div class="sk-text-repr-fallback"><pre>RandomForestClassifier(n_estimators=5, random_state=2)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually sk-global" id="sk-estimator-id-1" type="checkbox" checked><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>RandomForestClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.9/modules/generated/sklearn.ensemble.RandomForestClassifier.html">?<span>Documentation for RandomForestClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+</style><body><div id="sk-container-id-2" tabindex="0" class="sk-top-container sk-global"><div class="sk-text-repr-fallback"><pre>RandomForestClassifier(n_estimators=5, random_state=2)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br />On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually sk-global" id="sk-estimator-id-2" type="checkbox" checked><label for="sk-estimator-id-2" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>RandomForestClassifier</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.9/modules/generated/sklearn.ensemble.RandomForestClassifier.html">?<span>Documentation for RandomForestClassifier</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
         <div class="estimator-table">
             <details>
                 <summary>Parameters</summary>
@@ -2777,7 +2777,7 @@ function forceTheme(elementId) {
     }
 }
 
-forceTheme('sk-container-id-1');</script></body></div></div>
+forceTheme('sk-container-id-2');</script></body></div></div>
 </div>
 <ul class="simple">
 <li><p><em><strong>The trees built as part of the random forest are stored in <code class="docutils literal notranslate"><span class="pre">estimators_</span></code> attribute</strong></em>. Let us visualise the decision boundaries learned by each tree, along with their aggregated prediction.</p></li>
@@ -40115,25 +40115,25 @@ Accuracy on test set: 0.958
 /***/ })
 /******/ ]);
 //# sourceMappingURL=bundle.js.map </script></head><body>
-        <div class="lime top_div" id="top_divT8A1UIZQ9QEV79F"></div>
+        <div class="lime top_div" id="top_divGB94XAU8XRWB15I"></div>
         
         <script>
-        var top_div = d3.select('#top_divT8A1UIZQ9QEV79F').classed('lime top_div', true);
+        var top_div = d3.select('#top_divGB94XAU8XRWB15I').classed('lime top_div', true);
         
             var pp_div = top_div.append('div')
                                 .classed('lime predict_proba', true);
             var pp_svg = pp_div.append('svg').style('width', '100%');
-            var pp = new lime.PredictProba(pp_svg, ["malignant", "benign"], [0.4178692102432251, 0.5821307897567749]);
+            var pp = new lime.PredictProba(pp_svg, ["malignant", "benign"], [0.005079030648094007, 0.994920969351906]);
             
         
         var exp_div;
             var exp = new lime.Explanation(["malignant", "benign"]);
         
                 exp_div = top_div.append('div').classed('lime explanation', true);
-                exp.show([["area error > 44.87", -0.22679323418902672], ["worst texture <= 21.34", 0.2020837274141704], ["0.23 < worst concavity <= 0.38", -0.09554296817801149], ["mean texture <= 16.17", 0.08222412774709836], ["684.55 < worst area <= 1087.00", -0.0762595670129078], ["0.03 < mean concave points <= 0.08", -0.05399805177354289], ["perimeter error > 3.28", -0.03136445057056891], ["0.12 < worst smoothness <= 0.13", 0.027016973659597217], ["0.10 < mean smoothness <= 0.11", -0.026003692670097934], ["symmetry error > 0.02", 0.02272098667671344]], 1, exp_div);
+                exp.show([["worst texture <= 21.34", 0.1494262886992878], ["worst concave points <= 0.07", 0.1385098154807973], ["worst perimeter <= 84.37", 0.12272831151209164], ["worst area <= 516.83", 0.10377866500879768], ["0.02 < mean concave points <= 0.03", 0.09853341638861148], ["0.12 < worst concavity <= 0.23", 0.06279386676105224], ["worst radius <= 13.06", 0.04575451265331413], ["0.12 < worst smoothness <= 0.13", 0.039330569056749996], ["mean texture <= 16.17", 0.03857751563720038], ["worst symmetry <= 0.25", 0.025568297315127535]], 1, exp_div);
                 
         var raw_div = top_div.append('div');
-            exp.show_raw_tabular([["area error", "49.45", -0.22679323418902672], ["worst texture", "18.34", 0.2020837274141704], ["worst concavity", "0.32", -0.09554296817801149], ["mean texture", "13.98", 0.08222412774709836], ["worst area", "809.20", -0.0762595670129078], ["mean concave points", "0.06", -0.05399805177354289], ["perimeter error", "4.79", -0.03136445057056891], ["worst smoothness", "0.13", 0.027016973659597217], ["mean smoothness", "0.10", -0.026003692670097934], ["symmetry error", "0.03", 0.02272098667671344]], 1, raw_div);
+            exp.show_raw_tabular([["worst texture", "15.67", 0.1494262886992878], ["worst concave points", "0.05", 0.1385098154807973], ["worst perimeter", "62.56", 0.12272831151209164], ["worst area", "284.40", 0.10377866500879768], ["mean concave points", "0.03", 0.09853341638861148], ["worst concavity", "0.14", 0.06279386676105224], ["worst radius", "9.73", 0.04575451265331413], ["worst smoothness", "0.12", 0.039330569056749996], ["mean texture", "14.64", 0.03857751563720038], ["worst symmetry", "0.23", 0.025568297315127535]], 1, raw_div);
         
         </script>
         </body></html>
@@ -40151,7 +40151,7 @@ Accuracy on test set: 0.958
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/8a8a029d4f5c8737354ab4eba0313596745c4a25f2dbae3f55ea15ec8cbefd68.png" src="_images/8a8a029d4f5c8737354ab4eba0313596745c4a25f2dbae3f55ea15ec8cbefd68.png" />
+<img alt="_images/bd60865d58ea27227f7abbec37ad2eedc6df6fd9baab2ac0331489b5d1018eed.png" src="_images/bd60865d58ea27227f7abbec37ad2eedc6df6fd9baab2ac0331489b5d1018eed.png" />
 </div>
 </div>
 <p>The following are the meanings of each colour shown in each bar, which is also related to entropy. Below, another example is added, which considers explainability for observation <code class="docutils literal notranslate"><span class="pre">i=10</span></code></p>
@@ -40163,7 +40163,10 @@ Accuracy on test set: 0.958
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">IFrame</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">instance</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">exp</span> <span class="o">=</span> <span class="n">explainer</span><span class="o">.</span><span class="n">explain_instance</span><span class="p">(</span>
@@ -40176,6 +40179,7 @@ Accuracy on test set: 0.958
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;lime_explanation.html&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
 
+<span class="c1"># Mostrar HTML interactivo</span>
 <span class="n">IFrame</span><span class="p">(</span><span class="n">src</span><span class="o">=</span><span class="s1">&#39;lime_explanation.html&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
 
 <span class="c1"># Figura matplotlib</span>
@@ -40185,7 +40189,7 @@ Accuracy on test set: 0.958
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/4b3f11bae3929f76a1854c5ad7cda7385966fc66989d9142311828761fa56b81.png" src="_images/4b3f11bae3929f76a1854c5ad7cda7385966fc66989d9142311828761fa56b81.png" />
+<img alt="_images/511acc3b90ada3c0bcd7cf0103bb2545c9951a9641f183c712927f07a3ff471c.png" src="_images/511acc3b90ada3c0bcd7cf0103bb2545c9951a9641f183c712927f07a3ff471c.png" />
 </div>
 </div>
 <ul class="simple">
@@ -40304,7 +40308,975 @@ Accuracy on test set: 0.958
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model already exists. Loading from best_xgboost_model.pkl...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The model does not exist. Training a new model...
+Fitting 5 folds for each of 96 candidates, totalling 480 fits
+[13:35:42] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:35:42] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:43] INFO: /__w/xgboost/xgboost/src/common/cuda_dr_utils.cc:180: Driver version: `610.47`
+[13:35:43] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:43] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:43] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:43] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:43] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:43] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:44] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:44] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:44] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:35:44] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:44] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:44] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:44] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:44] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:45] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:45] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:45] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:45] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:45] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:35:45] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:46] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:46] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:47] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:47] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:47] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:47] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:48] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:48] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:48] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:35:48] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:49] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:49] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:50] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:50] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:51] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:51] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:53] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:53] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:54] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:35:54] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:54] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:54] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:54] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:54] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:55] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:55] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:55] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:55] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:55] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:35:55] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:55] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:55] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:56] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:56] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:56] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:56] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:57] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:57] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:57] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:35:57] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:58] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:58] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:35:59] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:35:59] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:00] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:00] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:01] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:01] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:01] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:01] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:03] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:03] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:04] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:04] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:05] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:05] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:06] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:06] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:07] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:07] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:07] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:07] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:08] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:08] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:08] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:08] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:08] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:08] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:08] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:08] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:09] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:09] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:09] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:09] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:10] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:10] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:10] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:10] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:11] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:11] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:12] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:12] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:13] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:13] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:14] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:14] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:14] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:14] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:15] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:15] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:17] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:17] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:18] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:18] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:19] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:19] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:20] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:20] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:22] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:22] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:22] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:22] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:22] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:22] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:23] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:23] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:23] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:23] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:23] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:23] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:24] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:24] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:24] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:24] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:25] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:25] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:26] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:26] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:27] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:27] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:28] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:28] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:29] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:29] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:30] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:30] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:31] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:31] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:32] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:32] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:33] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:33] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:34] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:34] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:35] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:35] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:36] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:36] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:38] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:38] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:38] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:38] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:38] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:38] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:38] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:38] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:39] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:39] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:39] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:39] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:39] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:39] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:40] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:40] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:41] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:41] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:41] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:41] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:42] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:42] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:42] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:42] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:43] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:43] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:44] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:44] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:45] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:45] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:46] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:46] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:47] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:47] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:48] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:48] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:50] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:50] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:51] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:51] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:52] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:52] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:53] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:53] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:53] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:53] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:53] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:53] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:53] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:53] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:53] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:53] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:54] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:54] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:55] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:55] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:55] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:55] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:56] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:56] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:56] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:36:56] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:57] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:57] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:36:58] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:36:58] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:00] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:00] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:02] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:02] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:02] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:02] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:04] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:04] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:05] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:05] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:06] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:06] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:08] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:08] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:09] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:09] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:09] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:09] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:09] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:09] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:09] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:09] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:10] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:10] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:10] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:10] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:10] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:10] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:10] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:10] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:11] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:11] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:11] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:11] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:12] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:12] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:12] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:12] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:13] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:13] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:13] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:13] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:14] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:14] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:14] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:14] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:15] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:15] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:16] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:16] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:17] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:17] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:17] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:17] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:18] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:18] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:18] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:18] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:19] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:19] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:19] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:19] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:19] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:19] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:19] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:19] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:19] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:19] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:20] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:20] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:20] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:20] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:21] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:21] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:21] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:21] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:22] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:22] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:22] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:22] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:23] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:23] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:24] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:24] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:24] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:24] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:25] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:25] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:26] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:26] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:27] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:27] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:27] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:27] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:28] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:28] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:28] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:28] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:29] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:29] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:29] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:29] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:29] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:29] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:29] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:29] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:30] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:30] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:30] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:30] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:31] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:31] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:31] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:31] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:32] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:32] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:34] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:34] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:34] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:34] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:35] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:35] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:36] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:36] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:36] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:36] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:37] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:37] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:38] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:38] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:39] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:39] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:40] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:40] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:40] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:40] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:41] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:41] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:41] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:41] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:41] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:41] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:42] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:42] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:42] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:42] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:42] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:42] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:43] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:43] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:43] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:43] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:44] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:44] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:44] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:44] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:45] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:45] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:45] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:45] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:46] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:46] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:47] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:47] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:47] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:47] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:48] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:48] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:49] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:49] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:50] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:50] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:51] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:51] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:52] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:52] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:52] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:52] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:52] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:52] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:52] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:52] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:52] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:52] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:53] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:53] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:53] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:53] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:53] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:53] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:54] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:54] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:54] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:54] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:55] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:55] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:56] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:56] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:56] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:56] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:57] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:57] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:58] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:58] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:58] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:37:58] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:37:59] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:37:59] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:00] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:00] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:01] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:01] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:02] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:02] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:02] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:02] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:03] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:03] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:03] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:03] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:03] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:03] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:03] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:03] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:04] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:04] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:04] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:04] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:05] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:05] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:05] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:05] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:05] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:05] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:07] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:07] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:08] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:08] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:08] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:08] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:09] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:09] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:10] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:10] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:10] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:10] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:11] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:11] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:12] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:12] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:13] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:13] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:14] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:14] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:15] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:15] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:15] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:15] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:15] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:15] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:15] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:15] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:15] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:15] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:15] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:15] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:16] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:16] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:16] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:16] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:16] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:16] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:17] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:17] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:17] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:17] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:18] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:18] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:18] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:18] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:19] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:19] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:19] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:19] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:20] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:20] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:20] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:20] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:21] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:21] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:22] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:22] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:22] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:22] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:23] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:23] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:23] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:23] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:23] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:23] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:24] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:24] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:24] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:24] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:24] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:24] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:25] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:25] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:25] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:25] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:25] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:25] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:26] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:26] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:26] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:26] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:27] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:27] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:27] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:27] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:28] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:28] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:28] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:28] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:29] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:29] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:30] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:30] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:30] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:30] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:31] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:31] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:32] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:32] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:32] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:32] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:33] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:33] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:33] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:33] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:33] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:33] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:33] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:33] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:34] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:34] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:34] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:34] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:34] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:34] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:35] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:35] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:35] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:35] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:36] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:36] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:36] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:36] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:37] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:37] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:37] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:37] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:38] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:38] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:38] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:38] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:40] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:40] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:41] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:41] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:42] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:42] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:42] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:42] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:43] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:43] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:43] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:43] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:44] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:44] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:44] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:44] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:44] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:44] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:44] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:44] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:45] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:45] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:45] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:45] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:45] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:45] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:46] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:46] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:46] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:46] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:47] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:47] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:47] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:47] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:48] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:48] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:48] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:48] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:49] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:49] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:50] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:50] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:50] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:50] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:51] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:51] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:52] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:52] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:53] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:53] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:53] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:53] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:53] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:53] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:53] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:53] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:53] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:53] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:54] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:54] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:54] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:54] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:54] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:54] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:55] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:55] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:55] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:55] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:56] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:56] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:56] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:56] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:57] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:57] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:57] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:57] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:58] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:58] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:58] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:38:58] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:38:59] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:38:59] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:00] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:00] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:01] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:01] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:01] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:01] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:02] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:02] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:02] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:02] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:03] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:03] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:03] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:03] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:03] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:03] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:03] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:03] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:04] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:04] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:04] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:04] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:04] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:04] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:05] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:05] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:05] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:05] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:06] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:06] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:06] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:06] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:07] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:07] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:07] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:07] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:08] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:08] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:09] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:09] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:10] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:10] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:10] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:10] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:11] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:11] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:12] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:12] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:12] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:12] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:12] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:12] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:12] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:12] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:12] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:12] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:14] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:14] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:14] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:14] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:14] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:14] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:14] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:14] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:15] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:15] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:15] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:15] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:16] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:16] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:16] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:16] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:16] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:16] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:17] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:17] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:17] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:17] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:18] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:18] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:19] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:19] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:20] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:20] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:20] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:20] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:21] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:21] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:21] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:21] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:22] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:22] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:22] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:22] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:22] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:22] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:22] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:22] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:23] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:23] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:23] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:23] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:23] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:23] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:24] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:24] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:24] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:24] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:24] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:24] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:25] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:25] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:25] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:25] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:26] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:26] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:26] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:26] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:27] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:27] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:27] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:27] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:28] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:28] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:29] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:29] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:29] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:29] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:29] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:29] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:30] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:30] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:30] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:30] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:30] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:30] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:30] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:30] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:30] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:30] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:31] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:31] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:31] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:31] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:31] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:31] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:32] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:32] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:32] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:32] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:33] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:33] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:33] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:33] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:33] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:33] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:34] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:34] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:35] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:35] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:35] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:35] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:36] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:36] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:36] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:36] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:37] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:37] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:37] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:37] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:37] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:37] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:38] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:38] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:38] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:38] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:38] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:38] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:38] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:38] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:39] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:39] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:39] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:39] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:39] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:39] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:40] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:40] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:40] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:40] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:41] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:41] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:41] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:41] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:41] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:41] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:42] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:42] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:43] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:43] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:43] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:43] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:44] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:44] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:45] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:45] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:45] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:45] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:45] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:45] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:46] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:46] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:47] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:47] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:47] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:47] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:47] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:47] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:48] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:48] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:48] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:48] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:48] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:48] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:48] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:48] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:49] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:49] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:49] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:49] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:50] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:50] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:50] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:50] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:51] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:51] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:51] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:51] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:52] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:52] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:52] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:52] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:53] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:53] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:54] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:54] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:54] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:54] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:55] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:55] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:55] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:55] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:55] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:55] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:55] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:55] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:55] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:55] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:56] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:56] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:56] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:56] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:56] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:56] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:57] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:57] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:57] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:57] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:58] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:58] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:58] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:58] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:59] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:59] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:59] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:39:59] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:39:59] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (340, 30, 10200).
+[13:39:59] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:40:00] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:40:00] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:40:01] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:40:01] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:40:01] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:40:01] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:40:02] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (341, 30, 10230).
+[13:40:02] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+[13:40:02] INFO: /__w/xgboost/xgboost/src/data/iterative_dmatrix.cc:56: Finished constructing the `IterativeDMatrix`: (426, 30, 12780).
+[13:40:02] INFO: /__w/xgboost/xgboost/src/data/ellpack_page.cu:173: Ellpack is dense.
+Best parameters: {&#39;learning_rate&#39;: 0.1, &#39;max_depth&#39;: 4, &#39;n_estimators&#39;: 100}
+Best AUC on test: 0.9924358530015102
+Tiempo de cómputo: 262.15 segundos
+Model saved as best_xgboost_model.pkl
 </pre></div>
 </div>
 </div>
@@ -40498,7 +41470,7 @@ weighted avg       0.98      0.98      0.98       143
 </div>
 <img alt="_images/401765c433abed1b3be314d811972077d79e0b66175e9390305388496c65eb32.png" src="_images/401765c433abed1b3be314d811972077d79e0b66175e9390305388496c65eb32.png" />
 <img alt="_images/22c964ee9011f776a8595f11dec15676554c96005d7946a6cc6b9f0d2c4282c9.png" src="_images/22c964ee9011f776a8595f11dec15676554c96005d7946a6cc6b9f0d2c4282c9.png" />
-<img alt="_images/b513b3e1893d4fadf01a79194e8dd2ce7570ff0a9edfdb492871b92b07abe256.png" src="_images/b513b3e1893d4fadf01a79194e8dd2ce7570ff0a9edfdb492871b92b07abe256.png" />
+<img alt="_images/7ae5035e71a87cee13b012b9dc9011241106ab62cdde65c443280b8ecb784a10.png" src="_images/7ae5035e71a87cee13b012b9dc9011241106ab62cdde65c443280b8ecb784a10.png" />
 </div>
 </div>
 </section>
@@ -40646,164 +41618,164 @@ Target range  : [5.0, 50.0] (USD 1,000s)
 </div>
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_0ef06">
+<table id="T_6b18a">
   <caption>Feature summary statistics</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_0ef06_level0_col0" class="col_heading level0 col0" >count</th>
-      <th id="T_0ef06_level0_col1" class="col_heading level0 col1" >mean</th>
-      <th id="T_0ef06_level0_col2" class="col_heading level0 col2" >std</th>
-      <th id="T_0ef06_level0_col3" class="col_heading level0 col3" >min</th>
-      <th id="T_0ef06_level0_col4" class="col_heading level0 col4" >25%</th>
-      <th id="T_0ef06_level0_col5" class="col_heading level0 col5" >50%</th>
-      <th id="T_0ef06_level0_col6" class="col_heading level0 col6" >75%</th>
-      <th id="T_0ef06_level0_col7" class="col_heading level0 col7" >max</th>
+      <th id="T_6b18a_level0_col0" class="col_heading level0 col0" >count</th>
+      <th id="T_6b18a_level0_col1" class="col_heading level0 col1" >mean</th>
+      <th id="T_6b18a_level0_col2" class="col_heading level0 col2" >std</th>
+      <th id="T_6b18a_level0_col3" class="col_heading level0 col3" >min</th>
+      <th id="T_6b18a_level0_col4" class="col_heading level0 col4" >25%</th>
+      <th id="T_6b18a_level0_col5" class="col_heading level0 col5" >50%</th>
+      <th id="T_6b18a_level0_col6" class="col_heading level0 col6" >75%</th>
+      <th id="T_6b18a_level0_col7" class="col_heading level0 col7" >max</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_0ef06_level0_row0" class="row_heading level0 row0" >crim</th>
-      <td id="T_0ef06_row0_col0" class="data row0 col0" >506.00</td>
-      <td id="T_0ef06_row0_col1" class="data row0 col1" >3.61</td>
-      <td id="T_0ef06_row0_col2" class="data row0 col2" >8.60</td>
-      <td id="T_0ef06_row0_col3" class="data row0 col3" >0.01</td>
-      <td id="T_0ef06_row0_col4" class="data row0 col4" >0.08</td>
-      <td id="T_0ef06_row0_col5" class="data row0 col5" >0.26</td>
-      <td id="T_0ef06_row0_col6" class="data row0 col6" >3.68</td>
-      <td id="T_0ef06_row0_col7" class="data row0 col7" >88.98</td>
+      <th id="T_6b18a_level0_row0" class="row_heading level0 row0" >crim</th>
+      <td id="T_6b18a_row0_col0" class="data row0 col0" >506.00</td>
+      <td id="T_6b18a_row0_col1" class="data row0 col1" >3.61</td>
+      <td id="T_6b18a_row0_col2" class="data row0 col2" >8.60</td>
+      <td id="T_6b18a_row0_col3" class="data row0 col3" >0.01</td>
+      <td id="T_6b18a_row0_col4" class="data row0 col4" >0.08</td>
+      <td id="T_6b18a_row0_col5" class="data row0 col5" >0.26</td>
+      <td id="T_6b18a_row0_col6" class="data row0 col6" >3.68</td>
+      <td id="T_6b18a_row0_col7" class="data row0 col7" >88.98</td>
     </tr>
     <tr>
-      <th id="T_0ef06_level0_row1" class="row_heading level0 row1" >zn</th>
-      <td id="T_0ef06_row1_col0" class="data row1 col0" >506.00</td>
-      <td id="T_0ef06_row1_col1" class="data row1 col1" >11.36</td>
-      <td id="T_0ef06_row1_col2" class="data row1 col2" >23.32</td>
-      <td id="T_0ef06_row1_col3" class="data row1 col3" >0.00</td>
-      <td id="T_0ef06_row1_col4" class="data row1 col4" >0.00</td>
-      <td id="T_0ef06_row1_col5" class="data row1 col5" >0.00</td>
-      <td id="T_0ef06_row1_col6" class="data row1 col6" >12.50</td>
-      <td id="T_0ef06_row1_col7" class="data row1 col7" >100.00</td>
+      <th id="T_6b18a_level0_row1" class="row_heading level0 row1" >zn</th>
+      <td id="T_6b18a_row1_col0" class="data row1 col0" >506.00</td>
+      <td id="T_6b18a_row1_col1" class="data row1 col1" >11.36</td>
+      <td id="T_6b18a_row1_col2" class="data row1 col2" >23.32</td>
+      <td id="T_6b18a_row1_col3" class="data row1 col3" >0.00</td>
+      <td id="T_6b18a_row1_col4" class="data row1 col4" >0.00</td>
+      <td id="T_6b18a_row1_col5" class="data row1 col5" >0.00</td>
+      <td id="T_6b18a_row1_col6" class="data row1 col6" >12.50</td>
+      <td id="T_6b18a_row1_col7" class="data row1 col7" >100.00</td>
     </tr>
     <tr>
-      <th id="T_0ef06_level0_row2" class="row_heading level0 row2" >indus</th>
-      <td id="T_0ef06_row2_col0" class="data row2 col0" >506.00</td>
-      <td id="T_0ef06_row2_col1" class="data row2 col1" >11.14</td>
-      <td id="T_0ef06_row2_col2" class="data row2 col2" >6.86</td>
-      <td id="T_0ef06_row2_col3" class="data row2 col3" >0.46</td>
-      <td id="T_0ef06_row2_col4" class="data row2 col4" >5.19</td>
-      <td id="T_0ef06_row2_col5" class="data row2 col5" >9.69</td>
-      <td id="T_0ef06_row2_col6" class="data row2 col6" >18.10</td>
-      <td id="T_0ef06_row2_col7" class="data row2 col7" >27.74</td>
+      <th id="T_6b18a_level0_row2" class="row_heading level0 row2" >indus</th>
+      <td id="T_6b18a_row2_col0" class="data row2 col0" >506.00</td>
+      <td id="T_6b18a_row2_col1" class="data row2 col1" >11.14</td>
+      <td id="T_6b18a_row2_col2" class="data row2 col2" >6.86</td>
+      <td id="T_6b18a_row2_col3" class="data row2 col3" >0.46</td>
+      <td id="T_6b18a_row2_col4" class="data row2 col4" >5.19</td>
+      <td id="T_6b18a_row2_col5" class="data row2 col5" >9.69</td>
+      <td id="T_6b18a_row2_col6" class="data row2 col6" >18.10</td>
+      <td id="T_6b18a_row2_col7" class="data row2 col7" >27.74</td>
     </tr>
     <tr>
-      <th id="T_0ef06_level0_row3" class="row_heading level0 row3" >chas</th>
-      <td id="T_0ef06_row3_col0" class="data row3 col0" >506.00</td>
-      <td id="T_0ef06_row3_col1" class="data row3 col1" >0.07</td>
-      <td id="T_0ef06_row3_col2" class="data row3 col2" >0.25</td>
-      <td id="T_0ef06_row3_col3" class="data row3 col3" >0.00</td>
-      <td id="T_0ef06_row3_col4" class="data row3 col4" >0.00</td>
-      <td id="T_0ef06_row3_col5" class="data row3 col5" >0.00</td>
-      <td id="T_0ef06_row3_col6" class="data row3 col6" >0.00</td>
-      <td id="T_0ef06_row3_col7" class="data row3 col7" >1.00</td>
+      <th id="T_6b18a_level0_row3" class="row_heading level0 row3" >chas</th>
+      <td id="T_6b18a_row3_col0" class="data row3 col0" >506.00</td>
+      <td id="T_6b18a_row3_col1" class="data row3 col1" >0.07</td>
+      <td id="T_6b18a_row3_col2" class="data row3 col2" >0.25</td>
+      <td id="T_6b18a_row3_col3" class="data row3 col3" >0.00</td>
+      <td id="T_6b18a_row3_col4" class="data row3 col4" >0.00</td>
+      <td id="T_6b18a_row3_col5" class="data row3 col5" >0.00</td>
+      <td id="T_6b18a_row3_col6" class="data row3 col6" >0.00</td>
+      <td id="T_6b18a_row3_col7" class="data row3 col7" >1.00</td>
     </tr>
     <tr>
-      <th id="T_0ef06_level0_row4" class="row_heading level0 row4" >nox</th>
-      <td id="T_0ef06_row4_col0" class="data row4 col0" >506.00</td>
-      <td id="T_0ef06_row4_col1" class="data row4 col1" >0.55</td>
-      <td id="T_0ef06_row4_col2" class="data row4 col2" >0.12</td>
-      <td id="T_0ef06_row4_col3" class="data row4 col3" >0.39</td>
-      <td id="T_0ef06_row4_col4" class="data row4 col4" >0.45</td>
-      <td id="T_0ef06_row4_col5" class="data row4 col5" >0.54</td>
-      <td id="T_0ef06_row4_col6" class="data row4 col6" >0.62</td>
-      <td id="T_0ef06_row4_col7" class="data row4 col7" >0.87</td>
+      <th id="T_6b18a_level0_row4" class="row_heading level0 row4" >nox</th>
+      <td id="T_6b18a_row4_col0" class="data row4 col0" >506.00</td>
+      <td id="T_6b18a_row4_col1" class="data row4 col1" >0.55</td>
+      <td id="T_6b18a_row4_col2" class="data row4 col2" >0.12</td>
+      <td id="T_6b18a_row4_col3" class="data row4 col3" >0.39</td>
+      <td id="T_6b18a_row4_col4" class="data row4 col4" >0.45</td>
+      <td id="T_6b18a_row4_col5" class="data row4 col5" >0.54</td>
+      <td id="T_6b18a_row4_col6" class="data row4 col6" >0.62</td>
+      <td id="T_6b18a_row4_col7" class="data row4 col7" >0.87</td>
     </tr>
     <tr>
-      <th id="T_0ef06_level0_row5" class="row_heading level0 row5" >rm</th>
-      <td id="T_0ef06_row5_col0" class="data row5 col0" >506.00</td>
-      <td id="T_0ef06_row5_col1" class="data row5 col1" >6.28</td>
-      <td id="T_0ef06_row5_col2" class="data row5 col2" >0.70</td>
-      <td id="T_0ef06_row5_col3" class="data row5 col3" >3.56</td>
-      <td id="T_0ef06_row5_col4" class="data row5 col4" >5.89</td>
-      <td id="T_0ef06_row5_col5" class="data row5 col5" >6.21</td>
-      <td id="T_0ef06_row5_col6" class="data row5 col6" >6.62</td>
-      <td id="T_0ef06_row5_col7" class="data row5 col7" >8.78</td>
+      <th id="T_6b18a_level0_row5" class="row_heading level0 row5" >rm</th>
+      <td id="T_6b18a_row5_col0" class="data row5 col0" >506.00</td>
+      <td id="T_6b18a_row5_col1" class="data row5 col1" >6.28</td>
+      <td id="T_6b18a_row5_col2" class="data row5 col2" >0.70</td>
+      <td id="T_6b18a_row5_col3" class="data row5 col3" >3.56</td>
+      <td id="T_6b18a_row5_col4" class="data row5 col4" >5.89</td>
+      <td id="T_6b18a_row5_col5" class="data row5 col5" >6.21</td>
+      <td id="T_6b18a_row5_col6" class="data row5 col6" >6.62</td>
+      <td id="T_6b18a_row5_col7" class="data row5 col7" >8.78</td>
     </tr>
     <tr>
-      <th id="T_0ef06_level0_row6" class="row_heading level0 row6" >age</th>
-      <td id="T_0ef06_row6_col0" class="data row6 col0" >506.00</td>
-      <td id="T_0ef06_row6_col1" class="data row6 col1" >68.57</td>
-      <td id="T_0ef06_row6_col2" class="data row6 col2" >28.15</td>
-      <td id="T_0ef06_row6_col3" class="data row6 col3" >2.90</td>
-      <td id="T_0ef06_row6_col4" class="data row6 col4" >45.02</td>
-      <td id="T_0ef06_row6_col5" class="data row6 col5" >77.50</td>
-      <td id="T_0ef06_row6_col6" class="data row6 col6" >94.07</td>
-      <td id="T_0ef06_row6_col7" class="data row6 col7" >100.00</td>
+      <th id="T_6b18a_level0_row6" class="row_heading level0 row6" >age</th>
+      <td id="T_6b18a_row6_col0" class="data row6 col0" >506.00</td>
+      <td id="T_6b18a_row6_col1" class="data row6 col1" >68.57</td>
+      <td id="T_6b18a_row6_col2" class="data row6 col2" >28.15</td>
+      <td id="T_6b18a_row6_col3" class="data row6 col3" >2.90</td>
+      <td id="T_6b18a_row6_col4" class="data row6 col4" >45.02</td>
+      <td id="T_6b18a_row6_col5" class="data row6 col5" >77.50</td>
+      <td id="T_6b18a_row6_col6" class="data row6 col6" >94.07</td>
+      <td id="T_6b18a_row6_col7" class="data row6 col7" >100.00</td>
     </tr>
     <tr>
-      <th id="T_0ef06_level0_row7" class="row_heading level0 row7" >dis</th>
-      <td id="T_0ef06_row7_col0" class="data row7 col0" >506.00</td>
-      <td id="T_0ef06_row7_col1" class="data row7 col1" >3.80</td>
-      <td id="T_0ef06_row7_col2" class="data row7 col2" >2.11</td>
-      <td id="T_0ef06_row7_col3" class="data row7 col3" >1.13</td>
-      <td id="T_0ef06_row7_col4" class="data row7 col4" >2.10</td>
-      <td id="T_0ef06_row7_col5" class="data row7 col5" >3.21</td>
-      <td id="T_0ef06_row7_col6" class="data row7 col6" >5.19</td>
-      <td id="T_0ef06_row7_col7" class="data row7 col7" >12.13</td>
+      <th id="T_6b18a_level0_row7" class="row_heading level0 row7" >dis</th>
+      <td id="T_6b18a_row7_col0" class="data row7 col0" >506.00</td>
+      <td id="T_6b18a_row7_col1" class="data row7 col1" >3.80</td>
+      <td id="T_6b18a_row7_col2" class="data row7 col2" >2.11</td>
+      <td id="T_6b18a_row7_col3" class="data row7 col3" >1.13</td>
+      <td id="T_6b18a_row7_col4" class="data row7 col4" >2.10</td>
+      <td id="T_6b18a_row7_col5" class="data row7 col5" >3.21</td>
+      <td id="T_6b18a_row7_col6" class="data row7 col6" >5.19</td>
+      <td id="T_6b18a_row7_col7" class="data row7 col7" >12.13</td>
     </tr>
     <tr>
-      <th id="T_0ef06_level0_row8" class="row_heading level0 row8" >rad</th>
-      <td id="T_0ef06_row8_col0" class="data row8 col0" >506.00</td>
-      <td id="T_0ef06_row8_col1" class="data row8 col1" >9.55</td>
-      <td id="T_0ef06_row8_col2" class="data row8 col2" >8.71</td>
-      <td id="T_0ef06_row8_col3" class="data row8 col3" >1.00</td>
-      <td id="T_0ef06_row8_col4" class="data row8 col4" >4.00</td>
-      <td id="T_0ef06_row8_col5" class="data row8 col5" >5.00</td>
-      <td id="T_0ef06_row8_col6" class="data row8 col6" >24.00</td>
-      <td id="T_0ef06_row8_col7" class="data row8 col7" >24.00</td>
+      <th id="T_6b18a_level0_row8" class="row_heading level0 row8" >rad</th>
+      <td id="T_6b18a_row8_col0" class="data row8 col0" >506.00</td>
+      <td id="T_6b18a_row8_col1" class="data row8 col1" >9.55</td>
+      <td id="T_6b18a_row8_col2" class="data row8 col2" >8.71</td>
+      <td id="T_6b18a_row8_col3" class="data row8 col3" >1.00</td>
+      <td id="T_6b18a_row8_col4" class="data row8 col4" >4.00</td>
+      <td id="T_6b18a_row8_col5" class="data row8 col5" >5.00</td>
+      <td id="T_6b18a_row8_col6" class="data row8 col6" >24.00</td>
+      <td id="T_6b18a_row8_col7" class="data row8 col7" >24.00</td>
     </tr>
     <tr>
-      <th id="T_0ef06_level0_row9" class="row_heading level0 row9" >tax</th>
-      <td id="T_0ef06_row9_col0" class="data row9 col0" >506.00</td>
-      <td id="T_0ef06_row9_col1" class="data row9 col1" >408.24</td>
-      <td id="T_0ef06_row9_col2" class="data row9 col2" >168.54</td>
-      <td id="T_0ef06_row9_col3" class="data row9 col3" >187.00</td>
-      <td id="T_0ef06_row9_col4" class="data row9 col4" >279.00</td>
-      <td id="T_0ef06_row9_col5" class="data row9 col5" >330.00</td>
-      <td id="T_0ef06_row9_col6" class="data row9 col6" >666.00</td>
-      <td id="T_0ef06_row9_col7" class="data row9 col7" >711.00</td>
+      <th id="T_6b18a_level0_row9" class="row_heading level0 row9" >tax</th>
+      <td id="T_6b18a_row9_col0" class="data row9 col0" >506.00</td>
+      <td id="T_6b18a_row9_col1" class="data row9 col1" >408.24</td>
+      <td id="T_6b18a_row9_col2" class="data row9 col2" >168.54</td>
+      <td id="T_6b18a_row9_col3" class="data row9 col3" >187.00</td>
+      <td id="T_6b18a_row9_col4" class="data row9 col4" >279.00</td>
+      <td id="T_6b18a_row9_col5" class="data row9 col5" >330.00</td>
+      <td id="T_6b18a_row9_col6" class="data row9 col6" >666.00</td>
+      <td id="T_6b18a_row9_col7" class="data row9 col7" >711.00</td>
     </tr>
     <tr>
-      <th id="T_0ef06_level0_row10" class="row_heading level0 row10" >ptratio</th>
-      <td id="T_0ef06_row10_col0" class="data row10 col0" >506.00</td>
-      <td id="T_0ef06_row10_col1" class="data row10 col1" >18.46</td>
-      <td id="T_0ef06_row10_col2" class="data row10 col2" >2.16</td>
-      <td id="T_0ef06_row10_col3" class="data row10 col3" >12.60</td>
-      <td id="T_0ef06_row10_col4" class="data row10 col4" >17.40</td>
-      <td id="T_0ef06_row10_col5" class="data row10 col5" >19.05</td>
-      <td id="T_0ef06_row10_col6" class="data row10 col6" >20.20</td>
-      <td id="T_0ef06_row10_col7" class="data row10 col7" >22.00</td>
+      <th id="T_6b18a_level0_row10" class="row_heading level0 row10" >ptratio</th>
+      <td id="T_6b18a_row10_col0" class="data row10 col0" >506.00</td>
+      <td id="T_6b18a_row10_col1" class="data row10 col1" >18.46</td>
+      <td id="T_6b18a_row10_col2" class="data row10 col2" >2.16</td>
+      <td id="T_6b18a_row10_col3" class="data row10 col3" >12.60</td>
+      <td id="T_6b18a_row10_col4" class="data row10 col4" >17.40</td>
+      <td id="T_6b18a_row10_col5" class="data row10 col5" >19.05</td>
+      <td id="T_6b18a_row10_col6" class="data row10 col6" >20.20</td>
+      <td id="T_6b18a_row10_col7" class="data row10 col7" >22.00</td>
     </tr>
     <tr>
-      <th id="T_0ef06_level0_row11" class="row_heading level0 row11" >black</th>
-      <td id="T_0ef06_row11_col0" class="data row11 col0" >506.00</td>
-      <td id="T_0ef06_row11_col1" class="data row11 col1" >356.67</td>
-      <td id="T_0ef06_row11_col2" class="data row11 col2" >91.29</td>
-      <td id="T_0ef06_row11_col3" class="data row11 col3" >0.32</td>
-      <td id="T_0ef06_row11_col4" class="data row11 col4" >375.38</td>
-      <td id="T_0ef06_row11_col5" class="data row11 col5" >391.44</td>
-      <td id="T_0ef06_row11_col6" class="data row11 col6" >396.23</td>
-      <td id="T_0ef06_row11_col7" class="data row11 col7" >396.90</td>
+      <th id="T_6b18a_level0_row11" class="row_heading level0 row11" >black</th>
+      <td id="T_6b18a_row11_col0" class="data row11 col0" >506.00</td>
+      <td id="T_6b18a_row11_col1" class="data row11 col1" >356.67</td>
+      <td id="T_6b18a_row11_col2" class="data row11 col2" >91.29</td>
+      <td id="T_6b18a_row11_col3" class="data row11 col3" >0.32</td>
+      <td id="T_6b18a_row11_col4" class="data row11 col4" >375.38</td>
+      <td id="T_6b18a_row11_col5" class="data row11 col5" >391.44</td>
+      <td id="T_6b18a_row11_col6" class="data row11 col6" >396.23</td>
+      <td id="T_6b18a_row11_col7" class="data row11 col7" >396.90</td>
     </tr>
     <tr>
-      <th id="T_0ef06_level0_row12" class="row_heading level0 row12" >lstat</th>
-      <td id="T_0ef06_row12_col0" class="data row12 col0" >506.00</td>
-      <td id="T_0ef06_row12_col1" class="data row12 col1" >12.65</td>
-      <td id="T_0ef06_row12_col2" class="data row12 col2" >7.14</td>
-      <td id="T_0ef06_row12_col3" class="data row12 col3" >1.73</td>
-      <td id="T_0ef06_row12_col4" class="data row12 col4" >6.95</td>
-      <td id="T_0ef06_row12_col5" class="data row12 col5" >11.36</td>
-      <td id="T_0ef06_row12_col6" class="data row12 col6" >16.96</td>
-      <td id="T_0ef06_row12_col7" class="data row12 col7" >37.97</td>
+      <th id="T_6b18a_level0_row12" class="row_heading level0 row12" >lstat</th>
+      <td id="T_6b18a_row12_col0" class="data row12 col0" >506.00</td>
+      <td id="T_6b18a_row12_col1" class="data row12 col1" >12.65</td>
+      <td id="T_6b18a_row12_col2" class="data row12 col2" >7.14</td>
+      <td id="T_6b18a_row12_col3" class="data row12 col3" >1.73</td>
+      <td id="T_6b18a_row12_col4" class="data row12 col4" >6.95</td>
+      <td id="T_6b18a_row12_col5" class="data row12 col5" >11.36</td>
+      <td id="T_6b18a_row12_col6" class="data row12 col6" >16.96</td>
+      <td id="T_6b18a_row12_col7" class="data row12 col7" >37.97</td>
     </tr>
   </tbody>
 </table>
@@ -41196,19 +42168,19 @@ Best XGBoost hyperparameters:
 </pre></div>
 </div>
 <div class="output text_html"><style type="text/css">
-#T_1c694_row1_col3 {
+#T_2b0e5_row1_col3 {
   background-color: #ffe0e0;
 }
 </style>
-<table id="T_1c694">
+<table id="T_2b0e5">
   <caption>Overfitting diagnosis — best configuration per model</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_1c694_level0_col0" class="col_heading level0 col0" >train_rmse</th>
-      <th id="T_1c694_level0_col1" class="col_heading level0 col1" >cv_rmse</th>
-      <th id="T_1c694_level0_col2" class="col_heading level0 col2" >cv_std</th>
-      <th id="T_1c694_level0_col3" class="col_heading level0 col3" >gap_ratio</th>
+      <th id="T_2b0e5_level0_col0" class="col_heading level0 col0" >train_rmse</th>
+      <th id="T_2b0e5_level0_col1" class="col_heading level0 col1" >cv_rmse</th>
+      <th id="T_2b0e5_level0_col2" class="col_heading level0 col2" >cv_std</th>
+      <th id="T_2b0e5_level0_col3" class="col_heading level0 col3" >gap_ratio</th>
     </tr>
     <tr>
       <th class="index_name level0" >model</th>
@@ -41220,18 +42192,18 @@ Best XGBoost hyperparameters:
   </thead>
   <tbody>
     <tr>
-      <th id="T_1c694_level0_row0" class="row_heading level0 row0" >Random Forest</th>
-      <td id="T_1c694_row0_col0" class="data row0 col0" >1.4495</td>
-      <td id="T_1c694_row0_col1" class="data row0 col1" >3.5585</td>
-      <td id="T_1c694_row0_col2" class="data row0 col2" >0.6893</td>
-      <td id="T_1c694_row0_col3" class="data row0 col3" >0.5927</td>
+      <th id="T_2b0e5_level0_row0" class="row_heading level0 row0" >Random Forest</th>
+      <td id="T_2b0e5_row0_col0" class="data row0 col0" >1.4495</td>
+      <td id="T_2b0e5_row0_col1" class="data row0 col1" >3.5585</td>
+      <td id="T_2b0e5_row0_col2" class="data row0 col2" >0.6893</td>
+      <td id="T_2b0e5_row0_col3" class="data row0 col3" >0.5927</td>
     </tr>
     <tr>
-      <th id="T_1c694_level0_row1" class="row_heading level0 row1" >XGBoost</th>
-      <td id="T_1c694_row1_col0" class="data row1 col0" >0.2822</td>
-      <td id="T_1c694_row1_col1" class="data row1 col1" >3.3368</td>
-      <td id="T_1c694_row1_col2" class="data row1 col2" >0.7058</td>
-      <td id="T_1c694_row1_col3" class="data row1 col3" >0.9154</td>
+      <th id="T_2b0e5_level0_row1" class="row_heading level0 row1" >XGBoost</th>
+      <td id="T_2b0e5_row1_col0" class="data row1 col0" >0.2822</td>
+      <td id="T_2b0e5_row1_col1" class="data row1 col1" >3.3368</td>
+      <td id="T_2b0e5_row1_col2" class="data row1 col2" >0.7058</td>
+      <td id="T_2b0e5_row1_col3" class="data row1 col3" >0.9154</td>
     </tr>
   </tbody>
 </table>
@@ -41429,152 +42401,152 @@ TOP-10 FEATURES — Random Forest
 </pre></div>
 </div>
 <div class="output text_html"><style type="text/css">
-#T_e970c_row0_col1, #T_e970c_row1_col2 {
+#T_60ce1_row0_col1, #T_60ce1_row1_col2 {
   background-color: #08306b;
   color: #f1f1f1;
 }
-#T_e970c_row0_col2 {
+#T_60ce1_row0_col2 {
   background-color: #084285;
   color: #f1f1f1;
 }
-#T_e970c_row1_col1 {
+#T_60ce1_row1_col1 {
   background-color: #1d6cb1;
   color: #f1f1f1;
 }
-#T_e970c_row2_col1 {
+#T_60ce1_row2_col1 {
   background-color: #ddeaf7;
   color: #000000;
 }
-#T_e970c_row2_col2 {
+#T_60ce1_row2_col2 {
   background-color: #d8e7f5;
   color: #000000;
 }
-#T_e970c_row3_col1 {
+#T_60ce1_row3_col1 {
   background-color: #e3eef8;
   color: #000000;
 }
-#T_e970c_row3_col2 {
+#T_60ce1_row3_col2 {
   background-color: #eef5fc;
   color: #000000;
 }
-#T_e970c_row4_col1, #T_e970c_row5_col1 {
+#T_60ce1_row4_col1, #T_60ce1_row5_col1 {
   background-color: #e5eff9;
   color: #000000;
 }
-#T_e970c_row4_col2 {
+#T_60ce1_row4_col2 {
   background-color: #d6e5f4;
   color: #000000;
 }
-#T_e970c_row5_col2, #T_e970c_row6_col2 {
+#T_60ce1_row5_col2, #T_60ce1_row6_col2 {
   background-color: #dfebf7;
   color: #000000;
 }
-#T_e970c_row6_col1 {
+#T_60ce1_row6_col1 {
   background-color: #e7f0fa;
   color: #000000;
 }
-#T_e970c_row7_col1 {
+#T_60ce1_row7_col1 {
   background-color: #f2f8fd;
   color: #000000;
 }
-#T_e970c_row7_col2 {
+#T_60ce1_row7_col2 {
   background-color: #f1f7fd;
   color: #000000;
 }
-#T_e970c_row8_col1 {
+#T_60ce1_row8_col1 {
   background-color: #f6faff;
   color: #000000;
 }
-#T_e970c_row8_col2 {
+#T_60ce1_row8_col2 {
   background-color: #f3f8fe;
   color: #000000;
 }
-#T_e970c_row9_col1, #T_e970c_row9_col2 {
+#T_60ce1_row9_col1, #T_60ce1_row9_col2 {
   background-color: #f7fbff;
   color: #000000;
 }
 </style>
-<table id="T_e970c">
+<table id="T_60ce1">
   <caption>Random Forest — MDI vs Permutation Importance</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_e970c_level0_col0" class="col_heading level0 col0" >feature</th>
-      <th id="T_e970c_level0_col1" class="col_heading level0 col1" >mdi_importance</th>
-      <th id="T_e970c_level0_col2" class="col_heading level0 col2" >perm_mean</th>
-      <th id="T_e970c_level0_col3" class="col_heading level0 col3" >perm_std</th>
+      <th id="T_60ce1_level0_col0" class="col_heading level0 col0" >feature</th>
+      <th id="T_60ce1_level0_col1" class="col_heading level0 col1" >mdi_importance</th>
+      <th id="T_60ce1_level0_col2" class="col_heading level0 col2" >perm_mean</th>
+      <th id="T_60ce1_level0_col3" class="col_heading level0 col3" >perm_std</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_e970c_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_e970c_row0_col0" class="data row0 col0" >rm</td>
-      <td id="T_e970c_row0_col1" class="data row0 col1" >0.3987</td>
-      <td id="T_e970c_row0_col2" class="data row0 col2" >4.6907</td>
-      <td id="T_e970c_row0_col3" class="data row0 col3" >0.1539</td>
+      <th id="T_60ce1_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_60ce1_row0_col0" class="data row0 col0" >rm</td>
+      <td id="T_60ce1_row0_col1" class="data row0 col1" >0.3987</td>
+      <td id="T_60ce1_row0_col2" class="data row0 col2" >4.6907</td>
+      <td id="T_60ce1_row0_col3" class="data row0 col3" >0.1539</td>
     </tr>
     <tr>
-      <th id="T_e970c_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_e970c_row1_col0" class="data row1 col0" >lstat</td>
-      <td id="T_e970c_row1_col1" class="data row1 col1" >0.3079</td>
-      <td id="T_e970c_row1_col2" class="data row1 col2" >5.0144</td>
-      <td id="T_e970c_row1_col3" class="data row1 col3" >0.2159</td>
+      <th id="T_60ce1_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_60ce1_row1_col0" class="data row1 col0" >lstat</td>
+      <td id="T_60ce1_row1_col1" class="data row1 col1" >0.3079</td>
+      <td id="T_60ce1_row1_col2" class="data row1 col2" >5.0144</td>
+      <td id="T_60ce1_row1_col3" class="data row1 col3" >0.2159</td>
     </tr>
     <tr>
-      <th id="T_e970c_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_e970c_row2_col0" class="data row2 col0" >nox</td>
-      <td id="T_e970c_row2_col1" class="data row2 col1" >0.0609</td>
-      <td id="T_e970c_row2_col2" class="data row2 col2" >0.9735</td>
-      <td id="T_e970c_row2_col3" class="data row2 col3" >0.0889</td>
+      <th id="T_60ce1_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_60ce1_row2_col0" class="data row2 col0" >nox</td>
+      <td id="T_60ce1_row2_col1" class="data row2 col1" >0.0609</td>
+      <td id="T_60ce1_row2_col2" class="data row2 col2" >0.9735</td>
+      <td id="T_60ce1_row2_col3" class="data row2 col3" >0.0889</td>
     </tr>
     <tr>
-      <th id="T_e970c_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_e970c_row3_col0" class="data row3 col0" >indus</td>
-      <td id="T_e970c_row3_col1" class="data row3 col1" >0.0493</td>
-      <td id="T_e970c_row3_col2" class="data row3 col2" >0.4390</td>
-      <td id="T_e970c_row3_col3" class="data row3 col3" >0.0545</td>
+      <th id="T_60ce1_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_60ce1_row3_col0" class="data row3 col0" >indus</td>
+      <td id="T_60ce1_row3_col1" class="data row3 col1" >0.0493</td>
+      <td id="T_60ce1_row3_col2" class="data row3 col2" >0.4390</td>
+      <td id="T_60ce1_row3_col3" class="data row3 col3" >0.0545</td>
     </tr>
     <tr>
-      <th id="T_e970c_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_e970c_row4_col0" class="data row4 col0" >dis</td>
-      <td id="T_e970c_row4_col1" class="data row4 col1" >0.0457</td>
-      <td id="T_e970c_row4_col2" class="data row4 col2" >1.0329</td>
-      <td id="T_e970c_row4_col3" class="data row4 col3" >0.0915</td>
+      <th id="T_60ce1_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_60ce1_row4_col0" class="data row4 col0" >dis</td>
+      <td id="T_60ce1_row4_col1" class="data row4 col1" >0.0457</td>
+      <td id="T_60ce1_row4_col2" class="data row4 col2" >1.0329</td>
+      <td id="T_60ce1_row4_col3" class="data row4 col3" >0.0915</td>
     </tr>
     <tr>
-      <th id="T_e970c_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_e970c_row5_col0" class="data row5 col0" >ptratio</td>
-      <td id="T_e970c_row5_col1" class="data row5 col1" >0.0446</td>
-      <td id="T_e970c_row5_col2" class="data row5 col2" >0.7940</td>
-      <td id="T_e970c_row5_col3" class="data row5 col3" >0.0672</td>
+      <th id="T_60ce1_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_60ce1_row5_col0" class="data row5 col0" >ptratio</td>
+      <td id="T_60ce1_row5_col1" class="data row5 col1" >0.0446</td>
+      <td id="T_60ce1_row5_col2" class="data row5 col2" >0.7940</td>
+      <td id="T_60ce1_row5_col3" class="data row5 col3" >0.0672</td>
     </tr>
     <tr>
-      <th id="T_e970c_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_e970c_row6_col0" class="data row6 col0" >crim</td>
-      <td id="T_e970c_row6_col1" class="data row6 col1" >0.0424</td>
-      <td id="T_e970c_row6_col2" class="data row6 col2" >0.8008</td>
-      <td id="T_e970c_row6_col3" class="data row6 col3" >0.0390</td>
+      <th id="T_60ce1_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_60ce1_row6_col0" class="data row6 col0" >crim</td>
+      <td id="T_60ce1_row6_col1" class="data row6 col1" >0.0424</td>
+      <td id="T_60ce1_row6_col2" class="data row6 col2" >0.8008</td>
+      <td id="T_60ce1_row6_col3" class="data row6 col3" >0.0390</td>
     </tr>
     <tr>
-      <th id="T_e970c_level0_row7" class="row_heading level0 row7" >7</th>
-      <td id="T_e970c_row7_col0" class="data row7 col0" >tax</td>
-      <td id="T_e970c_row7_col1" class="data row7 col1" >0.0186</td>
-      <td id="T_e970c_row7_col2" class="data row7 col2" >0.3624</td>
-      <td id="T_e970c_row7_col3" class="data row7 col3" >0.0437</td>
+      <th id="T_60ce1_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_60ce1_row7_col0" class="data row7 col0" >tax</td>
+      <td id="T_60ce1_row7_col1" class="data row7 col1" >0.0186</td>
+      <td id="T_60ce1_row7_col2" class="data row7 col2" >0.3624</td>
+      <td id="T_60ce1_row7_col3" class="data row7 col3" >0.0437</td>
     </tr>
     <tr>
-      <th id="T_e970c_level0_row8" class="row_heading level0 row8" >8</th>
-      <td id="T_e970c_row8_col0" class="data row8 col0" >age</td>
-      <td id="T_e970c_row8_col1" class="data row8 col1" >0.0119</td>
-      <td id="T_e970c_row8_col2" class="data row8 col2" >0.3086</td>
-      <td id="T_e970c_row8_col3" class="data row8 col3" >0.0249</td>
+      <th id="T_60ce1_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_60ce1_row8_col0" class="data row8 col0" >age</td>
+      <td id="T_60ce1_row8_col1" class="data row8 col1" >0.0119</td>
+      <td id="T_60ce1_row8_col2" class="data row8 col2" >0.3086</td>
+      <td id="T_60ce1_row8_col3" class="data row8 col3" >0.0249</td>
     </tr>
     <tr>
-      <th id="T_e970c_level0_row9" class="row_heading level0 row9" >9</th>
-      <td id="T_e970c_row9_col0" class="data row9 col0" >black</td>
-      <td id="T_e970c_row9_col1" class="data row9 col1" >0.0094</td>
-      <td id="T_e970c_row9_col2" class="data row9 col2" >0.2113</td>
-      <td id="T_e970c_row9_col3" class="data row9 col3" >0.0212</td>
+      <th id="T_60ce1_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_60ce1_row9_col0" class="data row9 col0" >black</td>
+      <td id="T_60ce1_row9_col1" class="data row9 col1" >0.0094</td>
+      <td id="T_60ce1_row9_col2" class="data row9 col2" >0.2113</td>
+      <td id="T_60ce1_row9_col3" class="data row9 col3" >0.0212</td>
     </tr>
   </tbody>
 </table>
@@ -41584,144 +42556,144 @@ TOP-10 FEATURES — XGBoost
 </pre></div>
 </div>
 <div class="output text_html"><style type="text/css">
-#T_2e983_row0_col1, #T_2e983_row0_col2 {
+#T_a27f7_row0_col1, #T_a27f7_row0_col2 {
   background-color: #7f2704;
   color: #f1f1f1;
 }
-#T_2e983_row1_col1 {
+#T_a27f7_row1_col1 {
   background-color: #f87f2c;
   color: #f1f1f1;
 }
-#T_2e983_row1_col2 {
+#T_a27f7_row1_col2 {
   background-color: #b53b02;
   color: #f1f1f1;
 }
-#T_2e983_row2_col1 {
+#T_a27f7_row2_col1 {
   background-color: #fedebf;
   color: #000000;
 }
-#T_2e983_row2_col2 {
+#T_a27f7_row2_col2 {
   background-color: #fdd4aa;
   color: #000000;
 }
-#T_2e983_row3_col1, #T_2e983_row4_col1 {
+#T_a27f7_row3_col1, #T_a27f7_row4_col1 {
   background-color: #fee8d2;
   color: #000000;
 }
-#T_2e983_row3_col2, #T_2e983_row7_col2 {
+#T_a27f7_row3_col2, #T_a27f7_row7_col2 {
   background-color: #fdd2a6;
   color: #000000;
 }
-#T_2e983_row4_col2, #T_2e983_row8_col1, #T_2e983_row9_col1 {
+#T_a27f7_row4_col2, #T_a27f7_row8_col1, #T_a27f7_row9_col1 {
   background-color: #fff5eb;
   color: #000000;
 }
-#T_2e983_row5_col1, #T_2e983_row6_col1 {
+#T_a27f7_row5_col1, #T_a27f7_row6_col1 {
   background-color: #feecda;
   color: #000000;
 }
-#T_2e983_row5_col2 {
+#T_a27f7_row5_col2 {
   background-color: #fee2c6;
   color: #000000;
 }
-#T_2e983_row6_col2 {
+#T_a27f7_row6_col2 {
   background-color: #fda660;
   color: #000000;
 }
-#T_2e983_row7_col1 {
+#T_a27f7_row7_col1 {
   background-color: #ffefdf;
   color: #000000;
 }
-#T_2e983_row8_col2 {
+#T_a27f7_row8_col2 {
   background-color: #fff2e6;
   color: #000000;
 }
-#T_2e983_row9_col2 {
+#T_a27f7_row9_col2 {
   background-color: #fdd5ab;
   color: #000000;
 }
 </style>
-<table id="T_2e983">
+<table id="T_a27f7">
   <caption>XGBoost — MDI vs Permutation Importance</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_2e983_level0_col0" class="col_heading level0 col0" >feature</th>
-      <th id="T_2e983_level0_col1" class="col_heading level0 col1" >mdi_importance</th>
-      <th id="T_2e983_level0_col2" class="col_heading level0 col2" >perm_mean</th>
-      <th id="T_2e983_level0_col3" class="col_heading level0 col3" >perm_std</th>
+      <th id="T_a27f7_level0_col0" class="col_heading level0 col0" >feature</th>
+      <th id="T_a27f7_level0_col1" class="col_heading level0 col1" >mdi_importance</th>
+      <th id="T_a27f7_level0_col2" class="col_heading level0 col2" >perm_mean</th>
+      <th id="T_a27f7_level0_col3" class="col_heading level0 col3" >perm_std</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_2e983_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_2e983_row0_col0" class="data row0 col0" >lstat</td>
-      <td id="T_2e983_row0_col1" class="data row0 col1" >0.3606</td>
-      <td id="T_2e983_row0_col2" class="data row0 col2" >6.0434</td>
-      <td id="T_2e983_row0_col3" class="data row0 col3" >0.2356</td>
+      <th id="T_a27f7_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_a27f7_row0_col0" class="data row0 col0" >lstat</td>
+      <td id="T_a27f7_row0_col1" class="data row0 col1" >0.3606</td>
+      <td id="T_a27f7_row0_col2" class="data row0 col2" >6.0434</td>
+      <td id="T_a27f7_row0_col3" class="data row0 col3" >0.2356</td>
     </tr>
     <tr>
-      <th id="T_2e983_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_2e983_row1_col0" class="data row1 col0" >rm</td>
-      <td id="T_2e983_row1_col1" class="data row1 col1" >0.2084</td>
-      <td id="T_2e983_row1_col2" class="data row1 col2" >5.0866</td>
-      <td id="T_2e983_row1_col3" class="data row1 col3" >0.1521</td>
+      <th id="T_a27f7_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_a27f7_row1_col0" class="data row1 col0" >rm</td>
+      <td id="T_a27f7_row1_col1" class="data row1 col1" >0.2084</td>
+      <td id="T_a27f7_row1_col2" class="data row1 col2" >5.0866</td>
+      <td id="T_a27f7_row1_col3" class="data row1 col3" >0.1521</td>
     </tr>
     <tr>
-      <th id="T_2e983_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_2e983_row2_col0" class="data row2 col0" >ptratio</td>
-      <td id="T_2e983_row2_col1" class="data row2 col1" >0.0795</td>
-      <td id="T_2e983_row2_col2" class="data row2 col2" >1.4599</td>
-      <td id="T_2e983_row2_col3" class="data row2 col3" >0.0614</td>
+      <th id="T_a27f7_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_a27f7_row2_col0" class="data row2 col0" >ptratio</td>
+      <td id="T_a27f7_row2_col1" class="data row2 col1" >0.0795</td>
+      <td id="T_a27f7_row2_col2" class="data row2 col2" >1.4599</td>
+      <td id="T_a27f7_row2_col3" class="data row2 col3" >0.0614</td>
     </tr>
     <tr>
-      <th id="T_2e983_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_2e983_row3_col0" class="data row3 col0" >nox</td>
-      <td id="T_2e983_row3_col1" class="data row3 col1" >0.0597</td>
-      <td id="T_2e983_row3_col2" class="data row3 col2" >1.5354</td>
-      <td id="T_2e983_row3_col3" class="data row3 col3" >0.0797</td>
+      <th id="T_a27f7_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_a27f7_row3_col0" class="data row3 col0" >nox</td>
+      <td id="T_a27f7_row3_col1" class="data row3 col1" >0.0597</td>
+      <td id="T_a27f7_row3_col2" class="data row3 col2" >1.5354</td>
+      <td id="T_a27f7_row3_col3" class="data row3 col3" >0.0797</td>
     </tr>
     <tr>
-      <th id="T_2e983_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_2e983_row4_col0" class="data row4 col0" >chas</td>
-      <td id="T_2e983_row4_col1" class="data row4 col1" >0.0583</td>
-      <td id="T_2e983_row4_col2" class="data row4 col2" >0.0971</td>
-      <td id="T_2e983_row4_col3" class="data row4 col3" >0.0135</td>
+      <th id="T_a27f7_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_a27f7_row4_col0" class="data row4 col0" >chas</td>
+      <td id="T_a27f7_row4_col1" class="data row4 col1" >0.0583</td>
+      <td id="T_a27f7_row4_col2" class="data row4 col2" >0.0971</td>
+      <td id="T_a27f7_row4_col3" class="data row4 col3" >0.0135</td>
     </tr>
     <tr>
-      <th id="T_2e983_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_2e983_row5_col0" class="data row5 col0" >tax</td>
-      <td id="T_2e983_row5_col1" class="data row5 col1" >0.0487</td>
-      <td id="T_2e983_row5_col2" class="data row5 col2" >0.9853</td>
-      <td id="T_2e983_row5_col3" class="data row5 col3" >0.0472</td>
+      <th id="T_a27f7_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_a27f7_row5_col0" class="data row5 col0" >tax</td>
+      <td id="T_a27f7_row5_col1" class="data row5 col1" >0.0487</td>
+      <td id="T_a27f7_row5_col2" class="data row5 col2" >0.9853</td>
+      <td id="T_a27f7_row5_col3" class="data row5 col3" >0.0472</td>
     </tr>
     <tr>
-      <th id="T_2e983_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_2e983_row6_col0" class="data row6 col0" >dis</td>
-      <td id="T_2e983_row6_col1" class="data row6 col1" >0.0477</td>
-      <td id="T_2e983_row6_col2" class="data row6 col2" >2.5003</td>
-      <td id="T_2e983_row6_col3" class="data row6 col3" >0.1163</td>
+      <th id="T_a27f7_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_a27f7_row6_col0" class="data row6 col0" >dis</td>
+      <td id="T_a27f7_row6_col1" class="data row6 col1" >0.0477</td>
+      <td id="T_a27f7_row6_col2" class="data row6 col2" >2.5003</td>
+      <td id="T_a27f7_row6_col3" class="data row6 col3" >0.1163</td>
     </tr>
     <tr>
-      <th id="T_2e983_level0_row7" class="row_heading level0 row7" >7</th>
-      <td id="T_2e983_row7_col0" class="data row7 col0" >crim</td>
-      <td id="T_2e983_row7_col1" class="data row7 col1" >0.0403</td>
-      <td id="T_2e983_row7_col2" class="data row7 col2" >1.5205</td>
-      <td id="T_2e983_row7_col3" class="data row7 col3" >0.0442</td>
+      <th id="T_a27f7_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_a27f7_row7_col0" class="data row7 col0" >crim</td>
+      <td id="T_a27f7_row7_col1" class="data row7 col1" >0.0403</td>
+      <td id="T_a27f7_row7_col2" class="data row7 col2" >1.5205</td>
+      <td id="T_a27f7_row7_col3" class="data row7 col3" >0.0442</td>
     </tr>
     <tr>
-      <th id="T_2e983_level0_row8" class="row_heading level0 row8" >8</th>
-      <td id="T_2e983_row8_col0" class="data row8 col0" >indus</td>
-      <td id="T_2e983_row8_col1" class="data row8 col1" >0.0232</td>
-      <td id="T_2e983_row8_col2" class="data row8 col2" >0.2574</td>
-      <td id="T_2e983_row8_col3" class="data row8 col3" >0.0136</td>
+      <th id="T_a27f7_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_a27f7_row8_col0" class="data row8 col0" >indus</td>
+      <td id="T_a27f7_row8_col1" class="data row8 col1" >0.0232</td>
+      <td id="T_a27f7_row8_col2" class="data row8 col2" >0.2574</td>
+      <td id="T_a27f7_row8_col3" class="data row8 col3" >0.0136</td>
     </tr>
     <tr>
-      <th id="T_2e983_level0_row9" class="row_heading level0 row9" >9</th>
-      <td id="T_2e983_row9_col0" class="data row9 col0" >age</td>
-      <td id="T_2e983_row9_col1" class="data row9 col1" >0.0225</td>
-      <td id="T_2e983_row9_col2" class="data row9 col2" >1.4289</td>
-      <td id="T_2e983_row9_col3" class="data row9 col3" >0.0517</td>
+      <th id="T_a27f7_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_a27f7_row9_col0" class="data row9 col0" >age</td>
+      <td id="T_a27f7_row9_col1" class="data row9 col1" >0.0225</td>
+      <td id="T_a27f7_row9_col2" class="data row9 col2" >1.4289</td>
+      <td id="T_a27f7_row9_col3" class="data row9 col3" >0.0517</td>
     </tr>
   </tbody>
 </table>
@@ -41766,18 +42738,18 @@ TOP-10 FEATURES — XGBoost
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
-#T_18e9d_row1_col0, #T_18e9d_row1_col1, #T_18e9d_row1_col2 {
+#T_71409_row1_col0, #T_71409_row1_col1, #T_71409_row1_col2 {
   background-color: #d4edda;
 }
 </style>
-<table id="T_18e9d">
+<table id="T_71409">
   <caption>Test set metrics — best model highlighted in green</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_18e9d_level0_col0" class="col_heading level0 col0" >RMSE</th>
-      <th id="T_18e9d_level0_col1" class="col_heading level0 col1" >MAE</th>
-      <th id="T_18e9d_level0_col2" class="col_heading level0 col2" >R²</th>
+      <th id="T_71409_level0_col0" class="col_heading level0 col0" >RMSE</th>
+      <th id="T_71409_level0_col1" class="col_heading level0 col1" >MAE</th>
+      <th id="T_71409_level0_col2" class="col_heading level0 col2" >R²</th>
     </tr>
     <tr>
       <th class="index_name level0" >Model</th>
@@ -41788,16 +42760,16 @@ TOP-10 FEATURES — XGBoost
   </thead>
   <tbody>
     <tr>
-      <th id="T_18e9d_level0_row0" class="row_heading level0 row0" >Random Forest</th>
-      <td id="T_18e9d_row0_col0" class="data row0 col0" >2.8427</td>
-      <td id="T_18e9d_row0_col1" class="data row0 col1" >2.0390</td>
-      <td id="T_18e9d_row0_col2" class="data row0 col2" >0.8898</td>
+      <th id="T_71409_level0_row0" class="row_heading level0 row0" >Random Forest</th>
+      <td id="T_71409_row0_col0" class="data row0 col0" >2.8427</td>
+      <td id="T_71409_row0_col1" class="data row0 col1" >2.0390</td>
+      <td id="T_71409_row0_col2" class="data row0 col2" >0.8898</td>
     </tr>
     <tr>
-      <th id="T_18e9d_level0_row1" class="row_heading level0 row1" >XGBoost</th>
-      <td id="T_18e9d_row1_col0" class="data row1 col0" >2.5918</td>
-      <td id="T_18e9d_row1_col1" class="data row1 col1" >1.8573</td>
-      <td id="T_18e9d_row1_col2" class="data row1 col2" >0.9084</td>
+      <th id="T_71409_level0_row1" class="row_heading level0 row1" >XGBoost</th>
+      <td id="T_71409_row1_col0" class="data row1 col0" >2.5918</td>
+      <td id="T_71409_row1_col1" class="data row1 col1" >1.8573</td>
+      <td id="T_71409_row1_col2" class="data row1 col2" >0.9084</td>
     </tr>
   </tbody>
 </table>
@@ -41897,31 +42869,31 @@ TOP-10 FEATURES — XGBoost
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_0ae51">
+<table id="T_b89d4">
   <caption>CV estimate vs. Test RMSE — a small gap confirms the CV was well-calibrated</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_0ae51_level0_col0" class="col_heading level0 col0" >CV RMSE (mean)</th>
-      <th id="T_0ae51_level0_col1" class="col_heading level0 col1" >Test RMSE</th>
-      <th id="T_0ae51_level0_col2" class="col_heading level0 col2" >Test R²</th>
-      <th id="T_0ae51_level0_col3" class="col_heading level0 col3" >CV→Test gap</th>
+      <th id="T_b89d4_level0_col0" class="col_heading level0 col0" >CV RMSE (mean)</th>
+      <th id="T_b89d4_level0_col1" class="col_heading level0 col1" >Test RMSE</th>
+      <th id="T_b89d4_level0_col2" class="col_heading level0 col2" >Test R²</th>
+      <th id="T_b89d4_level0_col3" class="col_heading level0 col3" >CV→Test gap</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_0ae51_level0_row0" class="row_heading level0 row0" >Random Forest</th>
-      <td id="T_0ae51_row0_col0" class="data row0 col0" >3.5585</td>
-      <td id="T_0ae51_row0_col1" class="data row0 col1" >2.8427</td>
-      <td id="T_0ae51_row0_col2" class="data row0 col2" >0.8898</td>
-      <td id="T_0ae51_row0_col3" class="data row0 col3" >-0.7158</td>
+      <th id="T_b89d4_level0_row0" class="row_heading level0 row0" >Random Forest</th>
+      <td id="T_b89d4_row0_col0" class="data row0 col0" >3.5585</td>
+      <td id="T_b89d4_row0_col1" class="data row0 col1" >2.8427</td>
+      <td id="T_b89d4_row0_col2" class="data row0 col2" >0.8898</td>
+      <td id="T_b89d4_row0_col3" class="data row0 col3" >-0.7158</td>
     </tr>
     <tr>
-      <th id="T_0ae51_level0_row1" class="row_heading level0 row1" >XGBoost</th>
-      <td id="T_0ae51_row1_col0" class="data row1 col0" >3.3368</td>
-      <td id="T_0ae51_row1_col1" class="data row1 col1" >2.5918</td>
-      <td id="T_0ae51_row1_col2" class="data row1 col2" >0.9084</td>
-      <td id="T_0ae51_row1_col3" class="data row1 col3" >-0.7450</td>
+      <th id="T_b89d4_level0_row1" class="row_heading level0 row1" >XGBoost</th>
+      <td id="T_b89d4_row1_col0" class="data row1 col0" >3.3368</td>
+      <td id="T_b89d4_row1_col1" class="data row1 col1" >2.5918</td>
+      <td id="T_b89d4_row1_col2" class="data row1 col2" >0.9084</td>
+      <td id="T_b89d4_row1_col3" class="data row1 col3" >-0.7450</td>
     </tr>
   </tbody>
 </table>
@@ -42237,56 +43209,56 @@ Columnas: [&#39;temp&#39;, &#39;tmin&#39;, &#39;tmax&#39;, &#39;rhum&#39;, &#39;
 </div>
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_cac1d">
+<table id="T_ac792">
   <caption>Valores nulos por columna</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_cac1d_level0_col0" class="col_heading level0 col0" >temp</th>
-      <th id="T_cac1d_level0_col1" class="col_heading level0 col1" >tmin</th>
-      <th id="T_cac1d_level0_col2" class="col_heading level0 col2" >tmax</th>
-      <th id="T_cac1d_level0_col3" class="col_heading level0 col3" >rhum</th>
-      <th id="T_cac1d_level0_col4" class="col_heading level0 col4" >prcp</th>
-      <th id="T_cac1d_level0_col5" class="col_heading level0 col5" >snwd</th>
-      <th id="T_cac1d_level0_col6" class="col_heading level0 col6" >wspd</th>
-      <th id="T_cac1d_level0_col7" class="col_heading level0 col7" >pres</th>
-      <th id="T_cac1d_level0_col8" class="col_heading level0 col8" >cldc</th>
+      <th id="T_ac792_level0_col0" class="col_heading level0 col0" >temp</th>
+      <th id="T_ac792_level0_col1" class="col_heading level0 col1" >tmin</th>
+      <th id="T_ac792_level0_col2" class="col_heading level0 col2" >tmax</th>
+      <th id="T_ac792_level0_col3" class="col_heading level0 col3" >rhum</th>
+      <th id="T_ac792_level0_col4" class="col_heading level0 col4" >prcp</th>
+      <th id="T_ac792_level0_col5" class="col_heading level0 col5" >snwd</th>
+      <th id="T_ac792_level0_col6" class="col_heading level0 col6" >wspd</th>
+      <th id="T_ac792_level0_col7" class="col_heading level0 col7" >pres</th>
+      <th id="T_ac792_level0_col8" class="col_heading level0 col8" >cldc</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_cac1d_level0_row0" class="row_heading level0 row0" >nulos</th>
-      <td id="T_cac1d_row0_col0" class="data row0 col0" >0</td>
-      <td id="T_cac1d_row0_col1" class="data row0 col1" >0</td>
-      <td id="T_cac1d_row0_col2" class="data row0 col2" >0</td>
-      <td id="T_cac1d_row0_col3" class="data row0 col3" >0</td>
-      <td id="T_cac1d_row0_col4" class="data row0 col4" >0</td>
-      <td id="T_cac1d_row0_col5" class="data row0 col5" >0</td>
-      <td id="T_cac1d_row0_col6" class="data row0 col6" >0</td>
-      <td id="T_cac1d_row0_col7" class="data row0 col7" >0</td>
-      <td id="T_cac1d_row0_col8" class="data row0 col8" >1862</td>
+      <th id="T_ac792_level0_row0" class="row_heading level0 row0" >nulos</th>
+      <td id="T_ac792_row0_col0" class="data row0 col0" >0</td>
+      <td id="T_ac792_row0_col1" class="data row0 col1" >0</td>
+      <td id="T_ac792_row0_col2" class="data row0 col2" >0</td>
+      <td id="T_ac792_row0_col3" class="data row0 col3" >0</td>
+      <td id="T_ac792_row0_col4" class="data row0 col4" >0</td>
+      <td id="T_ac792_row0_col5" class="data row0 col5" >0</td>
+      <td id="T_ac792_row0_col6" class="data row0 col6" >0</td>
+      <td id="T_ac792_row0_col7" class="data row0 col7" >0</td>
+      <td id="T_ac792_row0_col8" class="data row0 col8" >1862</td>
     </tr>
   </tbody>
 </table>
 </div><div class="output text_html"><style type="text/css">
-#T_5eb3d_row0_col8, #T_5eb3d_row2_col8, #T_5eb3d_row3_col8, #T_5eb3d_row4_col8, #T_5eb3d_row5_col8, #T_5eb3d_row7_col8, #T_5eb3d_row8_col8, #T_5eb3d_row9_col8 {
+#T_32b31_row0_col8, #T_32b31_row2_col8, #T_32b31_row3_col8, #T_32b31_row4_col8, #T_32b31_row5_col8, #T_32b31_row7_col8, #T_32b31_row8_col8, #T_32b31_row9_col8 {
   background-color: #ffe0e0;
 }
 </style>
-<table id="T_5eb3d">
+<table id="T_32b31">
   <caption>Primeras 10 filas</caption>
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_5eb3d_level0_col0" class="col_heading level0 col0" >temp</th>
-      <th id="T_5eb3d_level0_col1" class="col_heading level0 col1" >tmin</th>
-      <th id="T_5eb3d_level0_col2" class="col_heading level0 col2" >tmax</th>
-      <th id="T_5eb3d_level0_col3" class="col_heading level0 col3" >rhum</th>
-      <th id="T_5eb3d_level0_col4" class="col_heading level0 col4" >prcp</th>
-      <th id="T_5eb3d_level0_col5" class="col_heading level0 col5" >snwd</th>
-      <th id="T_5eb3d_level0_col6" class="col_heading level0 col6" >wspd</th>
-      <th id="T_5eb3d_level0_col7" class="col_heading level0 col7" >pres</th>
-      <th id="T_5eb3d_level0_col8" class="col_heading level0 col8" >cldc</th>
+      <th id="T_32b31_level0_col0" class="col_heading level0 col0" >temp</th>
+      <th id="T_32b31_level0_col1" class="col_heading level0 col1" >tmin</th>
+      <th id="T_32b31_level0_col2" class="col_heading level0 col2" >tmax</th>
+      <th id="T_32b31_level0_col3" class="col_heading level0 col3" >rhum</th>
+      <th id="T_32b31_level0_col4" class="col_heading level0 col4" >prcp</th>
+      <th id="T_32b31_level0_col5" class="col_heading level0 col5" >snwd</th>
+      <th id="T_32b31_level0_col6" class="col_heading level0 col6" >wspd</th>
+      <th id="T_32b31_level0_col7" class="col_heading level0 col7" >pres</th>
+      <th id="T_32b31_level0_col8" class="col_heading level0 col8" >cldc</th>
     </tr>
     <tr>
       <th class="index_name level0" >time</th>
@@ -42303,124 +43275,124 @@ Columnas: [&#39;temp&#39;, &#39;tmin&#39;, &#39;tmax&#39;, &#39;rhum&#39;, &#39;
   </thead>
   <tbody>
     <tr>
-      <th id="T_5eb3d_level0_row0" class="row_heading level0 row0" >2015-01-01 00:00:00</th>
-      <td id="T_5eb3d_row0_col0" class="data row0 col0" >-6.70</td>
-      <td id="T_5eb3d_row0_col1" class="data row0 col1" >-9.90</td>
-      <td id="T_5eb3d_row0_col2" class="data row0 col2" >0.00</td>
-      <td id="T_5eb3d_row0_col3" class="data row0 col3" >58</td>
-      <td id="T_5eb3d_row0_col4" class="data row0 col4" >0.00</td>
-      <td id="T_5eb3d_row0_col5" class="data row0 col5" >0</td>
-      <td id="T_5eb3d_row0_col6" class="data row0 col6" >23.40</td>
-      <td id="T_5eb3d_row0_col7" class="data row0 col7" >1018.40</td>
-      <td id="T_5eb3d_row0_col8" class="data row0 col8" ><NA></td>
+      <th id="T_32b31_level0_row0" class="row_heading level0 row0" >2015-01-01 00:00:00</th>
+      <td id="T_32b31_row0_col0" class="data row0 col0" >-6.70</td>
+      <td id="T_32b31_row0_col1" class="data row0 col1" >-9.90</td>
+      <td id="T_32b31_row0_col2" class="data row0 col2" >0.00</td>
+      <td id="T_32b31_row0_col3" class="data row0 col3" >58</td>
+      <td id="T_32b31_row0_col4" class="data row0 col4" >0.00</td>
+      <td id="T_32b31_row0_col5" class="data row0 col5" >0</td>
+      <td id="T_32b31_row0_col6" class="data row0 col6" >23.40</td>
+      <td id="T_32b31_row0_col7" class="data row0 col7" >1018.40</td>
+      <td id="T_32b31_row0_col8" class="data row0 col8" ><NA></td>
     </tr>
     <tr>
-      <th id="T_5eb3d_level0_row1" class="row_heading level0 row1" >2015-01-02 00:00:00</th>
-      <td id="T_5eb3d_row1_col0" class="data row1 col0" >-3.50</td>
-      <td id="T_5eb3d_row1_col1" class="data row1 col1" >-9.30</td>
-      <td id="T_5eb3d_row1_col2" class="data row1 col2" >1.10</td>
-      <td id="T_5eb3d_row1_col3" class="data row1 col3" >70</td>
-      <td id="T_5eb3d_row1_col4" class="data row1 col4" >0.00</td>
-      <td id="T_5eb3d_row1_col5" class="data row1 col5" >0</td>
-      <td id="T_5eb3d_row1_col6" class="data row1 col6" >7.60</td>
-      <td id="T_5eb3d_row1_col7" class="data row1 col7" >1024.40</td>
-      <td id="T_5eb3d_row1_col8" class="data row1 col8" >0</td>
+      <th id="T_32b31_level0_row1" class="row_heading level0 row1" >2015-01-02 00:00:00</th>
+      <td id="T_32b31_row1_col0" class="data row1 col0" >-3.50</td>
+      <td id="T_32b31_row1_col1" class="data row1 col1" >-9.30</td>
+      <td id="T_32b31_row1_col2" class="data row1 col2" >1.10</td>
+      <td id="T_32b31_row1_col3" class="data row1 col3" >70</td>
+      <td id="T_32b31_row1_col4" class="data row1 col4" >0.00</td>
+      <td id="T_32b31_row1_col5" class="data row1 col5" >0</td>
+      <td id="T_32b31_row1_col6" class="data row1 col6" >7.60</td>
+      <td id="T_32b31_row1_col7" class="data row1 col7" >1024.40</td>
+      <td id="T_32b31_row1_col8" class="data row1 col8" >0</td>
     </tr>
     <tr>
-      <th id="T_5eb3d_level0_row2" class="row_heading level0 row2" >2015-01-03 00:00:00</th>
-      <td id="T_5eb3d_row2_col0" class="data row2 col0" >-0.30</td>
-      <td id="T_5eb3d_row2_col1" class="data row2 col1" >-1.60</td>
-      <td id="T_5eb3d_row2_col2" class="data row2 col2" >1.10</td>
-      <td id="T_5eb3d_row2_col3" class="data row2 col3" >91</td>
-      <td id="T_5eb3d_row2_col4" class="data row2 col4" >14.50</td>
-      <td id="T_5eb3d_row2_col5" class="data row2 col5" >0</td>
-      <td id="T_5eb3d_row2_col6" class="data row2 col6" >9.00</td>
-      <td id="T_5eb3d_row2_col7" class="data row2 col7" >1013.80</td>
-      <td id="T_5eb3d_row2_col8" class="data row2 col8" ><NA></td>
+      <th id="T_32b31_level0_row2" class="row_heading level0 row2" >2015-01-03 00:00:00</th>
+      <td id="T_32b31_row2_col0" class="data row2 col0" >-0.30</td>
+      <td id="T_32b31_row2_col1" class="data row2 col1" >-1.60</td>
+      <td id="T_32b31_row2_col2" class="data row2 col2" >1.10</td>
+      <td id="T_32b31_row2_col3" class="data row2 col3" >91</td>
+      <td id="T_32b31_row2_col4" class="data row2 col4" >14.50</td>
+      <td id="T_32b31_row2_col5" class="data row2 col5" >0</td>
+      <td id="T_32b31_row2_col6" class="data row2 col6" >9.00</td>
+      <td id="T_32b31_row2_col7" class="data row2 col7" >1013.80</td>
+      <td id="T_32b31_row2_col8" class="data row2 col8" ><NA></td>
     </tr>
     <tr>
-      <th id="T_5eb3d_level0_row3" class="row_heading level0 row3" >2015-01-04 00:00:00</th>
-      <td id="T_5eb3d_row3_col0" class="data row3 col0" >-1.70</td>
-      <td id="T_5eb3d_row3_col1" class="data row3 col1" >-16.60</td>
-      <td id="T_5eb3d_row3_col2" class="data row3 col2" >0.60</td>
-      <td id="T_5eb3d_row3_col3" class="data row3 col3" >80</td>
-      <td id="T_5eb3d_row3_col4" class="data row3 col4" >3.30</td>
-      <td id="T_5eb3d_row3_col5" class="data row3 col5" >3</td>
-      <td id="T_5eb3d_row3_col6" class="data row3 col6" >25.60</td>
-      <td id="T_5eb3d_row3_col7" class="data row3 col7" >1017.90</td>
-      <td id="T_5eb3d_row3_col8" class="data row3 col8" ><NA></td>
+      <th id="T_32b31_level0_row3" class="row_heading level0 row3" >2015-01-04 00:00:00</th>
+      <td id="T_32b31_row3_col0" class="data row3 col0" >-1.70</td>
+      <td id="T_32b31_row3_col1" class="data row3 col1" >-16.60</td>
+      <td id="T_32b31_row3_col2" class="data row3 col2" >0.60</td>
+      <td id="T_32b31_row3_col3" class="data row3 col3" >80</td>
+      <td id="T_32b31_row3_col4" class="data row3 col4" >3.30</td>
+      <td id="T_32b31_row3_col5" class="data row3 col5" >3</td>
+      <td id="T_32b31_row3_col6" class="data row3 col6" >25.60</td>
+      <td id="T_32b31_row3_col7" class="data row3 col7" >1017.90</td>
+      <td id="T_32b31_row3_col8" class="data row3 col8" ><NA></td>
     </tr>
     <tr>
-      <th id="T_5eb3d_level0_row4" class="row_heading level0 row4" >2015-01-05 00:00:00</th>
-      <td id="T_5eb3d_row4_col0" class="data row4 col0" >-16.60</td>
-      <td id="T_5eb3d_row4_col1" class="data row4 col1" >-19.30</td>
-      <td id="T_5eb3d_row4_col2" class="data row4 col2" >-14.30</td>
-      <td id="T_5eb3d_row4_col3" class="data row4 col3" >68</td>
-      <td id="T_5eb3d_row4_col4" class="data row4 col4" >3.80</td>
-      <td id="T_5eb3d_row4_col5" class="data row4 col5" >5</td>
-      <td id="T_5eb3d_row4_col6" class="data row4 col6" >16.60</td>
-      <td id="T_5eb3d_row4_col7" class="data row4 col7" >1035.20</td>
-      <td id="T_5eb3d_row4_col8" class="data row4 col8" ><NA></td>
+      <th id="T_32b31_level0_row4" class="row_heading level0 row4" >2015-01-05 00:00:00</th>
+      <td id="T_32b31_row4_col0" class="data row4 col0" >-16.60</td>
+      <td id="T_32b31_row4_col1" class="data row4 col1" >-19.30</td>
+      <td id="T_32b31_row4_col2" class="data row4 col2" >-14.30</td>
+      <td id="T_32b31_row4_col3" class="data row4 col3" >68</td>
+      <td id="T_32b31_row4_col4" class="data row4 col4" >3.80</td>
+      <td id="T_32b31_row4_col5" class="data row4 col5" >5</td>
+      <td id="T_32b31_row4_col6" class="data row4 col6" >16.60</td>
+      <td id="T_32b31_row4_col7" class="data row4 col7" >1035.20</td>
+      <td id="T_32b31_row4_col8" class="data row4 col8" ><NA></td>
     </tr>
     <tr>
-      <th id="T_5eb3d_level0_row5" class="row_heading level0 row5" >2015-01-06 00:00:00</th>
-      <td id="T_5eb3d_row5_col0" class="data row5 col0" >-14.80</td>
-      <td id="T_5eb3d_row5_col1" class="data row5 col1" >-20.50</td>
-      <td id="T_5eb3d_row5_col2" class="data row5 col2" >-12.10</td>
-      <td id="T_5eb3d_row5_col3" class="data row5 col3" >74</td>
-      <td id="T_5eb3d_row5_col4" class="data row5 col4" >0.30</td>
-      <td id="T_5eb3d_row5_col5" class="data row5 col5" >10</td>
-      <td id="T_5eb3d_row5_col6" class="data row5 col6" >22.30</td>
-      <td id="T_5eb3d_row5_col7" class="data row5 col7" >1027.70</td>
-      <td id="T_5eb3d_row5_col8" class="data row5 col8" ><NA></td>
+      <th id="T_32b31_level0_row5" class="row_heading level0 row5" >2015-01-06 00:00:00</th>
+      <td id="T_32b31_row5_col0" class="data row5 col0" >-14.80</td>
+      <td id="T_32b31_row5_col1" class="data row5 col1" >-20.50</td>
+      <td id="T_32b31_row5_col2" class="data row5 col2" >-12.10</td>
+      <td id="T_32b31_row5_col3" class="data row5 col3" >74</td>
+      <td id="T_32b31_row5_col4" class="data row5 col4" >0.30</td>
+      <td id="T_32b31_row5_col5" class="data row5 col5" >10</td>
+      <td id="T_32b31_row5_col6" class="data row5 col6" >22.30</td>
+      <td id="T_32b31_row5_col7" class="data row5 col7" >1027.70</td>
+      <td id="T_32b31_row5_col8" class="data row5 col8" ><NA></td>
     </tr>
     <tr>
-      <th id="T_5eb3d_level0_row6" class="row_heading level0 row6" >2015-01-07 00:00:00</th>
-      <td id="T_5eb3d_row6_col0" class="data row6 col0" >-16.10</td>
-      <td id="T_5eb3d_row6_col1" class="data row6 col1" >-21.00</td>
-      <td id="T_5eb3d_row6_col2" class="data row6 col2" >-14.30</td>
-      <td id="T_5eb3d_row6_col3" class="data row6 col3" >58</td>
-      <td id="T_5eb3d_row6_col4" class="data row6 col4" >0.00</td>
-      <td id="T_5eb3d_row6_col5" class="data row6 col5" >8</td>
-      <td id="T_5eb3d_row6_col6" class="data row6 col6" >28.10</td>
-      <td id="T_5eb3d_row6_col7" class="data row6 col7" >1038.00</td>
-      <td id="T_5eb3d_row6_col8" class="data row6 col8" >1</td>
+      <th id="T_32b31_level0_row6" class="row_heading level0 row6" >2015-01-07 00:00:00</th>
+      <td id="T_32b31_row6_col0" class="data row6 col0" >-16.10</td>
+      <td id="T_32b31_row6_col1" class="data row6 col1" >-21.00</td>
+      <td id="T_32b31_row6_col2" class="data row6 col2" >-14.30</td>
+      <td id="T_32b31_row6_col3" class="data row6 col3" >58</td>
+      <td id="T_32b31_row6_col4" class="data row6 col4" >0.00</td>
+      <td id="T_32b31_row6_col5" class="data row6 col5" >8</td>
+      <td id="T_32b31_row6_col6" class="data row6 col6" >28.10</td>
+      <td id="T_32b31_row6_col7" class="data row6 col7" >1038.00</td>
+      <td id="T_32b31_row6_col8" class="data row6 col8" >1</td>
     </tr>
     <tr>
-      <th id="T_5eb3d_level0_row7" class="row_heading level0 row7" >2015-01-08 00:00:00</th>
-      <td id="T_5eb3d_row7_col0" class="data row7 col0" >-18.90</td>
-      <td id="T_5eb3d_row7_col1" class="data row7 col1" >-22.10</td>
-      <td id="T_5eb3d_row7_col2" class="data row7 col2" >-7.70</td>
-      <td id="T_5eb3d_row7_col3" class="data row7 col3" >73</td>
-      <td id="T_5eb3d_row7_col4" class="data row7 col4" >1.50</td>
-      <td id="T_5eb3d_row7_col5" class="data row7 col5" >8</td>
-      <td id="T_5eb3d_row7_col6" class="data row7 col6" >28.40</td>
-      <td id="T_5eb3d_row7_col7" class="data row7 col7" >1022.90</td>
-      <td id="T_5eb3d_row7_col8" class="data row7 col8" ><NA></td>
+      <th id="T_32b31_level0_row7" class="row_heading level0 row7" >2015-01-08 00:00:00</th>
+      <td id="T_32b31_row7_col0" class="data row7 col0" >-18.90</td>
+      <td id="T_32b31_row7_col1" class="data row7 col1" >-22.10</td>
+      <td id="T_32b31_row7_col2" class="data row7 col2" >-7.70</td>
+      <td id="T_32b31_row7_col3" class="data row7 col3" >73</td>
+      <td id="T_32b31_row7_col4" class="data row7 col4" >1.50</td>
+      <td id="T_32b31_row7_col5" class="data row7 col5" >8</td>
+      <td id="T_32b31_row7_col6" class="data row7 col6" >28.40</td>
+      <td id="T_32b31_row7_col7" class="data row7 col7" >1022.90</td>
+      <td id="T_32b31_row7_col8" class="data row7 col8" ><NA></td>
     </tr>
     <tr>
-      <th id="T_5eb3d_level0_row8" class="row_heading level0 row8" >2015-01-09 00:00:00</th>
-      <td id="T_5eb3d_row8_col0" class="data row8 col0" >-13.30</td>
-      <td id="T_5eb3d_row8_col1" class="data row8 col1" >-17.70</td>
-      <td id="T_5eb3d_row8_col2" class="data row8 col2" >-11.60</td>
-      <td id="T_5eb3d_row8_col3" class="data row8 col3" >63</td>
-      <td id="T_5eb3d_row8_col4" class="data row8 col4" >0.00</td>
-      <td id="T_5eb3d_row8_col5" class="data row8 col5" >13</td>
-      <td id="T_5eb3d_row8_col6" class="data row8 col6" >26.60</td>
-      <td id="T_5eb3d_row8_col7" class="data row8 col7" >1025.30</td>
-      <td id="T_5eb3d_row8_col8" class="data row8 col8" ><NA></td>
+      <th id="T_32b31_level0_row8" class="row_heading level0 row8" >2015-01-09 00:00:00</th>
+      <td id="T_32b31_row8_col0" class="data row8 col0" >-13.30</td>
+      <td id="T_32b31_row8_col1" class="data row8 col1" >-17.70</td>
+      <td id="T_32b31_row8_col2" class="data row8 col2" >-11.60</td>
+      <td id="T_32b31_row8_col3" class="data row8 col3" >63</td>
+      <td id="T_32b31_row8_col4" class="data row8 col4" >0.00</td>
+      <td id="T_32b31_row8_col5" class="data row8 col5" >13</td>
+      <td id="T_32b31_row8_col6" class="data row8 col6" >26.60</td>
+      <td id="T_32b31_row8_col7" class="data row8 col7" >1025.30</td>
+      <td id="T_32b31_row8_col8" class="data row8 col8" ><NA></td>
     </tr>
     <tr>
-      <th id="T_5eb3d_level0_row9" class="row_heading level0 row9" >2015-01-10 00:00:00</th>
-      <td id="T_5eb3d_row9_col0" class="data row9 col0" >-15.10</td>
-      <td id="T_5eb3d_row9_col1" class="data row9 col1" >-18.80</td>
-      <td id="T_5eb3d_row9_col2" class="data row9 col2" >-4.30</td>
-      <td id="T_5eb3d_row9_col3" class="data row9 col3" >67</td>
-      <td id="T_5eb3d_row9_col4" class="data row9 col4" >0.00</td>
-      <td id="T_5eb3d_row9_col5" class="data row9 col5" >10</td>
-      <td id="T_5eb3d_row9_col6" class="data row9 col6" >18.70</td>
-      <td id="T_5eb3d_row9_col7" class="data row9 col7" >1029.20</td>
-      <td id="T_5eb3d_row9_col8" class="data row9 col8" ><NA></td>
+      <th id="T_32b31_level0_row9" class="row_heading level0 row9" >2015-01-10 00:00:00</th>
+      <td id="T_32b31_row9_col0" class="data row9 col0" >-15.10</td>
+      <td id="T_32b31_row9_col1" class="data row9 col1" >-18.80</td>
+      <td id="T_32b31_row9_col2" class="data row9 col2" >-4.30</td>
+      <td id="T_32b31_row9_col3" class="data row9 col3" >67</td>
+      <td id="T_32b31_row9_col4" class="data row9 col4" >0.00</td>
+      <td id="T_32b31_row9_col5" class="data row9 col5" >10</td>
+      <td id="T_32b31_row9_col6" class="data row9 col6" >18.70</td>
+      <td id="T_32b31_row9_col7" class="data row9 col7" >1029.20</td>
+      <td id="T_32b31_row9_col8" class="data row9 col8" ><NA></td>
     </tr>
   </tbody>
 </table>
@@ -43061,16 +44033,16 @@ docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w"> </spa
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "tf_gpu"
+            mode: "python"
         },
         kernelOptions: {
-            name: "tf_gpu",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'tf_gpu'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
