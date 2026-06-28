@@ -1,0 +1,1457 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>1. Supervised Learning &#8212; Machine Learning</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css?v=8cd3d715" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=8c6b312c" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=530fe47d" />
+    <link rel="stylesheet" type="text/css" href="_static/.ipynb_checkpoints/custom-checkpoint.css" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'supervised_intro_en';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/custom.js?v=14184634"></script>
+    <script src="_static/.ipynb_checkpoints/custom-checkpoint.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Decision Tree-Based Models" href="decisiontree_model.html" />
+    <link rel="prev" title="Profesor: Dr. Lihki Rubio" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fotolihki.jpg" class="logo__image only-light" alt="Machine Learning - Home"/>
+    <img src="_static/fotolihki.jpg" class="logo__image only-dark pst-js-only" alt="Machine Learning - Home"/>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Profesor: Dr. Lihki Rubio
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Supervised Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="decisiontree_model.html">2. Decision Tree-Based Models</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="model_evaluation.html">3. Evaluación de modelos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chains_pipelines.html">4. Pipelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblio.html">5. Bibliografía</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/supervised_intro_en.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Supervised Learning</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-supervised-learning-tasks">1.1. Examples of Supervised Learning Tasks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-and-regression">1.2. Classification and Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization-overfitting-and-underfitting">1.3. Generalization, Overfitting, and Underfitting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detecting-overfitting-using-statistical-tests">1.4. Detecting Overfitting Using Statistical Tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">1.5. Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-overfitting-important">1.6. Why Is Overfitting Important?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization-vs-overfitting">1.6.1. Generalization vs. Overfitting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">1.7. Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-not-use-a-single-train-test-split">1.8. Why Not Use a Single Train-Test Split?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-stratified-k-fold-cross-validation">1.8.1. Repeated Stratified K-Fold Cross-Validation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-selection">1.9. Model Selection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-model">1.9.1. Why This Model?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-procedure">1.10. Cross-Validation Procedure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-analysis">1.11. Preliminary Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">1.11.1. Interpretation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-statistical-approach-to-detecting-overfitting">1.12. A Statistical Approach to Detecting Overfitting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypotheses">1.12.1. Hypotheses</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-tests">1.13. Statistical Tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.13.1. Paired <em>t</em>-Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.13.2. Wilcoxon Signed-Rank Test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-interval-for-the-performance-difference">1.14. Confidence Interval for the Performance Difference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.14.1. Interpretation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-statistical-evaluation">1.15. Complete Statistical Evaluation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.15.1. Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">1.15.2. Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-reproducible-example">1.16. Complete Reproducible Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-complexity-vs-dataset-size">1.17. Model Complexity vs. Dataset Size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-environment-setup">1.18. TensorFlow Environment Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-2-10-on-native-windows">1.18.1. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span> <span class="pre">2.10</span></code> on <code class="docutils literal notranslate"><span class="pre">Native</span> <span class="pre">Windows</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-geq2-11-on-wsl2">1.18.2. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code><span class="math notranslate nohighlight">\(\geq\)</span><code class="docutils literal notranslate"><span class="pre">2.11</span></code> on <code class="docutils literal notranslate"><span class="pre">WSL2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-on-mac">1.18.3. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> on <code class="docutils literal notranslate"><span class="pre">Mac</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-jupyter-books-for-machine-learning-deliverables">1.18.4. Building <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Books</span></code> for Machine Learning Deliverables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-docker-and-dash">1.18.5. Introduction to <code class="docutils literal notranslate"><span class="pre">Docker</span></code> and <code class="docutils literal notranslate"><span class="pre">Dash</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roles-in-the-data-ecosystem">1.19. Roles in the Data Ecosystem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analyst">1.19.1. Data Analyst</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-scientist">1.19.2. Data Scientist</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-engineer">1.19.3. Data Engineer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-stack-data-scientist">1.19.4. Full-Stack Data Scientist</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-engineer">1.19.5. Machine Learning Engineer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-scientist">1.19.6. Machine Learning Scientist</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-comparison">1.19.7. Role Comparison</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linkedin-profile-for-data-scientists">1.20. LinkedIn Profile for Data Scientists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-linkedin-essential">1.20.1. Why is LinkedIn essential?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-recommendations">1.20.2. Practical recommendations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remember">1.20.3. Remember</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="supervised-learning">
+<h1><span class="section-number">1. </span>Supervised Learning<a class="headerlink" href="#supervised-learning" title="Link to this heading">#</a></h1>
+<figure class="align-center" id="fig-v7labs-supervisedlearning">
+<a class="reference internal image-reference" href="_images/v7labs_supervisedlearning.png"><img alt="_images/v7labs_supervisedlearning.png" src="_images/v7labs_supervisedlearning.png" style="width: 814.0px; height: 483.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Supervised learning. Source: <a class="reference external" href="http://v7labs.com">v7labs.com</a>.</span><a class="headerlink" href="#fig-v7labs-supervisedlearning" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">Introduction</p>
+<ul class="simple">
+<li><p>The most effective machine learning algorithms <em><strong>automate decision-making by generalizing from examples</strong></em>. Supervised learning is the clearest case: <em><strong>input-output pairs</strong></em> (labeled data) are provided to <em><strong>train models that classify data or predict outcomes accurately</strong></em>.</p></li>
+<li><p>The algorithm adjusts its weights through <em><strong>cross-validation</strong></em> until it fits well, allowing it to <em><strong>produce accurate predictions for new inputs</strong></em> without further human intervention, thanks to the initial supervision it received.</p></li>
+</ul>
+</div>
+<section id="examples-of-supervised-learning-tasks">
+<h2><span class="section-number">1.1. </span>Examples of Supervised Learning Tasks<a class="headerlink" href="#examples-of-supervised-learning-tasks" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><em><strong>Recognizing handwritten zip codes on an envelope:</strong></em>
+The <em>input is a scan of the handwriting, and the desired output is the actual zip-code digits</em>. Building a dataset means collecting many envelopes, reading the zip codes yourself, and storing the digits as the ground-truth labels.</p></li>
+<li><p><em><strong>Determining whether a tumor is benign from a medical image:</strong></em>
+The <em>input is the image, and the output is whether the tumor is benign</em>. Building a model requires a database of medical images plus expert opinion: a physician must review every image and decide which tumors are benign. Additional diagnosis beyond the image itself may even be needed to confirm malignancy.</p></li>
+<li><p><em><strong>Detecting fraudulent credit-card transactions:</strong></em>
+The <em>input is a transaction record, and the output is whether it is likely fraudulent</em>. Assuming you are the card issuer, building the dataset means storing every transaction and recording whether a user reported it as fraudulent.</p></li>
+</ul>
+</section>
+<section id="classification-and-regression">
+<h2><span class="section-number">1.2. </span>Classification and Regression<a class="headerlink" href="#classification-and-regression" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><em><strong>Supervised machine learning</strong></em> problems are mainly divided into <em><strong>classification</strong></em> and <em><strong>regression</strong></em>. <em><strong>Classification</strong></em> predicts discrete categories and can be <em><strong>binary</strong></em> (two classes) or <em><strong>multiclass</strong></em> (more than two classes). A common example of binary classification is identifying whether an email is spam or not.</p></li>
+<li><p>In <em><strong>binary classification</strong></em>, classes are usually labeled as <em><strong>positive</strong></em> and <em><strong>negative</strong></em>. The <em><strong>positive</strong></em> class simply represents the category of interest and does not imply any favorable meaning. Its definition depends on the application domain.</p></li>
+<li><p><em><strong>Regression</strong></em> predicts a continuous numerical value (a real number). For example, predicting a person’s annual income from demographic and socioeconomic variables is a regression task.</p></li>
+<li><p>The key distinction between <em><strong>classification</strong></em> and <em><strong>regression</strong></em> is the nature of the output: <em><strong>classification</strong></em> predicts discrete categories, whereas <em><strong>regression</strong></em> predicts continuous values.</p></li>
+</ul>
+</section>
+<section id="generalization-overfitting-and-underfitting">
+<h2><span class="section-number">1.3. </span>Generalization, Overfitting, and Underfitting<a class="headerlink" href="#generalization-overfitting-and-underfitting" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>In <em><strong>supervised learning</strong></em>, the goal is to build a model using the <em><strong>training set</strong></em> that can make accurate predictions on unseen data. This ability is known as <em><strong>generalization</strong></em> and is evaluated using the <em><strong>test set</strong></em>.</p></li>
+<li><p>A model may achieve high accuracy on the <em><strong>training set</strong></em> but still perform poorly on new data. This occurs when the model becomes excessively complex and learns the specific details of the training data instead of the underlying patterns.</p></li>
+<li><p><em><strong>Overfitting</strong></em> occurs when a model adapts too closely to the training data and fails to generalize. In contrast, <em><strong>underfitting</strong></em> occurs when a model is too simple to capture the data structure, resulting in poor performance even on the training set.</p></li>
+</ul>
+<figure class="align-center" id="generalizacion-machine-learning-fig">
+<img alt="_images/generalizacion-machine-learning.png" src="_images/generalizacion-machine-learning.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 1.2 </span><span class="caption-text">Overfitting and underfitting. Source <a class="reference external" href="https://www.aprendemachinelearning.com/que-es-overfitting-y-underfitting-y-como-solucionarlo/">aprendemachinelearning</a>.</span><a class="headerlink" href="#generalizacion-machine-learning-fig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="tip admonition">
+<p class="admonition-title">Remark</p>
+<ul class="simple">
+<li><p>Increasing model complexity generally improves training performance. However, overly complex models may overfit the training data and fail to generalize to unseen observations.</p></li>
+<li><p>The goal is to identify the optimal level of complexity that achieves the best generalization performance by balancing underfitting and overfitting.</p></li>
+</ul>
+</div>
+<figure class="align-center" id="fig-sweet-spot">
+<a class="reference internal image-reference" href="_images/sweet_spot.png"><img alt="_images/sweet_spot.png" src="_images/sweet_spot.png" style="width: 873.0px; height: 648.6px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.3 </span><span class="caption-text">Complexity vs. accuracy for training and test sets. Source: <a class="reference external" href="http://towardsai.net">towardsai.net</a>.</span><a class="headerlink" href="#fig-sweet-spot" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<div class="warning admonition">
+<p class="admonition-title">What gap is acceptable?</p>
+<ul class="simple">
+<li><p><em><strong>There is no fixed rule</strong></em> for deciding whether the gap between training performance and test performance is acceptable, but generally:</p>
+<ul>
+<li><p><em><strong>Gaps under 5-10% in the score are usually acceptable</strong></em>.</p></li>
+<li><p><em><strong>Gaps above 15-20% suggest the model may be overfitted</strong></em> and needs adjustment (<em>regularization, more data, reduced complexity, etc.</em>).</p></li>
+</ul>
+</li>
+<li><p><em><strong>Bottom line</strong></em>: if a model performs exceptionally well on training but poorly on test data, it is likely memorizing rather than learning general patterns. Comparing train and test scores is key to detecting and correcting overfitting.</p></li>
+</ul>
+</div>
+</section>
+<section id="detecting-overfitting-using-statistical-tests">
+<h2><span class="section-number">1.4. </span>Detecting Overfitting Using Statistical Tests<a class="headerlink" href="#detecting-overfitting-using-statistical-tests" title="Link to this heading">#</a></h2>
+</section>
+<section id="learning-objectives">
+<h2><span class="section-number">1.5. </span>Learning Objectives<a class="headerlink" href="#learning-objectives" title="Link to this heading">#</a></h2>
+<p>After completing this example, you should be able to:</p>
+<ul class="simple">
+<li><p>Explain the concept of <strong>generalization</strong>.</p></li>
+<li><p>Distinguish between <strong>underfitting</strong>, <strong>good fit</strong>, and <strong>overfitting</strong>.</p></li>
+<li><p>Evaluate model performance using training and testing scores.</p></li>
+<li><p>Apply <strong>Repeated Stratified K-Fold Cross-Validation</strong>.</p></li>
+<li><p>Use statistical hypothesis testing to detect overfitting.</p></li>
+<li><p>Interpret <span class="math notranslate nohighlight">\(p\)</span>-values and confidence intervals in the context of machine learning.</p></li>
+</ul>
+</section>
+<section id="why-is-overfitting-important">
+<h2><span class="section-number">1.6. </span>Why Is Overfitting Important?<a class="headerlink" href="#why-is-overfitting-important" title="Link to this heading">#</a></h2>
+<p>The ultimate goal of <strong>supervised machine learning</strong> is not to achieve perfect performance on the training data, but rather to build models that <strong>generalize well to unseen observations</strong>.</p>
+<p>A model that performs extremely well on the training set but poorly on new data has learned the specific characteristics of the training data rather than the underlying patterns.</p>
+<p>This phenomenon is known as <strong>overfitting</strong>.</p>
+<section id="generalization-vs-overfitting">
+<h3><span class="section-number">1.6.1. </span>Generalization vs. Overfitting<a class="headerlink" href="#generalization-vs-overfitting" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Scenario</p></th>
+<th class="head"><p>Train Performance</p></th>
+<th class="head"><p>Test Performance</p></th>
+<th class="head"><p>Interpretation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Underfitting</p></td>
+<td><p>Low</p></td>
+<td><p>Low</p></td>
+<td><p>The model is too simple to capture the underlying patterns.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Good Fit</p></td>
+<td><p>High</p></td>
+<td><p>High</p></td>
+<td><p>The model generalizes well to unseen data.</p></td>
+</tr>
+<tr class="row-even"><td><p>Overfitting</p></td>
+<td><p>Very High</p></td>
+<td><p>Significantly Lower</p></td>
+<td><p>The model memorizes the training data and fails to generalize.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="dataset">
+<h2><span class="section-number">1.7. </span>Dataset<a class="headerlink" href="#dataset" title="Link to this heading">#</a></h2>
+<p>In this example, we use the <strong>Breast Cancer Wisconsin Dataset</strong>, which is included in scikit-learn.</p>
+<p>This dataset contains diagnostic measurements extracted from breast mass images and is commonly used for binary classification problems.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_breast_cancer</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_breast_cancer</span><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Observations:&quot;</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Features:&quot;</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Observations: 569
+Features: 30
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="why-not-use-a-single-train-test-split">
+<h2><span class="section-number">1.8. </span>Why Not Use a Single Train-Test Split?<a class="headerlink" href="#why-not-use-a-single-train-test-split" title="Link to this heading">#</a></h2>
+<p>Suppose a model produces the following results:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Training Accuracy = 100%
+Testing Accuracy  = 92%
+</pre></div>
+</div>
+<p>Although this difference suggests possible overfitting, the conclusion is based on only a single train-test partition.</p>
+<p>A single split may be misleading because the results depend on the specific observations selected for training and testing.</p>
+<p>To obtain a more reliable estimate of model performance, we use:</p>
+<section id="repeated-stratified-k-fold-cross-validation">
+<h3><span class="section-number">1.8.1. </span>Repeated Stratified K-Fold Cross-Validation<a class="headerlink" href="#repeated-stratified-k-fold-cross-validation" title="Link to this heading">#</a></h3>
+<p>This procedure:</p>
+<ol class="arabic simple">
+<li><p>Divides the data into multiple folds.</p></li>
+<li><p>Preserves class proportions in every fold.</p></li>
+<li><p>Repeats the process several times using different random partitions.</p></li>
+<li><p>Produces multiple estimates of training and testing performance.</p></li>
+</ol>
+<p>These repeated measurements allow statistical inference and provide a more robust assessment of model generalization.</p>
+</section>
+</section>
+<section id="model-selection">
+<h2><span class="section-number">1.9. </span>Model Selection<a class="headerlink" href="#model-selection" title="Link to this heading">#</a></h2>
+<p>To intentionally create an overfitting scenario, we use a highly flexible decision tree:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span>
+    <span class="n">max_depth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">min_samples_split</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<section id="why-this-model">
+<h3><span class="section-number">1.9.1. </span>Why This Model?<a class="headerlink" href="#why-this-model" title="Link to this heading">#</a></h3>
+<p>A fully grown decision tree can continue splitting until it nearly memorizes the training data.</p>
+<p>As a result, it often achieves:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Training Accuracy ≈ 100%
+</pre></div>
+</div>
+<p>However, such performance frequently comes at the cost of poor generalization.</p>
+</section>
+</section>
+<section id="cross-validation-procedure">
+<h2><span class="section-number">1.10. </span>Cross-Validation Procedure<a class="headerlink" href="#cross-validation-procedure" title="Link to this heading">#</a></h2>
+<p>The following code evaluates the model using repeated cross-validation and stores the training and testing accuracies obtained in each fold.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_breast_cancer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">RepeatedStratifiedKFold</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_breast_cancer</span><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span>
+    <span class="n">max_depth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">min_samples_split</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="n">cv</span> <span class="o">=</span> <span class="n">RepeatedStratifiedKFold</span><span class="p">(</span>
+    <span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">n_repeats</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="n">train_scores</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">test_scores</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">train_idx</span><span class="p">,</span> <span class="n">test_idx</span> <span class="ow">in</span> <span class="n">cv</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">train_idx</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">test_idx</span><span class="p">]</span>
+    <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">train_idx</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">test_idx</span><span class="p">]</span>
+
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+    <span class="n">train_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+    <span class="n">test_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+    <span class="n">train_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">train_pred</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">test_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">test_pred</span><span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="n">train_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_scores</span><span class="p">)</span>
+<span class="n">test_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="preliminary-analysis">
+<h2><span class="section-number">1.11. </span>Preliminary Analysis<a class="headerlink" href="#preliminary-analysis" title="Link to this heading">#</a></h2>
+<p>Before performing any statistical test, we should compare the average training and testing accuracies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean Train Accuracy: </span><span class="si">{</span><span class="n">train_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean Test Accuracy : </span><span class="si">{</span><span class="n">test_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Train Accuracy: 1.0000
+Mean Test Accuracy : 0.9299
+</pre></div>
+</div>
+</div>
+</div>
+<section id="interpretation">
+<h3><span class="section-number">1.11.1. </span>Interpretation<a class="headerlink" href="#interpretation" title="Link to this heading">#</a></h3>
+<p>The model perfectly classifies the training data.</p>
+<p>However, its performance decreases noticeably when evaluated on unseen observations.</p>
+<p>This discrepancy suggests the presence of overfitting.</p>
+<p>Nevertheless, visual inspection alone is insufficient. We must determine whether the observed difference is statistically significant.</p>
+</section>
+</section>
+<section id="a-statistical-approach-to-detecting-overfitting">
+<h2><span class="section-number">1.12. </span>A Statistical Approach to Detecting Overfitting<a class="headerlink" href="#a-statistical-approach-to-detecting-overfitting" title="Link to this heading">#</a></h2>
+<p>After observing a difference between training and testing performance, the next step is to determine whether this difference is statistically significant or simply the result of random variation.</p>
+<p>From a statistical perspective, detecting overfitting can be formulated as a hypothesis-testing problem.</p>
+<section id="hypotheses">
+<h3><span class="section-number">1.12.1. </span>Hypotheses<a class="headerlink" href="#hypotheses" title="Link to this heading">#</a></h3>
+<div class="math notranslate nohighlight">
+\[
+H_0:\text{There is no significant difference between training and testing performance.}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+H_1:\text{There is a significant difference between training and testing performance, suggesting overfitting.}
+\]</div>
+<p>Under the null hypothesis, the model generalizes equally well to unseen data, and any observed discrepancy between training and testing scores is attributable to sampling variability.</p>
+<p>Under the alternative hypothesis, the model performs significantly better on the training data than on unseen data, indicating a loss of generalization capability.</p>
+<div class="important admonition">
+<p class="admonition-title">Statistical Methods for Detecting Overfitting</p>
+<h3 class="rubric" id="paired-t-test">Paired <em>t</em>-Test</h3>
+<p>When performance scores are obtained across multiple cross-validation folds, a <strong>paired <em>t</em>-test</strong> can be used to compare the mean training and testing scores.</p>
+<p>The hypotheses are:</p>
+<div class="math notranslate nohighlight">
+\[
+H_0:\mu_{\text{train}}-\mu_{\text{test}}=0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+H_1:\mu_{\text{train}}-\mu_{\text{test}}\neq0
+\]</div>
+<p>If the resulting <em>p</em>-value is smaller than the chosen significance level (commonly <span class="math notranslate nohighlight">\(\alpha=0.05\)</span>), the null hypothesis is rejected, indicating a statistically significant performance gap between the training and testing sets.</p>
+<h3 class="rubric" id="wilcoxon-signed-rank-test">Wilcoxon Signed-Rank Test</h3>
+<p>The paired <em>t</em>-test assumes that the differences between paired observations are approximately normally distributed.</p>
+<p>When this assumption is questionable, the <strong>Wilcoxon signed-rank test</strong> provides a non-parametric alternative that does not rely on normality assumptions.</p>
+<p>Because cross-validation scores may not always satisfy the normality assumption, reporting both tests often leads to a more robust statistical assessment.</p>
+<h3 class="rubric" id="confidence-intervals-for-the-performance-gap">Confidence Intervals for the Performance Gap</h3>
+<p>In addition to hypothesis testing, it is informative to estimate the magnitude of the performance difference.</p>
+<p>A confidence interval can be constructed for:</p>
+<div class="math notranslate nohighlight">
+\[
+\mu_{\text{train}}-\mu_{\text{test}}
+\]</div>
+<p>For example, a 95% confidence interval provides a range of plausible values for the true performance gap.</p>
+<ul class="simple">
+<li><p>If the interval contains zero, there is insufficient evidence to conclude that a meaningful difference exists.</p></li>
+<li><p>If the interval excludes zero, the difference is statistically significant.</p></li>
+<li><p>The width of the interval provides information about the uncertainty of the estimate.</p></li>
+</ul>
+<h3 class="rubric" id="practical-interpretation">Practical Interpretation</h3>
+<p>Statistical significance alone should not be the sole criterion for diagnosing overfitting.</p>
+<p>A comprehensive assessment should consider:</p>
+<ol class="arabic simple">
+<li><p>The average difference between training and testing performance.</p></li>
+<li><p>The associated <em>p</em>-value.</p></li>
+<li><p>The confidence interval.</p></li>
+<li><p>The practical relevance of the observed performance gap.</p></li>
+</ol>
+<p>A statistically significant difference between training and testing scores is strong evidence of overfitting. However, the magnitude of the difference should also be evaluated, and potential remedies such as regularization, pruning, feature selection, or data augmentation should be considered to improve generalization performance.</p>
+</div>
+</section>
+</section>
+<section id="statistical-tests">
+<h2><span class="section-number">1.13. </span>Statistical Tests<a class="headerlink" href="#statistical-tests" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3><span class="section-number">1.13.1. </span>Paired <em>t</em>-Test<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>The paired <em>t</em>-test evaluates whether the mean difference between training and testing scores is significantly different from zero.</p>
+</section>
+<section id="id2">
+<h3><span class="section-number">1.13.2. </span>Wilcoxon Signed-Rank Test<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>The Wilcoxon test is the non-parametric counterpart of the paired <em>t</em>-test and is useful when normality assumptions are questionable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+
+<span class="n">t_stat</span><span class="p">,</span> <span class="n">p_value_t</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span>
+    <span class="n">train_scores</span><span class="p">,</span>
+    <span class="n">test_scores</span>
+<span class="p">)</span>
+
+<span class="n">w_stat</span><span class="p">,</span> <span class="n">p_value_w</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">wilcoxon</span><span class="p">(</span>
+    <span class="n">train_scores</span><span class="p">,</span>
+    <span class="n">test_scores</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Paired t-test: t = </span><span class="si">{</span><span class="n">t_stat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-value = </span><span class="si">{</span><span class="n">p_value_t</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Wilcoxon test: W = </span><span class="si">{</span><span class="n">w_stat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-value = </span><span class="si">{</span><span class="n">p_value_w</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Paired t-test: t = 20.905
+p-value = 0.00000
+
+Wilcoxon test: W = 0.000
+p-value = 0.00000
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="confidence-interval-for-the-performance-difference">
+<h2><span class="section-number">1.14. </span>Confidence Interval for the Performance Difference<a class="headerlink" href="#confidence-interval-for-the-performance-difference" title="Link to this heading">#</a></h2>
+<p>In addition to hypothesis testing, we estimate the magnitude of the performance gap.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span> <span class="o">=</span> <span class="n">train_scores</span> <span class="o">-</span> <span class="n">test_scores</span>
+
+<span class="n">mean_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+
+<span class="n">conf_int</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span>
+    <span class="n">confidence</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
+    <span class="n">df</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">loc</span><span class="o">=</span><span class="n">mean_diff</span><span class="p">,</span>
+    <span class="n">scale</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">sem</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">conf_int</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(0.06339163757525602), np.float64(0.07687540170435896))
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id3">
+<h3><span class="section-number">1.14.1. </span>Interpretation<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>The resulting confidence interval is:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(0.0634, 0.0769)
+</pre></div>
+</div>
+<p>This indicates that the true difference between the mean training and testing accuracies is likely between <strong>6.34% and 7.69%</strong>.</p>
+<p>In practical terms, the model’s training accuracy is expected to be approximately <strong>6–8 percentage points higher</strong> than its testing accuracy.</p>
+<p>Because the confidence interval does <strong>not</strong> contain zero, there is statistical evidence that the performance difference is real and not merely the result of random sampling variability.</p>
+<p>Consequently, the model performs significantly better on the training data than on unseen data, providing evidence of <strong>overfitting</strong>.</p>
+<p>Furthermore, the relatively narrow width of the confidence interval suggests that the estimated performance gap is stable across the repeated cross-validation folds, increasing confidence in this conclusion.</p>
+</section>
+</section>
+<section id="complete-statistical-evaluation">
+<h2><span class="section-number">1.15. </span>Complete Statistical Evaluation<a class="headerlink" href="#complete-statistical-evaluation" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean Train Accuracy: </span><span class="si">{</span><span class="n">train_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean Test Accuracy : </span><span class="si">{</span><span class="n">test_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Paired t-test p-value: </span><span class="si">{</span><span class="n">p_value_t</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Wilcoxon p-value: </span><span class="si">{</span><span class="n">p_value_w</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">lower_ci</span><span class="p">,</span> <span class="n">upper_ci</span> <span class="o">=</span> <span class="n">conf_int</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">95% Confidence Interval:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">lower_ci</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">upper_ci</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">p_value_t</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Significant difference detected.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Evidence suggests overfitting.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">No significant difference detected.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Train Accuracy: 1.0000
+Mean Test Accuracy : 0.9299
+
+Paired t-test p-value: 0.00000
+Wilcoxon p-value: 0.00000
+
+95% Confidence Interval:
+(0.0634, 0.0769)
+
+Significant difference detected.
+Evidence suggests overfitting.
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id4">
+<h3><span class="section-number">1.15.1. </span>Interpretation<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The model achieves nearly perfect performance on the training data.</p></li>
+<li><p>Performance decreases when evaluated on unseen observations.</p></li>
+<li><p>The paired <em>t</em>-test indicates that the difference between training and testing performance is statistically significant.</p></li>
+<li><p>The 95% confidence interval excludes zero, providing additional evidence that the observed difference is not due to random sampling variability.</p></li>
+<li><p>The true performance gap is estimated to lie between <strong>6.34% and 7.69%</strong>, meaning that the training accuracy is expected to be approximately <strong>6–8 percentage points higher</strong> than the testing accuracy.</p></li>
+</ul>
+</section>
+<section id="conclusion">
+<h3><span class="section-number">1.15.2. </span>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p>The model exhibits <strong>overfitting</strong> because its performance on the training data is significantly higher than its performance on unseen data. Furthermore, the relatively narrow confidence interval suggests that this performance gap is stable across the repeated cross-validation folds.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="complete-reproducible-example">
+<h2><span class="section-number">1.16. </span>Complete Reproducible Example<a class="headerlink" href="#complete-reproducible-example" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_breast_cancer</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">RepeatedStratifiedKFold</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="c1"># Load dataset</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_breast_cancer</span><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Define model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span>
+    <span class="n">max_depth</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">min_samples_split</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="c1"># Cross-validation strategy</span>
+<span class="n">cv</span> <span class="o">=</span> <span class="n">RepeatedStratifiedKFold</span><span class="p">(</span>
+    <span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">n_repeats</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="n">train_scores</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">test_scores</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">train_idx</span><span class="p">,</span> <span class="n">test_idx</span> <span class="ow">in</span> <span class="n">cv</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">train_idx</span><span class="p">],</span> <span class="n">X</span><span class="p">[</span><span class="n">test_idx</span><span class="p">]</span>
+    <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">train_idx</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">test_idx</span><span class="p">]</span>
+
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+    <span class="n">train_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+    <span class="n">test_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+    <span class="n">train_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">train_pred</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="n">test_scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">test_pred</span><span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="n">train_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">train_scores</span><span class="p">)</span>
+<span class="n">test_scores</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">test_scores</span><span class="p">)</span>
+
+<span class="c1"># Paired t-test</span>
+<span class="n">t_stat</span><span class="p">,</span> <span class="n">p_value_t</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span>
+    <span class="n">train_scores</span><span class="p">,</span>
+    <span class="n">test_scores</span>
+<span class="p">)</span>
+
+<span class="c1"># Wilcoxon signed-rank test</span>
+<span class="n">w_stat</span><span class="p">,</span> <span class="n">p_value_w</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">wilcoxon</span><span class="p">(</span>
+    <span class="n">train_scores</span><span class="p">,</span>
+    <span class="n">test_scores</span>
+<span class="p">)</span>
+
+<span class="c1"># Confidence interval</span>
+<span class="n">diff</span> <span class="o">=</span> <span class="n">train_scores</span> <span class="o">-</span> <span class="n">test_scores</span>
+
+<span class="n">mean_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+
+<span class="n">conf_int</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span>
+    <span class="n">confidence</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
+    <span class="n">df</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">loc</span><span class="o">=</span><span class="n">mean_diff</span><span class="p">,</span>
+    <span class="n">scale</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">sem</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">lower_ci</span><span class="p">,</span> <span class="n">upper_ci</span> <span class="o">=</span> <span class="n">conf_int</span>
+
+<span class="c1"># Results</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Model Evaluation&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Mean Train Accuracy: &quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">train_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;Mean Test Accuracy : &quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">test_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Paired t-test&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;t-statistic = </span><span class="si">{</span><span class="n">t_stat</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">p_value_t</span> <span class="o">&lt;</span> <span class="mf">0.0001</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p-value     &lt; 0.0001&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-value     = </span><span class="si">{</span><span class="n">p_value_t</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Wilcoxon Test&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;W-statistic = </span><span class="si">{</span><span class="n">w_stat</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">p_value_w</span> <span class="o">&lt;</span> <span class="mf">0.0001</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p-value     &lt; 0.0001&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-value     = </span><span class="si">{</span><span class="n">p_value_w</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">95% Confidence Interval&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">lower_ci</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">upper_ci</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+
+<span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Interpretation&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">p_value_t</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">:</span>
+
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;A statistically significant difference exists &quot;</span>
+        <span class="s2">&quot;between training and testing performance.&quot;</span>
+    <span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;The true performance gap is estimated to lie &quot;</span>
+        <span class="sa">f</span><span class="s2">&quot;between </span><span class="si">{</span><span class="n">lower_ci</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2"> and </span><span class="si">{</span><span class="n">upper_ci</span><span class="si">:</span><span class="s2">.2%</span><span class="si">}</span><span class="s2">.&quot;</span>
+    <span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;This result provides evidence of overfitting.&quot;</span>
+    <span class="p">)</span>
+
+<span class="k">else</span><span class="p">:</span>
+
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;No statistically significant difference was &quot;</span>
+        <span class="s2">&quot;detected between training and testing performance.&quot;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model Evaluation
+--------------------------------------------------
+Mean Train Accuracy: 1.0000
+Mean Test Accuracy : 0.9299
+
+Paired t-test
+t-statistic = 20.9049
+p-value     &lt; 0.0001
+
+Wilcoxon Test
+W-statistic = 0.0000
+p-value     &lt; 0.0001
+
+95% Confidence Interval
+(0.0634, 0.0769)
+
+Interpretation
+--------------------------------------------------
+A statistically significant difference exists between training and testing performance.
+The true performance gap is estimated to lie between 6.34% and 7.69%.
+This result provides evidence of overfitting.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="model-complexity-vs-dataset-size">
+<h2><span class="section-number">1.17. </span>Model Complexity vs. Dataset Size<a class="headerlink" href="#model-complexity-vs-dataset-size" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Model complexity should increase only when supported by sufficient data variability.</strong> More diverse observations allow <strong>more complex models</strong> to be learned without <strong>overfitting</strong>, whereas duplicating or collecting highly similar data provides little benefit.</p></li>
+<li><p>In <strong>supervised learning</strong>, increasing the amount of <strong>diverse data</strong> often improves performance more than model tuning. Consequently, determining <strong>how much data to collect</strong> can be as important as selecting the model itself.</p></li>
+</ul>
+</section>
+<section id="tensorflow-environment-setup">
+<h2><span class="section-number">1.18. </span>TensorFlow Environment Setup<a class="headerlink" href="#tensorflow-environment-setup" title="Link to this heading">#</a></h2>
+<section id="installing-tensorflow-2-10-on-native-windows">
+<h3><span class="section-number">1.18.1. </span>Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span> <span class="pre">2.10</span></code> on <code class="docutils literal notranslate"><span class="pre">Native</span> <span class="pre">Windows</span></code><a class="headerlink" href="#installing-tensorflow-2-10-on-native-windows" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Tutorial: <a class="reference external" href="https://www.youtube.com/watch?v=jzTWjXm8hsc&amp;amp;ab_channel=LihkiJoseRubioOrtega">Tutorial 1. Machine Learning. UN 202330</a> and <a class="reference external" href="https://github.com/lihkir/Data/blob/main/TutorialesMachineLearning.pdf">TutorialesMachineLearning.pdf</a></p></li>
+<li><p>Link: <a class="reference external" href="https://www.tensorflow.org/install/pip#windows-native">TensorFlow Windows Native</a></p></li>
+</ul>
+</section>
+<section id="installing-tensorflow-geq2-11-on-wsl2">
+<h3><span class="section-number">1.18.2. </span>Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code><span class="math notranslate nohighlight">\(\geq\)</span><code class="docutils literal notranslate"><span class="pre">2.11</span></code> on <code class="docutils literal notranslate"><span class="pre">WSL2</span></code><a class="headerlink" href="#installing-tensorflow-geq2-11-on-wsl2" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Tutorial: <a class="reference external" href="https://www.youtube.com/watch?v=VOJq98BLjb8&amp;amp;ab_channel=TechJotters">Install TensorFlow GPU on WSL2 (Windows Subsystem for Linux) - Step by Step Tutorial</a></p></li>
+<li><p>Link: <a class="reference external" href="https://www.tensorflow.org/install/pip#windows-wsl2">TensorFlow WSL2</a></p></li>
+</ul>
+</section>
+<section id="installing-tensorflow-on-mac">
+<h3><span class="section-number">1.18.3. </span>Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> on <code class="docutils literal notranslate"><span class="pre">Mac</span></code><a class="headerlink" href="#installing-tensorflow-on-mac" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Tutorial: <a class="reference external" href="https://www.youtube.com/watch?v=5DgWvU0p2bk&amp;amp;ab_channel=JeffHeaton">How to Install TensorFlow GPU for Mac M1/M2 with Conda</a></p></li>
+<li><p>Link: <a class="reference external" href="https://www.tensorflow.org/install/pip#macos">TensorFlow MacOS</a></p></li>
+</ul>
+</section>
+<section id="building-jupyter-books-for-machine-learning-deliverables">
+<h3><span class="section-number">1.18.4. </span>Building <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Books</span></code> for Machine Learning Deliverables<a class="headerlink" href="#building-jupyter-books-for-machine-learning-deliverables" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Tutorial: <a class="reference external" href="https://www.youtube.com/watch?v=m_wCMg2EmdQ&amp;amp;ab_channel=LihkiJoseRubioOrtega">Tutorial 2. Machine Learning. UN 202330</a> and <a class="reference external" href="https://github.com/lihkir/Data/blob/main/TutorialesMachineLearning.pdf">TutorialesMachineLearning.pdf</a></p></li>
+<li><p>Link: <a class="reference external" href="https://jupyterbook.org/en/stable/start/your-first-book.html">Create your first book</a></p></li>
+</ul>
+</section>
+<section id="introduction-to-docker-and-dash">
+<h3><span class="section-number">1.18.5. </span>Introduction to <code class="docutils literal notranslate"><span class="pre">Docker</span></code> and <code class="docutils literal notranslate"><span class="pre">Dash</span></code><a class="headerlink" href="#introduction-to-docker-and-dash" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://lihkir.github.io/DataVizPython/postgresql.html#instalacion-y-uso-de-docker">Installing and using Docker</a> and <a class="reference external" href="https://lihkir.github.io/DataVizPython/dash_dataviz.html">Introduction to Dash</a></p></li>
+</ul>
+</section>
+</section>
+<section id="roles-in-the-data-ecosystem">
+<h2><span class="section-number">1.19. </span>Roles in the Data Ecosystem<a class="headerlink" href="#roles-in-the-data-ecosystem" title="Link to this heading">#</a></h2>
+<p>Data science encompasses several distinct roles, each with its own focus and responsibilities. The main profiles and their differences are described below.</p>
+<section id="data-analyst">
+<h3><span class="section-number">1.19.1. </span>Data Analyst<a class="headerlink" href="#data-analyst" title="Link to this heading">#</a></h3>
+<p><strong>Main responsibilities:</strong></p>
+<ul class="simple">
+<li><p>Analyze historical data to answer business questions.</p></li>
+<li><p>Produce reports and dashboards and communicate findings.</p></li>
+</ul>
+<p><strong>Common tools:</strong>
+SQL, Excel, Tableau, Dash, Python.</p>
+<p><strong>Key indicators (KPIs):</strong>
+<strong>Key Performance Indicators</strong> are metrics used to evaluate a process’s performance, such as monthly revenue, conversion rate, or average response time.</p>
+</section>
+<section id="data-scientist">
+<h3><span class="section-number">1.19.2. </span>Data Scientist<a class="headerlink" href="#data-scientist" title="Link to this heading">#</a></h3>
+<p><strong>Main responsibilities:</strong></p>
+<ul class="simple">
+<li><p>Apply statistical and machine learning models to predict behavior or identify patterns.</p></li>
+<li><p>Generate complex insights from data.</p></li>
+</ul>
+<p><strong>Common tools:</strong>
+Python, R, Pandas, scikit-learn, Jupyter, SQL.</p>
+</section>
+<section id="data-engineer">
+<h3><span class="section-number">1.19.3. </span>Data Engineer<a class="headerlink" href="#data-engineer" title="Link to this heading">#</a></h3>
+<p><strong>Main responsibilities:</strong></p>
+<ul class="simple">
+<li><p>Design and maintain data pipelines.</p></li>
+<li><p>Ensure data is accessible, reliable, and scalable.</p></li>
+</ul>
+<p><strong>Common tools:</strong>
+Spark, Airflow, Kafka, Python, SQL/NoSQL databases, cloud platforms such as AWS, GCP, or Azure.</p>
+</section>
+<section id="full-stack-data-scientist">
+<h3><span class="section-number">1.19.4. </span>Full-Stack Data Scientist<a class="headerlink" href="#full-stack-data-scientist" title="Link to this heading">#</a></h3>
+<p><strong>Main responsibilities:</strong></p>
+<ul class="simple">
+<li><p>Handle every stage of the data lifecycle, from data acquisition to model deployment.</p></li>
+<li><p>Combine data science knowledge with engineering and MLOps skills.</p></li>
+</ul>
+<p><strong>Common tools:</strong>
+Python, Git, Docker, FastAPI, MLflow, plus engineering and visualization tools.</p>
+</section>
+<section id="machine-learning-engineer">
+<h3><span class="section-number">1.19.5. </span>Machine Learning Engineer<a class="headerlink" href="#machine-learning-engineer" title="Link to this heading">#</a></h3>
+<p><strong>Main responsibilities:</strong></p>
+<ul class="simple">
+<li><p>Deploy machine learning models in production environments.</p></li>
+<li><p>Optimize models for performance, scalability, and efficiency.</p></li>
+</ul>
+<p><strong>Common tools:</strong>
+TensorFlow, PyTorch, ONNX, Kubernetes, MLflow, SageMaker, Vertex AI.</p>
+</section>
+<section id="machine-learning-scientist">
+<h3><span class="section-number">1.19.6. </span>Machine Learning Scientist<a class="headerlink" href="#machine-learning-scientist" title="Link to this heading">#</a></h3>
+<p><strong>Main responsibilities:</strong></p>
+<ul class="simple">
+<li><p>Research and develop new algorithms or architectures.</p></li>
+<li><p>Deepen the theoretical foundations of machine learning.</p></li>
+<li><p>Publish research and improve existing models.</p></li>
+</ul>
+<p><strong>Common tools:</strong>
+Python, PyTorch, TensorFlow, JAX, mathematical optimization libraries, and scientific research tools.</p>
+</section>
+<section id="role-comparison">
+<h3><span class="section-number">1.19.7. </span>Role Comparison<a class="headerlink" href="#role-comparison" title="Link to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Role</p></th>
+<th class="head text-center"><p>Data Analysis</p></th>
+<th class="head text-center"><p>ML Modeling</p></th>
+<th class="head text-center"><p>Data Infrastructure</p></th>
+<th class="head text-center"><p>Model Deployment</p></th>
+<th class="head text-center"><p>Scientific Research</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data Analyst</p></td>
+<td class="text-center"><p>●</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p>Data Scientist</p></td>
+<td class="text-center"><p>●</p></td>
+<td class="text-center"><p>●●</p></td>
+<td class="text-center"><p>○</p></td>
+<td class="text-center"><p>●</p></td>
+<td class="text-center"><p>○</p></td>
+</tr>
+<tr class="row-even"><td><p>Data Engineer</p></td>
+<td class="text-center"><p>-</p></td>
+<td class="text-center"><p>○</p></td>
+<td class="text-center"><p>●●</p></td>
+<td class="text-center"><p>●</p></td>
+<td class="text-center"><p>-</p></td>
+</tr>
+<tr class="row-odd"><td><p>Full-Stack Data Scientist</p></td>
+<td class="text-center"><p>●</p></td>
+<td class="text-center"><p>●●</p></td>
+<td class="text-center"><p>●</p></td>
+<td class="text-center"><p>●●</p></td>
+<td class="text-center"><p>○</p></td>
+</tr>
+<tr class="row-even"><td><p>Machine Learning Engineer</p></td>
+<td class="text-center"><p>○</p></td>
+<td class="text-center"><p>●●</p></td>
+<td class="text-center"><p>●</p></td>
+<td class="text-center"><p>●●</p></td>
+<td class="text-center"><p>○</p></td>
+</tr>
+<tr class="row-odd"><td><p>Machine Learning Scientist</p></td>
+<td class="text-center"><p>○</p></td>
+<td class="text-center"><p>●●●</p></td>
+<td class="text-center"><p>○</p></td>
+<td class="text-center"><p>○</p></td>
+<td class="text-center"><p>●●</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Legend:</strong>
+● = present skill
+●● = core skill
+●●● = highly specialized skill
+○ = partial knowledge</p>
+<ul class="simple">
+<li><p>= not applicable / not required</p></li>
+</ul>
+</section>
+</section>
+<section id="linkedin-profile-for-data-scientists">
+<h2><span class="section-number">1.20. </span>LinkedIn Profile for Data Scientists<a class="headerlink" href="#linkedin-profile-for-data-scientists" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Today, <strong>LinkedIn has established itself as the leading professional network worldwide</strong>, a key tool for anyone building a career in Data Science. For undergraduate students, leveraging this platform early on can make a significant difference in their job prospects.</p></li>
+</ul>
+<section id="why-is-linkedin-essential">
+<h3><span class="section-number">1.20.1. </span>Why is LinkedIn essential?<a class="headerlink" href="#why-is-linkedin-essential" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Professional visibility</strong>: recruiters, companies, and data teams use LinkedIn as a database to find talent. A well-optimized profile increases your visibility.</p></li>
+<li><p><strong>Personal brand</strong>: publishing your projects, certifications, academic achievements, and articles positions you as an active professional engaged with the community.</p></li>
+<li><p><strong>Strategic networking</strong>: connecting with professors, peers, alumni, and industry professionals lets you learn about opportunities, trends, and recommendations firsthand.</p></li>
+<li><p><strong>Access to exclusive openings</strong>: many job postings, internships, or trainee positions are published directly on LinkedIn before appearing elsewhere.</p></li>
+<li><p><strong>Tracking key companies</strong>: you can follow organizations that interest you (such as Bancolombia, Ecopetrol, Rappi, Amazon, or AI startups) and learn about their projects and open positions.</p></li>
+</ul>
+</section>
+<section id="practical-recommendations">
+<h3><span class="section-number">1.20.2. </span>Practical recommendations<a class="headerlink" href="#practical-recommendations" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Professional photo and an eye-catching banner.</strong></p></li>
+<li><p><strong>Clear headline</strong>: for example, <em>“Data Science Student | Interested in Machine Learning and Data Visualization.”</em></p></li>
+<li><p><strong>Compelling summary</strong>: mention your technical skills, interests, notable projects, and what you are looking for.</p></li>
+<li><p><strong>Portfolio and links</strong>: add your GitHub, Jupyter Book, Tableau Public, dashboards, or blog, if you have them.</p></li>
+<li><p><strong>Frequent posts</strong>: share what you are learning, your projects, or reflections on the field.</p></li>
+</ol>
+</section>
+<section id="remember">
+<h3><span class="section-number">1.20.3. </span>Remember<a class="headerlink" href="#remember" title="Link to this heading">#</a></h3>
+<p>This is not just about job hunting — it’s about <strong>building a digital presence that supports your professional profile</strong> and showcases your growth as a data scientist. Start building your LinkedIn brand today.</p>
+<ul class="simple">
+<li><p><strong>Tutorial 1</strong>: <a class="reference external" href="https://www.youtube.com/watch?v=jpbU0uxRXhs&amp;amp;ab_channel=AnasRiad">Land Your Next DATA SCIENCE Job with LinkedIn (7 ESSENTIAL Steps)</a></p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>Tutorial 2</strong>: <a class="reference external" href="https://www.youtube.com/watch?v=PjenxeaMICc&amp;amp;ab_channel=EmmaDing">How to Make a Great LinkedIn Profile for Data Scientists</a></p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "tf_gpu"
+        },
+        kernelOptions: {
+            name: "tf_gpu",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'tf_gpu'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Profesor: Dr. Lihki Rubio</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="decisiontree_model.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">2. </span>Decision Tree-Based Models</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples-of-supervised-learning-tasks">1.1. Examples of Supervised Learning Tasks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classification-and-regression">1.2. Classification and Regression</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization-overfitting-and-underfitting">1.3. Generalization, Overfitting, and Underfitting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#detecting-overfitting-using-statistical-tests">1.4. Detecting Overfitting Using Statistical Tests</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-objectives">1.5. Learning Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-overfitting-important">1.6. Why Is Overfitting Important?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generalization-vs-overfitting">1.6.1. Generalization vs. Overfitting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">1.7. Dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-not-use-a-single-train-test-split">1.8. Why Not Use a Single Train-Test Split?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#repeated-stratified-k-fold-cross-validation">1.8.1. Repeated Stratified K-Fold Cross-Validation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-selection">1.9. Model Selection</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-this-model">1.9.1. Why This Model?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-procedure">1.10. Cross-Validation Procedure</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-analysis">1.11. Preliminary Analysis</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">1.11.1. Interpretation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-statistical-approach-to-detecting-overfitting">1.12. A Statistical Approach to Detecting Overfitting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypotheses">1.12.1. Hypotheses</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-tests">1.13. Statistical Tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.13.1. Paired <em>t</em>-Test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1.13.2. Wilcoxon Signed-Rank Test</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-interval-for-the-performance-difference">1.14. Confidence Interval for the Performance Difference</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">1.14.1. Interpretation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-statistical-evaluation">1.15. Complete Statistical Evaluation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1.15.1. Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">1.15.2. Conclusion</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-reproducible-example">1.16. Complete Reproducible Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-complexity-vs-dataset-size">1.17. Model Complexity vs. Dataset Size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-environment-setup">1.18. TensorFlow Environment Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-2-10-on-native-windows">1.18.1. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span> <span class="pre">2.10</span></code> on <code class="docutils literal notranslate"><span class="pre">Native</span> <span class="pre">Windows</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-geq2-11-on-wsl2">1.18.2. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code><span class="math notranslate nohighlight">\(\geq\)</span><code class="docutils literal notranslate"><span class="pre">2.11</span></code> on <code class="docutils literal notranslate"><span class="pre">WSL2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-on-mac">1.18.3. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> on <code class="docutils literal notranslate"><span class="pre">Mac</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-jupyter-books-for-machine-learning-deliverables">1.18.4. Building <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Books</span></code> for Machine Learning Deliverables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-docker-and-dash">1.18.5. Introduction to <code class="docutils literal notranslate"><span class="pre">Docker</span></code> and <code class="docutils literal notranslate"><span class="pre">Dash</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roles-in-the-data-ecosystem">1.19. Roles in the Data Ecosystem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analyst">1.19.1. Data Analyst</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-scientist">1.19.2. Data Scientist</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-engineer">1.19.3. Data Engineer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-stack-data-scientist">1.19.4. Full-Stack Data Scientist</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-engineer">1.19.5. Machine Learning Engineer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-scientist">1.19.6. Machine Learning Scientist</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-comparison">1.19.7. Role Comparison</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linkedin-profile-for-data-scientists">1.20. LinkedIn Profile for Data Scientists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-linkedin-essential">1.20.1. Why is LinkedIn essential?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-recommendations">1.20.2. Practical recommendations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remember">1.20.3. Remember</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Lihki Rubio, Ph.D.
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>Lihki Rubio, Ph.D. All rights reserved.</p>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
