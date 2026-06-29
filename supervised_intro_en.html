@@ -341,13 +341,11 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-procedure">1.9. Cross-Validation Procedure</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-analysis">1.10. Preliminary Analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-statistical-approach-to-detecting-overfitting">1.11. A Statistical Approach to Detecting Overfitting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-tests">1.12. Statistical Tests</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-interval-for-the-performance-difference">1.12.1. Confidence Interval for the Performance Difference</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">1.12.2. Interpretation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-statistical-evaluation">1.13. Complete Statistical Evaluation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">1.13.1. Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-interpretation">1.12. Practical Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-tests">1.13. Statistical Tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-interval-for-the-performance-difference">1.13.1. Confidence Interval for the Performance Difference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">1.13.2. Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">1.13.3. Conclusion</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-reproducible-example">1.14. Complete Reproducible Example</a></li>
@@ -1030,142 +1028,114 @@ H_1:\mu_{\text{train}}-\mu_{\text{test}}\neq0
 <h3 class="rubric" id="wilcoxon-signed-rank-test">Wilcoxon Signed-Rank Test</h3>
 <p>The paired <strong><span class="math notranslate nohighlight">\(t\)</span>-test assumes that the differences between paired observations are approximately normally distributed</strong>. When this assumption is questionable, the <strong>Wilcoxon signed-rank test provides a non-parametric alternative</strong> that does not rely on normality assumptions.</p>
 <h3 class="rubric" id="confidence-intervals-for-the-performance-gap">Confidence Intervals for the Performance Gap</h3>
-<p>In addition to hypothesis testing, it is informative to estimate the magnitude of the performance difference. A confidence interval can be constructed for:</p>
+<p>In addition to hypothesis testing, it is informative to <strong>estimate the magnitude of the performance difference</strong>. A confidence interval can be constructed for:</p>
 <div class="math notranslate nohighlight">
 \[
 \mu_{\text{train}}-\mu_{\text{test}}
 \]</div>
 <p>For example, a 95% confidence interval provides a range of plausible values for the true performance gap.</p>
 <ul class="simple">
-<li><p>If the interval contains zero, there is insufficient evidence to conclude that a meaningful difference exists.</p></li>
-<li><p>If the interval excludes zero, the difference is statistically significant.</p></li>
-<li><p>The width of the interval provides information about the uncertainty of the estimate.</p></li>
+<li><p>If the <strong>interval contains zero, there is insufficient evidence to conclude that a meaningful difference exists</strong>.</p></li>
+<li><p>If the <strong>interval excludes zero, the difference is statistically significant</strong>.</p></li>
+<li><p>The <strong>width of the interval provides information about the uncertainty</strong> of the estimate.</p></li>
 </ul>
-<h3 class="rubric" id="practical-interpretation">Practical Interpretation</h3>
-<p>Statistical significance alone should not be the sole criterion for diagnosing overfitting.</p>
-<p>A comprehensive assessment should consider:</p>
+</div>
+</section>
+<section id="practical-interpretation">
+<h2><span class="section-number">1.12. </span>Practical Interpretation<a class="headerlink" href="#practical-interpretation" title="Link to this heading">#</a></h2>
+<p><strong>Statistical significance alone should not be the sole criterion for diagnosing overfitting</strong>. A comprehensive assessment should consider:</p>
 <ol class="arabic simple">
 <li><p>The average difference between training and testing performance.</p></li>
 <li><p>The associated <span class="math notranslate nohighlight">\(p\)</span>-value.</p></li>
 <li><p>The confidence interval.</p></li>
 <li><p>The practical relevance of the observed performance gap.</p></li>
 </ol>
-<p>A <strong>statistically significant difference between training and testing scores is strong evidence of overfitting</strong>. However, the magnitude of the difference should also be evaluated, and potential remedies such as regularization, pruning, feature selection, or data augmentation should be considered to improve generalization performance.</p>
-</div>
+<p>A <strong>statistically significant difference between training and testing scores is strong evidence of overfitting</strong>. However, the magnitude of the difference should also be evaluated, and <strong>potential remedies such as regularization, pruning, feature selection, or data augmentation</strong> should be considered to improve generalization performance.</p>
 </section>
 <section id="statistical-tests">
-<h2><span class="section-number">1.12. </span>Statistical Tests<a class="headerlink" href="#statistical-tests" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.13. </span>Statistical Tests<a class="headerlink" href="#statistical-tests" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
 
-<span class="n">t_stat</span><span class="p">,</span> <span class="n">p_value_t</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span>
-    <span class="n">train_scores</span><span class="p">,</span>
-    <span class="n">test_scores</span>
-<span class="p">)</span>
+<span class="n">t_stat</span><span class="p">,</span> <span class="n">p_value_t</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">ttest_rel</span><span class="p">(</span><span class="n">train_scores</span><span class="p">,</span> <span class="n">test_scores</span><span class="p">)</span>
+<span class="n">w_stat</span><span class="p">,</span> <span class="n">p_value_w</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">wilcoxon</span><span class="p">(</span><span class="n">train_scores</span><span class="p">,</span> <span class="n">test_scores</span><span class="p">)</span>
 
-<span class="n">w_stat</span><span class="p">,</span> <span class="n">p_value_w</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">wilcoxon</span><span class="p">(</span>
-    <span class="n">train_scores</span><span class="p">,</span>
-    <span class="n">test_scores</span>
-<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Paired t-test: t = </span><span class="si">{</span><span class="n">t_stat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, p-value = </span><span class="si">{</span><span class="n">p_value_t</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Paired t-test: t = </span><span class="si">{</span><span class="n">t_stat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-value = </span><span class="si">{</span><span class="n">p_value_t</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">p_value_t</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t-test: Significant difference → possible overfitting.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;t-test: No significant difference.&quot;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Wilcoxon test: W = </span><span class="si">{</span><span class="n">w_stat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-value = </span><span class="si">{</span><span class="n">p_value_w</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Wilcoxon test: W = </span><span class="si">{</span><span class="n">w_stat</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, p-value = </span><span class="si">{</span><span class="n">p_value_w</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">p_value_w</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wilcoxon: Significant difference → possible overfitting.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wilcoxon: No significant difference.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Paired t-test: t = 20.905
-p-value = 0.00000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Paired t-test: t = 20.905, p-value = 0.00000
+t-test: Significant difference → possible overfitting.
 
-Wilcoxon test: W = 0.000
-p-value = 0.00000
+Wilcoxon test: W = 0.000, p-value = 0.00000
+Wilcoxon: Significant difference → possible overfitting.
 </pre></div>
 </div>
 </div>
 </div>
 <section id="confidence-interval-for-the-performance-difference">
-<h3><span class="section-number">1.12.1. </span>Confidence Interval for the Performance Difference<a class="headerlink" href="#confidence-interval-for-the-performance-difference" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.13.1. </span>Confidence Interval for the Performance Difference<a class="headerlink" href="#confidence-interval-for-the-performance-difference" title="Link to this heading">#</a></h3>
 <p>In addition to hypothesis testing, we estimate the magnitude of the performance gap.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span> <span class="o">=</span> <span class="n">train_scores</span> <span class="o">-</span> <span class="n">test_scores</span>
 
+<span class="c1"># Mean performance gap across all folds</span>
 <span class="n">mean_diff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
 
+<span class="c1"># Standard error of the mean difference: std(diff)/sqrt(n)</span>
+<span class="n">sem_diff</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">sem</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+
+<span class="c1"># 95% confidence interval for the true mean difference</span>
+<span class="c1"># - df = degrees of freedom (n - 1)</span>
+<span class="c1"># - loc = center of the interval (mean difference)</span>
+<span class="c1"># - scale = standard error (uncertainty of the estimate)</span>
 <span class="n">conf_int</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span>
     <span class="n">confidence</span><span class="o">=</span><span class="mf">0.95</span><span class="p">,</span>
-    <span class="n">df</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">df</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
     <span class="n">loc</span><span class="o">=</span><span class="n">mean_diff</span><span class="p">,</span>
-    <span class="n">scale</span><span class="o">=</span><span class="n">stats</span><span class="o">.</span><span class="n">sem</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+    <span class="n">scale</span><span class="o">=</span><span class="n">sem_diff</span>
 <span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">conf_int</span><span class="p">)</span>
+<span class="c1"># Printing results rounded to 4 decimal places for clarity</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;95% CI of performance gap: &quot;</span>
+    <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">conf_int</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">conf_int</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">)&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(0.06339163757525602), np.float64(0.07687540170435896))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>95% CI of performance gap: (0.0634, 0.0769)
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="interpretation">
-<h3><span class="section-number">1.12.2. </span>Interpretation<a class="headerlink" href="#interpretation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.13.2. </span>Interpretation<a class="headerlink" href="#interpretation" title="Link to this heading">#</a></h3>
 <p>The resulting confidence interval is:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>(0.0634, 0.0769)
 </pre></div>
 </div>
 <p>This indicates that the true difference between the mean training and testing accuracies is likely between <strong>6.34% and 7.69%</strong>. In practical terms, the model’s training accuracy is expected to be approximately <strong>6–8 percentage points higher</strong> than its testing accuracy. Because the confidence interval does <strong>not</strong> contain zero, there is statistical evidence that the performance difference is real and not merely the result of random sampling variability. Consequently, the model performs significantly better on the training data than on unseen data, providing evidence of <strong>overfitting</strong>.</p>
 </section>
-</section>
-<section id="complete-statistical-evaluation">
-<h2><span class="section-number">1.13. </span>Complete Statistical Evaluation<a class="headerlink" href="#complete-statistical-evaluation" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.05</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean Train Accuracy: </span><span class="si">{</span><span class="n">train_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mean Test Accuracy : </span><span class="si">{</span><span class="n">test_scores</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Paired t-test p-value: </span><span class="si">{</span><span class="n">p_value_t</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Wilcoxon p-value: </span><span class="si">{</span><span class="n">p_value_w</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-
-<span class="n">lower_ci</span><span class="p">,</span> <span class="n">upper_ci</span> <span class="o">=</span> <span class="n">conf_int</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">95% Confidence Interval:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">lower_ci</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">upper_ci</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">p_value_t</span> <span class="o">&lt;</span> <span class="n">alpha</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Significant difference detected.&quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Evidence suggests overfitting.&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">No significant difference detected.&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Mean Train Accuracy: 1.0000
-Mean Test Accuracy : 0.9299
-
-Paired t-test p-value: 0.00000
-Wilcoxon p-value: 0.00000
-
-95% Confidence Interval:
-(0.0634, 0.0769)
-
-Significant difference detected.
-Evidence suggests overfitting.
-</pre></div>
-</div>
-</div>
-</div>
 <section id="conclusion">
-<h3><span class="section-number">1.13.1. </span>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.13.3. </span>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h3>
 <blockquote>
 <div><p>The model exhibits <strong>overfitting</strong> because its performance on the training data is significantly higher than its performance on unseen data. Furthermore, the relatively narrow confidence interval suggests that this performance gap is stable across the repeated cross-validation folds.</p>
 </div></blockquote>
@@ -1343,8 +1313,8 @@ This result provides evidence of overfitting.
 <section id="model-complexity-vs-dataset-size">
 <h2><span class="section-number">1.15. </span>Model Complexity vs. Dataset Size<a class="headerlink" href="#model-complexity-vs-dataset-size" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Model complexity should increase only when supported by sufficient data variability.</strong> More diverse observations allow <strong>more complex models</strong> to be learned without <strong>overfitting</strong>, whereas duplicating or collecting highly similar data provides little benefit.</p></li>
-<li><p>In <strong>supervised learning</strong>, increasing the amount of <strong>diverse data</strong> often improves performance more than model tuning. Consequently, determining <strong>how much data to collect</strong> can be as important as selecting the model itself.</p></li>
+<li><p>Model complexity should increase only when supported by sufficient data variability. <strong>More diverse observations allow more complex models to be learned without overfitting</strong>, whereas duplicating or collecting highly similar data provides little benefit.</p></li>
+<li><p>In supervised learning, <strong>increasing the amount of diverse data often improves performance more than model tuning</strong>. Consequently, determining <strong>how much data to collect</strong> can be as important as selecting the model itself.</p></li>
 </ul>
 </section>
 <section id="tensorflow-environment-setup">
@@ -1636,13 +1606,11 @@ Python, PyTorch, TensorFlow, JAX, mathematical optimization libraries, and scien
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cross-validation-procedure">1.9. Cross-Validation Procedure</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-analysis">1.10. Preliminary Analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-statistical-approach-to-detecting-overfitting">1.11. A Statistical Approach to Detecting Overfitting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-tests">1.12. Statistical Tests</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-interval-for-the-performance-difference">1.12.1. Confidence Interval for the Performance Difference</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">1.12.2. Interpretation</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-statistical-evaluation">1.13. Complete Statistical Evaluation</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">1.13.1. Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-interpretation">1.12. Practical Interpretation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#statistical-tests">1.13. Statistical Tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-interval-for-the-performance-difference">1.13.1. Confidence Interval for the Performance Difference</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretation">1.13.2. Interpretation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">1.13.3. Conclusion</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-reproducible-example">1.14. Complete Reproducible Example</a></li>
