@@ -350,28 +350,38 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-reproducible-example">1.14. Complete Reproducible Example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-complexity-vs-dataset-size">1.15. Model Complexity vs. Dataset Size</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-environment-setup">1.16. TensorFlow Environment Setup</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-2-10-on-native-windows">1.16.1. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span> <span class="pre">2.10</span></code> on <code class="docutils literal notranslate"><span class="pre">Native</span> <span class="pre">Windows</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-geq2-11-on-wsl2">1.16.2. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code><span class="math notranslate nohighlight">\(\geq\)</span><code class="docutils literal notranslate"><span class="pre">2.11</span></code> on <code class="docutils literal notranslate"><span class="pre">WSL2</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-on-mac">1.16.3. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> on <code class="docutils literal notranslate"><span class="pre">Mac</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-jupyter-books-for-machine-learning-deliverables">1.16.4. Building <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Books</span></code> for Machine Learning Deliverables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-docker-and-dash">1.16.5. Introduction to <code class="docutils literal notranslate"><span class="pre">Docker</span></code> and <code class="docutils literal notranslate"><span class="pre">Dash</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-binary-classification-on-an-alternative-dataset">1.16. Assignment: Binary Classification on an Alternative Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.16.1. Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-evaluation-metric-auc">1.16.2. Primary Evaluation Metric: AUC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-model-training-and-cross-validation">1.16.3. Part 1: Model Training and Cross-Validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-final-model-evaluation">1.16.4. Part 2: Final Model Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-overfitting-diagnosis">1.16.5. Part 3: Overfitting Diagnosis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-bootstrap-confidence-intervals-for-test-metrics">1.16.6. Part 4: Bootstrap Confidence Intervals for Test Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-discussion">1.16.7. Part 5: Discussion</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roles-in-the-data-ecosystem">1.17. Roles in the Data Ecosystem</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analyst">1.17.1. Data Analyst</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-scientist">1.17.2. Data Scientist</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-engineer">1.17.3. Data Engineer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-stack-data-scientist">1.17.4. Full-Stack Data Scientist</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-engineer">1.17.5. Machine Learning Engineer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-scientist">1.17.6. Machine Learning Scientist</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-comparison">1.17.7. Role Comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-environment-setup">1.17. TensorFlow Environment Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-2-10-on-native-windows">1.17.1. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span> <span class="pre">2.10</span></code> on <code class="docutils literal notranslate"><span class="pre">Native</span> <span class="pre">Windows</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-geq2-11-on-wsl2">1.17.2. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code><span class="math notranslate nohighlight">\(\geq\)</span><code class="docutils literal notranslate"><span class="pre">2.11</span></code> on <code class="docutils literal notranslate"><span class="pre">WSL2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-on-mac">1.17.3. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> on <code class="docutils literal notranslate"><span class="pre">Mac</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-jupyter-books-for-machine-learning-deliverables">1.17.4. Building <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Books</span></code> for Machine Learning Deliverables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-docker-and-dash">1.17.5. Introduction to <code class="docutils literal notranslate"><span class="pre">Docker</span></code> and <code class="docutils literal notranslate"><span class="pre">Dash</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linkedin-profile-for-data-scientists">1.18. LinkedIn Profile for Data Scientists</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-linkedin-essential">1.18.1. Why is LinkedIn essential?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-recommendations">1.18.2. Practical recommendations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remember">1.18.3. Remember</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roles-in-the-data-ecosystem">1.18. Roles in the Data Ecosystem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analyst">1.18.1. Data Analyst</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-scientist">1.18.2. Data Scientist</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-engineer">1.18.3. Data Engineer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-stack-data-scientist">1.18.4. Full-Stack Data Scientist</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-engineer">1.18.5. Machine Learning Engineer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-scientist">1.18.6. Machine Learning Scientist</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-comparison">1.18.7. Role Comparison</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linkedin-profile-for-data-scientists">1.19. LinkedIn Profile for Data Scientists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-linkedin-essential">1.19.1. Why is LinkedIn essential?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-recommendations">1.19.2. Practical recommendations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remember">1.19.3. Remember</a></li>
 </ul>
 </li>
 </ul>
@@ -1317,48 +1327,305 @@ This result provides evidence of overfitting.
 <li><p>In supervised learning, <strong>increasing the amount of diverse data often improves performance more than model tuning</strong>. Consequently, determining <strong>how much data to collect</strong> can be as important as selecting the model itself.</p></li>
 </ul>
 </section>
+<section id="assignment-binary-classification-on-an-alternative-dataset">
+<h2><span class="section-number">1.16. </span>Assignment: Binary Classification on an Alternative Dataset<a class="headerlink" href="#assignment-binary-classification-on-an-alternative-dataset" title="Link to this heading">#</a></h2>
+<div class="important admonition">
+<p class="admonition-title">Assignment Overview</p>
+<p>This assignment extends the concepts introduced in the supervised learning section to a new dataset. You will train a binary classifier, evaluate it using multiple performance metrics, including the Area Under the ROC Curve (AUC), and rigorously assess whether the model generalizes well to unseen data or exhibits overfitting. Statistical inference through bootstrap confidence intervals is required as part of the analysis.</p>
+<p><strong>Submission format:</strong> a single Jupyter Notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) with all cells executed. Code must be clean, well-commented, and accompanied by written interpretations in Markdown cells.</p>
+</div>
+<section id="id1">
+<h3><span class="section-number">1.16.1. </span>Dataset<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Use the <strong>Pima Indians Diabetes Dataset</strong>, available directly from <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> via <code class="docutils literal notranslate"><span class="pre">fetch_openml</span></code>, or from any public repository. This dataset records diagnostic measurements for female patients of Pima Indian heritage and is labeled according to whether a patient was diagnosed with diabetes within five years of the measurements.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">fetch_openml</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">fetch_openml</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;diabetes&quot;</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parser</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">data</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">target</span> <span class="o">==</span> <span class="s2">&quot;tested_positive&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Observations:&quot;</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Features    :&quot;</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Class distribution:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Why this dataset?</p>
+<p>The Pima Indians Diabetes Dataset is publicly available, contains no missing values after standard loading, has 768 observations across 8 numerical features, and presents a moderately imbalanced binary classification problem, making it an appropriate context for evaluating AUC rather than accuracy alone.</p>
+</div>
+</section>
+<section id="primary-evaluation-metric-auc">
+<h3><span class="section-number">1.16.2. </span>Primary Evaluation Metric: AUC<a class="headerlink" href="#primary-evaluation-metric-auc" title="Link to this heading">#</a></h3>
+<p>In this assignment, the <strong>primary metric for model evaluation is the Area Under the ROC Curve (AUC)</strong>, also referred to as AUROC. Unlike accuracy, AUC is threshold-independent and remains informative under class imbalance.</p>
+<div class="math notranslate nohighlight">
+\[
+\text{AUC} = \int_0^1 \text{TPR}(\text{FPR}^{-1}(t))\, dt
+\]</div>
+<p>Where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\text{TPR} = \frac{TP}{TP + FN}\)</span> is the True Positive Rate (Sensitivity / Recall).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\text{FPR} = \frac{FP}{FP + TN}\)</span> is the False Positive Rate.</p></li>
+</ul>
+<p>An AUC of 0.5 corresponds to a random classifier. An AUC of 1.0 corresponds to a perfect classifier.</p>
+<div class="warning admonition">
+<p class="admonition-title">Remark</p>
+<p>When computing AUC inside a cross-validation loop, use <code class="docutils literal notranslate"><span class="pre">model.predict_proba(X_test)[:,</span> <span class="pre">1]</span></code>, the estimated probability of the positive class, rather than <code class="docutils literal notranslate"><span class="pre">model.predict(X_test)</span></code>. AUC requires probability scores, not hard class labels.</p>
+</div>
+</section>
+<section id="part-1-model-training-and-cross-validation">
+<h3><span class="section-number">1.16.3. </span>Part 1: Model Training and Cross-Validation<a class="headerlink" href="#part-1-model-training-and-cross-validation" title="Link to this heading">#</a></h3>
+<p>Train a <strong>Decision Tree Classifier</strong> with unrestricted depth on the dataset, replicating the structure used in class. Use <strong>Repeated Stratified K-Fold Cross-Validation</strong> (5 folds, 10 repetitions) to collect training and testing scores for both <strong>accuracy</strong> and <strong>AUC</strong> across all folds.</p>
+<div class="tip admonition">
+<p class="admonition-title">Implementation guidance</p>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">scoring=&quot;roc_auc&quot;</span></code> when computing AUC. To compute it manually inside the loop, import <code class="docutils literal notranslate"><span class="pre">roc_auc_score</span></code> from <code class="docutils literal notranslate"><span class="pre">sklearn.metrics</span></code>.</p></li>
+<li><p>Maintain separate lists for training and testing scores for each metric: <code class="docutils literal notranslate"><span class="pre">train_acc</span></code>, <code class="docutils literal notranslate"><span class="pre">test_acc</span></code>, <code class="docutils literal notranslate"><span class="pre">train_auc</span></code>, <code class="docutils literal notranslate"><span class="pre">test_auc</span></code>.</p></li>
+<li><p>At the end of the loop, convert all lists to NumPy arrays.</p></li>
+<li><p><strong>Important</strong>: fit a separate scaler inside each fold if you choose to standardize features. Fitting the scaler on the full dataset before splitting constitutes data leakage and is not acceptable.</p></li>
+</ul>
+</div>
+<p>The expected structure of the loop is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">train_idx</span><span class="p">,</span> <span class="n">test_idx</span> <span class="ow">in</span> <span class="n">cv</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">train_idx</span><span class="p">],</span> <span class="n">X</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">test_idx</span><span class="p">]</span>
+    <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">train_idx</span><span class="p">],</span> <span class="n">y</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">test_idx</span><span class="p">]</span>
+
+    <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+    <span class="c1"># Accuracy</span>
+    <span class="n">train_acc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)))</span>
+    <span class="n">test_acc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)))</span>
+
+    <span class="c1"># AUC</span>
+    <span class="n">train_auc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_train</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]))</span>
+    <span class="n">test_auc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>Report the mean and standard deviation of training and testing AUC across all folds in a summary table.</p>
+</section>
+<section id="part-2-final-model-evaluation">
+<h3><span class="section-number">1.16.4. </span>Part 2: Final Model Evaluation<a class="headerlink" href="#part-2-final-model-evaluation" title="Link to this heading">#</a></h3>
+<p>After completing cross-validation, perform a <strong>single stratified train-test split</strong> (80% training, 20% testing, <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code>) to produce a final evaluation on a held-out set. Using the model trained on the 80% split, report the following on the <strong>test set</strong>:</p>
+<ol class="arabic simple">
+<li><p><strong>Confusion Matrix</strong>: display it as a labeled heatmap using <code class="docutils literal notranslate"><span class="pre">ConfusionMatrixDisplay</span></code>.</p></li>
+<li><p><strong>Precision</strong>, <strong>Recall</strong>, <strong>F1-Score</strong>, and <strong>Accuracy</strong>: computed via <code class="docutils literal notranslate"><span class="pre">classification_report</span></code>.</p></li>
+<li><p><strong>AUC</strong>: computed from predicted probabilities.</p></li>
+<li><p><strong>ROC Curve</strong>: plot the ROC curve with the AUC value annotated in the legend.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\text{Precision} = \frac{TP}{TP + FP}, \qquad
+\text{Recall} = \frac{TP}{TP + FN}, \qquad
+\text{F1} = 2 \cdot \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
+\]</div>
+<div class="tip admonition">
+<p class="admonition-title">Hint: plotting the ROC curve</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">RocCurveDisplay</span>
+<span class="n">RocCurveDisplay</span><span class="o">.</span><span class="n">from_estimator</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Decision Tree&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>Provide a written interpretation of each metric beneath the corresponding output. Discuss what the confusion matrix reveals about the types of errors the model makes, and explain why AUC may be more informative than accuracy for this dataset.</p>
+</section>
+<section id="part-3-overfitting-diagnosis">
+<h3><span class="section-number">1.16.5. </span>Part 3: Overfitting Diagnosis<a class="headerlink" href="#part-3-overfitting-diagnosis" title="Link to this heading">#</a></h3>
+<p>Apply the statistical methods introduced in class to determine whether the model overfits. Use the AUC scores collected during cross-validation.</p>
+<p><strong>Step 3.1: Descriptive comparison</strong></p>
+<p>Compute and display the mean and standard deviation of training AUC and testing AUC. Evaluate the magnitude of the gap using the guideline introduced in class:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Gap (Train − Test)</p></th>
+<th class="head"><p>Interpretation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>&lt; 5%</p></td>
+<td><p>Generally acceptable</p></td>
+</tr>
+<tr class="row-odd"><td><p>5%–15%</p></td>
+<td><p>Moderate concern; investigate further</p></td>
+</tr>
+<tr class="row-even"><td><p>&gt; 15%</p></td>
+<td><p>Strong evidence of overfitting</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Step 3.2: Paired <span class="math notranslate nohighlight">\(t\)</span>-Test</strong></p>
+<div class="math notranslate nohighlight">
+\[
+H_0: \mu_{\text{train}} - \mu_{\text{test}} = 0 \qquad H_1: \mu_{\text{train}} - \mu_{\text{test}} \neq 0
+\]</div>
+<p>Use <code class="docutils literal notranslate"><span class="pre">scipy.stats.ttest_rel(train_auc,</span> <span class="pre">test_auc)</span></code>. Report the <span class="math notranslate nohighlight">\(t\)</span>-statistic and <span class="math notranslate nohighlight">\(p\)</span>-value. If <span class="math notranslate nohighlight">\(p &lt; 0.05\)</span>, reject <span class="math notranslate nohighlight">\(H_0\)</span> and interpret this as statistical evidence of overfitting.</p>
+<p><strong>Step 3.3: Wilcoxon Signed-Rank Test</strong></p>
+<p>As a non-parametric alternative that does not assume normality of the differences, apply <code class="docutils literal notranslate"><span class="pre">scipy.stats.wilcoxon(train_auc,</span> <span class="pre">test_auc)</span></code>. Report the <span class="math notranslate nohighlight">\(W\)</span>-statistic and <span class="math notranslate nohighlight">\(p\)</span>-value and compare the conclusion with the <span class="math notranslate nohighlight">\(t\)</span>-test result.</p>
+<p><strong>Step 3.4: Analytical Confidence Interval for the Performance Gap</strong></p>
+<p>Construct a 95% confidence interval for <span class="math notranslate nohighlight">\(\mu_{\text{train}} - \mu_{\text{test}}\)</span> using the <span class="math notranslate nohighlight">\(t\)</span>-distribution:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+<span class="n">diff</span> <span class="o">=</span> <span class="n">train_auc</span> <span class="o">-</span> <span class="n">test_auc</span>
+<span class="n">mean_diff</span> <span class="o">=</span> <span class="n">diff</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">sem_diff</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">sem</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
+<span class="n">lower_ci</span><span class="p">,</span> <span class="n">upper_ci</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">interval</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="n">df</span><span class="o">=</span><span class="nb">len</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="n">mean_diff</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="n">sem_diff</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Interpret the interval: if it excludes zero, the gap is statistically significant.</p>
+</section>
+<section id="part-4-bootstrap-confidence-intervals-for-test-metrics">
+<h3><span class="section-number">1.16.6. </span>Part 4: Bootstrap Confidence Intervals for Test Metrics<a class="headerlink" href="#part-4-bootstrap-confidence-intervals-for-test-metrics" title="Link to this heading">#</a></h3>
+<p>In addition to the analytical confidence interval computed from cross-validation differences, construct <strong>bootstrap confidence intervals</strong> for each of the following metrics evaluated on the held-out test set: <strong>Accuracy</strong>, <strong>Precision</strong>, <strong>Recall</strong>, <strong>F1-Score</strong>, and <strong>AUC</strong>.</p>
+<p>The bootstrap procedure resamples the test set with replacement <span class="math notranslate nohighlight">\(B\)</span> times and recomputes the metric in each replicate, yielding an empirical distribution of the statistic.</p>
+<p><strong>Algorithm:</strong></p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\theta}^{*(b)} = g\left(X_{\text{test}}^{*(b)},\, y_{\text{test}}^{*(b)}\right), \quad b = 1, \ldots, B
+\]</div>
+<p>The 95% bootstrap confidence interval is obtained as the 2.5th and 97.5th percentiles of the <span class="math notranslate nohighlight">\(B\)</span> replicated estimates:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{CI}_{95\%} = \left[\hat{\theta}^{*}_{(0.025)},\; \hat{\theta}^{*}_{(0.975)}\right]
+\]</div>
+<p>Use <span class="math notranslate nohighlight">\(B = 1000\)</span> bootstrap replicates and <code class="docutils literal notranslate"><span class="pre">random_state=42</span></code> for reproducibility. The implementation structure is:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">roc_auc_score</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">resample</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+
+<span class="n">boot_acc</span><span class="p">,</span> <span class="n">boot_prec</span><span class="p">,</span> <span class="n">boot_rec</span><span class="p">,</span> <span class="n">boot_f1</span><span class="p">,</span> <span class="n">boot_auc</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">B</span><span class="p">):</span>
+    <span class="n">X_boot</span><span class="p">,</span> <span class="n">y_boot</span> <span class="o">=</span> <span class="n">resample</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">rng</span><span class="p">)</span>
+    <span class="n">y_pred_boot</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_boot</span><span class="p">)</span>
+    <span class="n">y_prob_boot</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_boot</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">boot_acc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_boot</span><span class="p">,</span> <span class="n">y_pred_boot</span><span class="p">))</span>
+    <span class="n">boot_prec</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">precision_score</span><span class="p">(</span><span class="n">y_boot</span><span class="p">,</span> <span class="n">y_pred_boot</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+    <span class="n">boot_rec</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">recall_score</span><span class="p">(</span><span class="n">y_boot</span><span class="p">,</span> <span class="n">y_pred_boot</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+    <span class="n">boot_f1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f1_score</span><span class="p">(</span><span class="n">y_boot</span><span class="p">,</span> <span class="n">y_pred_boot</span><span class="p">,</span> <span class="n">zero_division</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+    <span class="n">boot_auc</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y_boot</span><span class="p">,</span> <span class="n">y_prob_boot</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Summarize the results in a table with the following columns:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Metric</p></th>
+<th class="head"><p>Point Estimate</p></th>
+<th class="head"><p>95% CI Lower</p></th>
+<th class="head"><p>95% CI Upper</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Accuracy</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Precision</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>Recall</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>F1-Score</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>AUC</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Interpret the width of each interval and discuss what it reveals about the stability of the model’s performance on unseen data.</p>
+</section>
+<section id="part-5-discussion">
+<h3><span class="section-number">1.16.7. </span>Part 5: Discussion<a class="headerlink" href="#part-5-discussion" title="Link to this heading">#</a></h3>
+<p>Write a concise discussion (minimum 200 words) addressing the following points:</p>
+<ol class="arabic simple">
+<li><p><strong>Overfitting evidence</strong>: Based on the cross-validation results, the hypothesis tests, and the analytical confidence interval, does the model overfit? Justify your answer using all three sources of evidence.</p></li>
+<li><p><strong>Metric interpretation</strong>: Why is AUC a more appropriate primary metric than accuracy for this dataset? What does the confusion matrix reveal about the model’s practical behavior in a clinical context?</p></li>
+<li><p><strong>Bootstrap confidence intervals</strong>: What additional information do the bootstrap intervals provide beyond the point estimates? Are the intervals wide or narrow, and what does this imply about the reliability of the evaluation?</p></li>
+<li><p><strong>Potential remedies</strong>: Propose at least two specific modifications to the model or training procedure that could reduce overfitting and potentially improve generalization performance. Justify each proposal.</p></li>
+</ol>
+<div class="important admonition">
+<p class="admonition-title">Evaluation Criteria</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Component</p></th>
+<th class="head"><p>Weight</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Correct implementation of cross-validation with AUC</p></td>
+<td><p>20%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Final model evaluation: confusion matrix, classification report, ROC curve</p></td>
+<td><p>20%</p></td>
+</tr>
+<tr class="row-even"><td><p>Overfitting diagnosis: descriptive analysis + statistical tests + analytical CI</p></td>
+<td><p>25%</p></td>
+</tr>
+<tr class="row-odd"><td><p>Bootstrap confidence intervals: correct implementation and interpretation</p></td>
+<td><p>20%</p></td>
+</tr>
+<tr class="row-even"><td><p>Discussion: depth, accuracy, and coherence of written analysis</p></td>
+<td><p>15%</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Submissions that present code without written interpretation will receive a deduction of up to 30% of the total grade. All figures must include axis labels, titles, and legends.</p>
+</div>
+</section>
+</section>
 <section id="tensorflow-environment-setup">
-<h2><span class="section-number">1.16. </span>TensorFlow Environment Setup<a class="headerlink" href="#tensorflow-environment-setup" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.17. </span>TensorFlow Environment Setup<a class="headerlink" href="#tensorflow-environment-setup" title="Link to this heading">#</a></h2>
 <section id="installing-tensorflow-2-10-on-native-windows">
-<h3><span class="section-number">1.16.1. </span>Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span> <span class="pre">2.10</span></code> on <code class="docutils literal notranslate"><span class="pre">Native</span> <span class="pre">Windows</span></code><a class="headerlink" href="#installing-tensorflow-2-10-on-native-windows" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.17.1. </span>Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span> <span class="pre">2.10</span></code> on <code class="docutils literal notranslate"><span class="pre">Native</span> <span class="pre">Windows</span></code><a class="headerlink" href="#installing-tensorflow-2-10-on-native-windows" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Tutorial: <a class="reference external" href="https://www.youtube.com/watch?v=jzTWjXm8hsc&amp;amp;ab_channel=LihkiJoseRubioOrtega">Tutorial 1. Machine Learning. UN 202330</a> and <a class="reference external" href="https://github.com/lihkir/Data/blob/main/TutorialesMachineLearning.pdf">TutorialesMachineLearning.pdf</a></p></li>
 <li><p>Link: <a class="reference external" href="https://www.tensorflow.org/install/pip#windows-native">TensorFlow Windows Native</a></p></li>
 </ul>
 </section>
 <section id="installing-tensorflow-geq2-11-on-wsl2">
-<h3><span class="section-number">1.16.2. </span>Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code><span class="math notranslate nohighlight">\(\geq\)</span><code class="docutils literal notranslate"><span class="pre">2.11</span></code> on <code class="docutils literal notranslate"><span class="pre">WSL2</span></code><a class="headerlink" href="#installing-tensorflow-geq2-11-on-wsl2" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.17.2. </span>Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code><span class="math notranslate nohighlight">\(\geq\)</span><code class="docutils literal notranslate"><span class="pre">2.11</span></code> on <code class="docutils literal notranslate"><span class="pre">WSL2</span></code><a class="headerlink" href="#installing-tensorflow-geq2-11-on-wsl2" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Tutorial: <a class="reference external" href="https://www.youtube.com/watch?v=VOJq98BLjb8&amp;amp;ab_channel=TechJotters">Install TensorFlow GPU on WSL2 (Windows Subsystem for Linux) - Step by Step Tutorial</a></p></li>
 <li><p>Link: <a class="reference external" href="https://www.tensorflow.org/install/pip#windows-wsl2">TensorFlow WSL2</a></p></li>
 </ul>
 </section>
 <section id="installing-tensorflow-on-mac">
-<h3><span class="section-number">1.16.3. </span>Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> on <code class="docutils literal notranslate"><span class="pre">Mac</span></code><a class="headerlink" href="#installing-tensorflow-on-mac" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.17.3. </span>Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> on <code class="docutils literal notranslate"><span class="pre">Mac</span></code><a class="headerlink" href="#installing-tensorflow-on-mac" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Tutorial: <a class="reference external" href="https://www.youtube.com/watch?v=5DgWvU0p2bk&amp;amp;ab_channel=JeffHeaton">How to Install TensorFlow GPU for Mac M1/M2 with Conda</a></p></li>
 <li><p>Link: <a class="reference external" href="https://www.tensorflow.org/install/pip#macos">TensorFlow MacOS</a></p></li>
 </ul>
 </section>
 <section id="building-jupyter-books-for-machine-learning-deliverables">
-<h3><span class="section-number">1.16.4. </span>Building <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Books</span></code> for Machine Learning Deliverables<a class="headerlink" href="#building-jupyter-books-for-machine-learning-deliverables" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.17.4. </span>Building <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Books</span></code> for Machine Learning Deliverables<a class="headerlink" href="#building-jupyter-books-for-machine-learning-deliverables" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Tutorial: <a class="reference external" href="https://www.youtube.com/watch?v=m_wCMg2EmdQ&amp;amp;ab_channel=LihkiJoseRubioOrtega">Tutorial 2. Machine Learning. UN 202330</a> and <a class="reference external" href="https://github.com/lihkir/Data/blob/main/TutorialesMachineLearning.pdf">TutorialesMachineLearning.pdf</a></p></li>
 <li><p>Link: <a class="reference external" href="https://jupyterbook.org/en/stable/start/your-first-book.html">Create your first book</a></p></li>
 </ul>
 </section>
 <section id="introduction-to-docker-and-dash">
-<h3><span class="section-number">1.16.5. </span>Introduction to <code class="docutils literal notranslate"><span class="pre">Docker</span></code> and <code class="docutils literal notranslate"><span class="pre">Dash</span></code><a class="headerlink" href="#introduction-to-docker-and-dash" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.17.5. </span>Introduction to <code class="docutils literal notranslate"><span class="pre">Docker</span></code> and <code class="docutils literal notranslate"><span class="pre">Dash</span></code><a class="headerlink" href="#introduction-to-docker-and-dash" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://lihkir.github.io/DataVizPython/postgresql.html#instalacion-y-uso-de-docker">Installing and using Docker</a> and <a class="reference external" href="https://lihkir.github.io/DataVizPython/dash_dataviz.html">Introduction to Dash</a></p></li>
 </ul>
 </section>
 </section>
 <section id="roles-in-the-data-ecosystem">
-<h2><span class="section-number">1.17. </span>Roles in the Data Ecosystem<a class="headerlink" href="#roles-in-the-data-ecosystem" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.18. </span>Roles in the Data Ecosystem<a class="headerlink" href="#roles-in-the-data-ecosystem" title="Link to this heading">#</a></h2>
 <p>Data science encompasses several distinct roles, each with its own focus and responsibilities. The main profiles and their differences are described below.</p>
 <section id="data-analyst">
-<h3><span class="section-number">1.17.1. </span>Data Analyst<a class="headerlink" href="#data-analyst" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.18.1. </span>Data Analyst<a class="headerlink" href="#data-analyst" title="Link to this heading">#</a></h3>
 <p><strong>Main responsibilities:</strong></p>
 <ul class="simple">
 <li><p>Analyze historical data to answer business questions.</p></li>
@@ -1370,7 +1637,7 @@ SQL, Excel, Tableau, Dash, Python.</p>
 <strong>Key Performance Indicators</strong> are metrics used to evaluate a process’s performance, such as monthly revenue, conversion rate, or average response time.</p>
 </section>
 <section id="data-scientist">
-<h3><span class="section-number">1.17.2. </span>Data Scientist<a class="headerlink" href="#data-scientist" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.18.2. </span>Data Scientist<a class="headerlink" href="#data-scientist" title="Link to this heading">#</a></h3>
 <p><strong>Main responsibilities:</strong></p>
 <ul class="simple">
 <li><p>Apply statistical and machine learning models to predict behavior or identify patterns.</p></li>
@@ -1380,7 +1647,7 @@ SQL, Excel, Tableau, Dash, Python.</p>
 Python, R, Pandas, scikit-learn, Jupyter, SQL.</p>
 </section>
 <section id="data-engineer">
-<h3><span class="section-number">1.17.3. </span>Data Engineer<a class="headerlink" href="#data-engineer" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.18.3. </span>Data Engineer<a class="headerlink" href="#data-engineer" title="Link to this heading">#</a></h3>
 <p><strong>Main responsibilities:</strong></p>
 <ul class="simple">
 <li><p>Design and maintain data pipelines.</p></li>
@@ -1390,7 +1657,7 @@ Python, R, Pandas, scikit-learn, Jupyter, SQL.</p>
 Spark, Airflow, Kafka, Python, SQL/NoSQL databases, cloud platforms such as AWS, GCP, or Azure.</p>
 </section>
 <section id="full-stack-data-scientist">
-<h3><span class="section-number">1.17.4. </span>Full-Stack Data Scientist<a class="headerlink" href="#full-stack-data-scientist" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.18.4. </span>Full-Stack Data Scientist<a class="headerlink" href="#full-stack-data-scientist" title="Link to this heading">#</a></h3>
 <p><strong>Main responsibilities:</strong></p>
 <ul class="simple">
 <li><p>Handle every stage of the data lifecycle, from data acquisition to model deployment.</p></li>
@@ -1400,7 +1667,7 @@ Spark, Airflow, Kafka, Python, SQL/NoSQL databases, cloud platforms such as AWS,
 Python, Git, Docker, FastAPI, MLflow, plus engineering and visualization tools.</p>
 </section>
 <section id="machine-learning-engineer">
-<h3><span class="section-number">1.17.5. </span>Machine Learning Engineer<a class="headerlink" href="#machine-learning-engineer" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.18.5. </span>Machine Learning Engineer<a class="headerlink" href="#machine-learning-engineer" title="Link to this heading">#</a></h3>
 <p><strong>Main responsibilities:</strong></p>
 <ul class="simple">
 <li><p>Deploy machine learning models in production environments.</p></li>
@@ -1410,7 +1677,7 @@ Python, Git, Docker, FastAPI, MLflow, plus engineering and visualization tools.<
 TensorFlow, PyTorch, ONNX, Kubernetes, MLflow, SageMaker, Vertex AI.</p>
 </section>
 <section id="machine-learning-scientist">
-<h3><span class="section-number">1.17.6. </span>Machine Learning Scientist<a class="headerlink" href="#machine-learning-scientist" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.18.6. </span>Machine Learning Scientist<a class="headerlink" href="#machine-learning-scientist" title="Link to this heading">#</a></h3>
 <p><strong>Main responsibilities:</strong></p>
 <ul class="simple">
 <li><p>Research and develop new algorithms or architectures.</p></li>
@@ -1421,7 +1688,7 @@ TensorFlow, PyTorch, ONNX, Kubernetes, MLflow, SageMaker, Vertex AI.</p>
 Python, PyTorch, TensorFlow, JAX, mathematical optimization libraries, and scientific research tools.</p>
 </section>
 <section id="role-comparison">
-<h3><span class="section-number">1.17.7. </span>Role Comparison<a class="headerlink" href="#role-comparison" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.18.7. </span>Role Comparison<a class="headerlink" href="#role-comparison" title="Link to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Role</p></th>
@@ -1489,12 +1756,12 @@ Python, PyTorch, TensorFlow, JAX, mathematical optimization libraries, and scien
 </section>
 </section>
 <section id="linkedin-profile-for-data-scientists">
-<h2><span class="section-number">1.18. </span>LinkedIn Profile for Data Scientists<a class="headerlink" href="#linkedin-profile-for-data-scientists" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.19. </span>LinkedIn Profile for Data Scientists<a class="headerlink" href="#linkedin-profile-for-data-scientists" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Today, <strong>LinkedIn has established itself as the leading professional network worldwide</strong>, a key tool for anyone building a career in Data Science. For undergraduate students, leveraging this platform early on can make a significant difference in their job prospects.</p></li>
 </ul>
 <section id="why-is-linkedin-essential">
-<h3><span class="section-number">1.18.1. </span>Why is LinkedIn essential?<a class="headerlink" href="#why-is-linkedin-essential" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.19.1. </span>Why is LinkedIn essential?<a class="headerlink" href="#why-is-linkedin-essential" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><strong>Professional visibility</strong>: recruiters, companies, and data teams use LinkedIn as a database to find talent. A well-optimized profile increases your visibility.</p></li>
 <li><p><strong>Personal brand</strong>: publishing your projects, certifications, academic achievements, and articles positions you as an active professional engaged with the community.</p></li>
@@ -1504,7 +1771,7 @@ Python, PyTorch, TensorFlow, JAX, mathematical optimization libraries, and scien
 </ul>
 </section>
 <section id="practical-recommendations">
-<h3><span class="section-number">1.18.2. </span>Practical recommendations<a class="headerlink" href="#practical-recommendations" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.19.2. </span>Practical recommendations<a class="headerlink" href="#practical-recommendations" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p><strong>Professional photo and an eye-catching banner.</strong></p></li>
 <li><p><strong>Clear headline</strong>: for example, <em>“Data Science Student | Interested in Machine Learning and Data Visualization.”</em></p></li>
@@ -1514,7 +1781,7 @@ Python, PyTorch, TensorFlow, JAX, mathematical optimization libraries, and scien
 </ol>
 </section>
 <section id="remember">
-<h3><span class="section-number">1.18.3. </span>Remember<a class="headerlink" href="#remember" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">1.19.3. </span>Remember<a class="headerlink" href="#remember" title="Link to this heading">#</a></h3>
 <p>This is not just about job hunting — it’s about <strong>building a digital presence that supports your professional profile</strong> and showcases your growth as a data scientist. Start building your LinkedIn brand today.</p>
 <ul class="simple">
 <li><p><strong>Tutorial 1</strong>: <a class="reference external" href="https://www.youtube.com/watch?v=jpbU0uxRXhs&amp;amp;ab_channel=AnasRiad">Land Your Next DATA SCIENCE Job with LinkedIn (7 ESSENTIAL Steps)</a></p></li>
@@ -1615,28 +1882,38 @@ Python, PyTorch, TensorFlow, JAX, mathematical optimization libraries, and scien
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complete-reproducible-example">1.14. Complete Reproducible Example</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-complexity-vs-dataset-size">1.15. Model Complexity vs. Dataset Size</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-environment-setup">1.16. TensorFlow Environment Setup</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-2-10-on-native-windows">1.16.1. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span> <span class="pre">2.10</span></code> on <code class="docutils literal notranslate"><span class="pre">Native</span> <span class="pre">Windows</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-geq2-11-on-wsl2">1.16.2. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code><span class="math notranslate nohighlight">\(\geq\)</span><code class="docutils literal notranslate"><span class="pre">2.11</span></code> on <code class="docutils literal notranslate"><span class="pre">WSL2</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-on-mac">1.16.3. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> on <code class="docutils literal notranslate"><span class="pre">Mac</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-jupyter-books-for-machine-learning-deliverables">1.16.4. Building <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Books</span></code> for Machine Learning Deliverables</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-docker-and-dash">1.16.5. Introduction to <code class="docutils literal notranslate"><span class="pre">Docker</span></code> and <code class="docutils literal notranslate"><span class="pre">Dash</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assignment-binary-classification-on-an-alternative-dataset">1.16. Assignment: Binary Classification on an Alternative Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1.16.1. Dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-evaluation-metric-auc">1.16.2. Primary Evaluation Metric: AUC</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-model-training-and-cross-validation">1.16.3. Part 1: Model Training and Cross-Validation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-final-model-evaluation">1.16.4. Part 2: Final Model Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-3-overfitting-diagnosis">1.16.5. Part 3: Overfitting Diagnosis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-4-bootstrap-confidence-intervals-for-test-metrics">1.16.6. Part 4: Bootstrap Confidence Intervals for Test Metrics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#part-5-discussion">1.16.7. Part 5: Discussion</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roles-in-the-data-ecosystem">1.17. Roles in the Data Ecosystem</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analyst">1.17.1. Data Analyst</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-scientist">1.17.2. Data Scientist</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-engineer">1.17.3. Data Engineer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-stack-data-scientist">1.17.4. Full-Stack Data Scientist</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-engineer">1.17.5. Machine Learning Engineer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-scientist">1.17.6. Machine Learning Scientist</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-comparison">1.17.7. Role Comparison</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorflow-environment-setup">1.17. TensorFlow Environment Setup</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-2-10-on-native-windows">1.17.1. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span> <span class="pre">2.10</span></code> on <code class="docutils literal notranslate"><span class="pre">Native</span> <span class="pre">Windows</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-geq2-11-on-wsl2">1.17.2. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code><span class="math notranslate nohighlight">\(\geq\)</span><code class="docutils literal notranslate"><span class="pre">2.11</span></code> on <code class="docutils literal notranslate"><span class="pre">WSL2</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-tensorflow-on-mac">1.17.3. Installing <code class="docutils literal notranslate"><span class="pre">TensorFlow</span></code> on <code class="docutils literal notranslate"><span class="pre">Mac</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-jupyter-books-for-machine-learning-deliverables">1.17.4. Building <code class="docutils literal notranslate"><span class="pre">Jupyter</span> <span class="pre">Books</span></code> for Machine Learning Deliverables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-docker-and-dash">1.17.5. Introduction to <code class="docutils literal notranslate"><span class="pre">Docker</span></code> and <code class="docutils literal notranslate"><span class="pre">Dash</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linkedin-profile-for-data-scientists">1.18. LinkedIn Profile for Data Scientists</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-linkedin-essential">1.18.1. Why is LinkedIn essential?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-recommendations">1.18.2. Practical recommendations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remember">1.18.3. Remember</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#roles-in-the-data-ecosystem">1.18. Roles in the Data Ecosystem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-analyst">1.18.1. Data Analyst</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-scientist">1.18.2. Data Scientist</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-engineer">1.18.3. Data Engineer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-stack-data-scientist">1.18.4. Full-Stack Data Scientist</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-engineer">1.18.5. Machine Learning Engineer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#machine-learning-scientist">1.18.6. Machine Learning Scientist</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#role-comparison">1.18.7. Role Comparison</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linkedin-profile-for-data-scientists">1.19. LinkedIn Profile for Data Scientists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-is-linkedin-essential">1.19.1. Why is LinkedIn essential?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-recommendations">1.19.2. Practical recommendations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remember">1.19.3. Remember</a></li>
 </ul>
 </li>
 </ul>
