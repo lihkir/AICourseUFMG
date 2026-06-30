@@ -329,14 +329,16 @@
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2. Decision Tree-Based Models</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">2.1. Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combination-of-classifiers">2.2. Combination of Classifiers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boosting-approach">2.3. Boosting Approach</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arboles-boosting">2.4. Arboles Boosting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">2.5. Implementation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complexity-control">2.6. Complexity Control</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-decision-trees">2.7. Analysis of Decision Trees</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance-in-trees">2.8. Feature Importance in Trees</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-of-decision-trees">2.9. Ensemble of Decision Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulation">2.2. Formulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-criterion">2.3. Splitting criterion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combination-of-classifiers">2.4. Combination of Classifiers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boosting-approach">2.5. Boosting Approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arboles-boosting">2.6. Arboles Boosting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">2.7. Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complexity-control">2.8. Complexity Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-decision-trees">2.9. Analysis of Decision Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance-in-trees">2.10. Feature Importance in Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-of-decision-trees">2.11. Ensemble of Decision Trees</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#boston-housing">2. Boston Housing</a><ul class="visible nav section-nav flex-column">
@@ -400,27 +402,31 @@
 <h1><span class="section-number">2. </span>Decision Tree-Based Models<a class="headerlink" href="#decision-tree-based-models" title="Link to this heading">#</a></h1>
 <section id="analysis">
 <h2><span class="section-number">2.1. </span>Analysis<a class="headerlink" href="#analysis" title="Link to this heading">#</a></h2>
-<p><strong><code class="docutils literal notranslate"><span class="pre">Observation</span></code></strong></p>
+<div class="tip admonition">
+<p class="admonition-title">Observation</p>
 <ul class="simple">
-<li><p>Classification trees <em><strong>are based on a simple yet powerful idea</strong></em> and are among the <em><strong>most widely used classification techniques</strong></em>. They are multi-stage systems in which the classification of a pattern into a class is performed sequentially. <em><strong>Through a sequence of tests, classes are progressively discarded until a final decision is made in favor of the remaining class</strong></em>.</p></li>
-<li><p>Each test, whose outcome determines which classes are rejected, is of the <em><strong>binary “Yes” or “No” type and is applied to a single feature</strong></em>. Our goal is to present the fundamental philosophy underlying a specific type of tree known as <em><strong><strong>Ordinary Binary Classification Trees (OBCTs)</strong></strong></em>. These belong to the broader family of methods designed for both classification and regression, referred to as <em><strong>Classification and Regression Trees (CART)</strong></em>.</p></li>
+<li><p>Classification trees <strong>are based on a simple yet powerful idea</strong> and are among the <strong>most widely used classification techniques</strong>. They are multi-stage systems in which the classification of a pattern into a class is performed sequentially. <strong>Through a sequence of tests, classes are progressively discarded until a final decision is made in favor of the remaining class</strong>.</p></li>
+<li><p>Each test is of the <strong>binary “Yes/No” type and is applied to a single feature</strong>. The focus is on <strong>Ordinary Binary Classification Trees (OBCTs)</strong>, belonging to the broader <strong>Classification and Regression Trees (CART)</strong> family, designed for both classification and regression tasks.</p></li>
 </ul>
-<p><strong><code class="docutils literal notranslate"><span class="pre">Formulation</span></code></strong></p>
+</div>
+</section>
+<section id="formulation">
+<h2><span class="section-number">2.2. </span>Formulation<a class="headerlink" href="#formulation" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>The basic idea behind <em><strong>OBCTs</strong></em> is to <em><strong>partition the feature space into (hyper)rectangles</strong></em>; that is, the space is divided by hyperplanes parallel to the coordinate axes. This is illustrated in <a class="reference internal" href="#fig-decision-hypplanes-obct"><span class="std std-numref">Fig. 2.1</span></a>.</p></li>
+<li><p>The basic idea behind <strong>OBCTs</strong> is to <strong>partition the feature space into (hyper)rectangles</strong>; that is, the space is divided by hyperplanes parallel to the coordinate axes. This is illustrated in <a class="reference internal" href="#fig-decision-hypplanes-obct"><span class="std std-numref">Fig. 2.1</span></a>.</p></li>
 </ul>
 <figure class="align-center" id="fig-decision-hypplanes-obct">
-<a class="reference internal image-reference" href="_images/decision_hypplanes_obct.png"><img alt="_images/decision_hypplanes_obct.png" src="_images/decision_hypplanes_obct.png" style="width: 400.8px; height: 413.4px;" />
+<a class="reference internal image-reference" href="_images/decision_hypplanes_obct.png"><img alt="_images/decision_hypplanes_obct.png" src="_images/decision_hypplanes_obct.png" style="width: 467.59999999999997px; height: 482.29999999999995px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Feature space partitioning. Classification tree (OBCT). Source: <span class="bibtex-citation" id="id1">[<a class="reference internal" href="biblio.html#id17" title="S. Theodoridis. Machine Learning: A Bayesian and Optimization Perspective. Elsevier Science, 2020. ISBN 9780128188040. URL: https://books.google.com.co/books?id=l-nEDwAAQBAJ.">Theodoridis, 2020</a>]</span>.</span><a class="headerlink" href="#fig-decision-hypplanes-obct" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
-<li><p>The partitioning of the space into <em><strong>(hyper)rectangles</strong></em> is performed through a sequence of <em><strong>“questions”</strong></em> of the form: <em><strong>is the feature value</strong></em> <span class="math notranslate nohighlight">\(x_{i} &lt; a\)</span>? This is also referred to as the <em><strong>splitting criterion</strong></em>. The sequence of questions can be conveniently represented using a tree structure. <a class="reference internal" href="#fig-decision-tree-obct"><span class="std std-numref">Fig. 2.2</span></a> shows the corresponding tree for the case illustrated in <a class="reference internal" href="#fig-decision-hypplanes-obct"><span class="std std-numref">Fig. 2.1</span></a>.</p></li>
+<li><p>The feature space is partitioned into <strong>(hyper)rectangles</strong> through sequential <strong>splitting criteria</strong> of the form <strong><span class="math notranslate nohighlight">\(x_i &lt; a\)</span></strong>, represented as a <strong>decision tree</strong>.</p></li>
 </ul>
 <figure class="align-center" id="fig-decision-tree-obct">
-<a class="reference internal image-reference" href="_images/decision_tree_obct.png"><img alt="_images/decision_tree_obct.png" src="_images/decision_tree_obct.png" style="width: 405.59999999999997px; height: 362.4px;" />
+<a class="reference internal image-reference" href="_images/decision_tree_obct.png"><img alt="_images/decision_tree_obct.png" src="_images/decision_tree_obct.png" style="width: 473.2px; height: 422.79999999999995px;" />
 </a>
 <figcaption>
 <p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Classification tree (OBCT). Space partition corresponding to <a class="reference internal" href="#fig-decision-hypplanes-obct"><span class="std std-numref">Fig. 2.1</span></a>. Source: <span class="bibtex-citation" id="id2">[<a class="reference internal" href="biblio.html#id17" title="S. Theodoridis. Machine Learning: A Bayesian and Optimization Perspective. Elsevier Science, 2020. ISBN 9780128188040. URL: https://books.google.com.co/books?id=l-nEDwAAQBAJ.">Theodoridis, 2020</a>]</span>.</span><a class="headerlink" href="#fig-decision-tree-obct" title="Link to this image">#</a></p>
@@ -428,43 +434,42 @@
 </figure>
 <div class="admonition-observation admonition">
 <p class="admonition-title">Observation</p>
-<p>Each node in the tree tests a single feature and, if it is not a <em><strong>leaf node (no further splitting)</strong></em>, it connects to two <em><strong>child nodes (decision nodes)</strong></em>: one associated with the <em><strong>“Yes” response</strong></em> and the other with the <em><strong>“No” response</strong></em>.</p>
+<p>Each node in the tree tests a single feature and, if it is not a <strong>leaf node (no further splitting)</strong>, it connects to two <strong>child nodes (decision nodes)</strong>: one associated with the <strong>“Yes” response</strong> and the other with the <strong>“No” response</strong>.</p>
 </div>
 <ul class="simple">
-<li><p>Starting from the root node, a sequence of successive decisions is followed until reaching a leaf node. <em><strong>Each leaf node is associated with a single class</strong></em>. <em><strong>Assignment of a data point to a class is performed according to the label of the corresponding leaf node</strong></em>. This classification approach is conceptually simple and highly interpretable. For instance, in a <em><strong>medical diagnostic system</strong></em>, one may start with the question: <em><strong>Is the temperature high?</strong></em> If the answer is affirmative, a second question may follow: <em><strong>Is there a runny nose?</strong></em> The process continues until a <em><strong>final decision regarding the disease</strong></em> is reached.</p></li>
-<li><p>In addition, decision trees are useful for <em><strong>building reasoning systems in artificial intelligence</strong></em>. For example, the existence of specific objects, inferred through a sequence of questions based on the values of certain (high-level) features, can lead to the <em><strong>recognition of a scene or an object represented in an image</strong></em>.</p></li>
-<li><p>Once the tree is built, classification is straightforward. The main challenge lies in <em><strong>constructing the tree by exploiting the information contained in the training dataset</strong></em>. The key questions involved in tree design, among others discussed later, are:</p>
+<li><p>Starting from the <strong>root node</strong>, successive decisions are made until reaching a <strong>leaf node</strong>. <strong>Each leaf node represents one class</strong>, and <strong>classification is determined by the label of the reached leaf</strong>. Decision trees are therefore <strong>simple and highly interpretable</strong> (e.g., <strong>medical diagnosis</strong> through sequential questions until the <strong>final diagnosis</strong>).</p></li>
+<li><p>Decision trees are also used to <strong>build AI reasoning systems</strong>, where sequential questions about <strong>high-level features</strong> enable <strong>scene or object recognition</strong>.</p></li>
+<li><p><strong>Classification after training is straightforward</strong>. The main challenge is <strong>constructing the tree from the training dataset</strong> by deciding:</p>
 <ul>
-<li><p><em><strong>Which splitting criterion should be used?</strong></em></p></li>
-<li><p><em><strong>When should tree growth be stopped and a node declared terminal?</strong></em></p></li>
-<li><p><em><strong>How should a leaf node be assigned to a specific class?</strong></em></p></li>
+<li><p><strong>Which splitting criterion to use.</strong></p></li>
+<li><p><strong>When to stop tree growth (terminal node).</strong></p></li>
+<li><p><strong>How to assign a class to each leaf node.</strong></p></li>
 </ul>
 </li>
 </ul>
-<p><strong><code class="docutils literal notranslate"><span class="pre">Splitting</span> <span class="pre">criterion</span></code></strong>: As previously stated, the questions at each node are of the form</p>
-<div class="math notranslate nohighlight">
-\[
-\text{Is } x_{i} &lt; a?
-\]</div>
+</section>
+<section id="splitting-criterion">
+<h2><span class="section-number">2.3. </span>Splitting criterion<a class="headerlink" href="#splitting-criterion" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>The goal is to <em><strong>select an appropriate threshold</strong></em> <span class="math notranslate nohighlight">\(a\)</span>. Suppose that, starting from the root node, the tree has grown up to the <em><strong>current node</strong></em> <span class="math notranslate nohighlight">\(t\)</span>. Each node <span class="math notranslate nohighlight">\(t\)</span> is associated with a subset <span class="math notranslate nohighlight">\(X_{t} \subseteq X\)</span> of the <em><strong>training dataset</strong></em> <span class="math notranslate nohighlight">\(X\)</span>. This is the <em><strong>set of training points that have reached this node after passing the tests performed at previous nodes in the tree</strong></em>.</p></li>
-<li><p>For example, in <a class="reference internal" href="#fig-decision-tree-obct"><span class="std std-numref">Fig. 2.2</span></a>, <em><strong>some points belonging, for instance, to class</strong></em> <span class="math notranslate nohighlight">\(\omega_{1}\)</span> <em><strong>do not reach node</strong></em> <span class="math notranslate nohighlight">\(t_{1}\)</span> because <em><strong>they have already been assigned to a previously labeled leaf node</strong></em>. The purpose of a splitting criterion is to <em><strong>partition</strong></em> <span class="math notranslate nohighlight">\(X_{t}\)</span> <em><strong>into two disjoint subsets, namely</strong></em> <span class="math notranslate nohighlight">\(X_{tY}\)</span> <em><strong>and</strong></em> <span class="math notranslate nohighlight">\(X_{tN}\)</span>, <em><strong>depending on the answer to the node-specific question at</strong></em> <span class="math notranslate nohighlight">\(t\)</span>. For each split, the following holds:</p></li>
+<li><p>Each node applies a <strong>splitting criterion</strong> of the form <strong><span class="math notranslate nohighlight">\(x_i &lt; a\)</span></strong>, where the objective is to <strong>select the optimal threshold</strong> <span class="math notranslate nohighlight">\(a\)</span>.</p></li>
+<li><p>Each node <span class="math notranslate nohighlight">\(t\)</span> contains a subset <strong><span class="math notranslate nohighlight">\(X_t\)</span> of the training dataset</strong>, consisting of <strong>all training samples that reached that node after the previous splits</strong>.</p></li>
+<li><p>The split <strong>partitions</strong> <span class="math notranslate nohighlight">\(X_t\)</span> into two <strong>disjoint subsets</strong>, <strong><span class="math notranslate nohighlight">\(X_{tY}\)</span></strong> and <strong><span class="math notranslate nohighlight">\(X_{tN}\)</span></strong>, according to the answer to the node test, such that:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
-X_{tY} \cap X_{tN} &amp;= \emptyset \\
-X_{tY} \cup X_{tN} &amp;= X_{t}
+X_{tY} \cap X_{tN} &amp;= \emptyset,\\
+X_{tY} \cup X_{tN} &amp;= X_t.
 \end{align}
 \end{split}\]</div>
 <ul class="simple">
-<li><p>The goal at each node is to determine which feature should be tested and the best threshold value <span class="math notranslate nohighlight">\(a\)</span>. The underlying philosophy is to make this choice such that each split produces subsets <span class="math notranslate nohighlight">\(X_{tY}\)</span> and <span class="math notranslate nohighlight">\(X_{tN}\)</span> that are more homogeneous in terms of class distribution than <span class="math notranslate nohighlight">\(X_{t}\)</span>. In other words, the data in each child subset should show a stronger preference for specific classes compared to the parent set.</p></li>
-<li><p>In the adopted terminology, the sets <span class="math notranslate nohighlight">\(X_{tY}\)</span> and <span class="math notranslate nohighlight">\(X_{tN}\)</span> <em><strong>should be purer than</strong></em> <span class="math notranslate nohighlight">\(X_{t}\)</span>. Therefore, an impurity measure must first be defined, and then the threshold value and the feature to be tested are selected so as to <em><strong>maximize the reduction in node impurity</strong></em>.</p></li>
-<li><p>For instance, a <em><strong>common measure of node impurity</strong></em> at node <span class="math notranslate nohighlight">\(t\)</span> is entropy, defined as</p></li>
+<li><p>At each node, the objective is to <strong>select the feature and threshold</strong> <span class="math notranslate nohighlight">\(a\)</span> that produce child subsets <strong>more homogeneous (purer)</strong> than the parent set.</p></li>
+<li><p>Therefore, an <strong>impurity measure</strong> is defined, and the optimal split is the one that <strong>maximizes the reduction in node impurity</strong>.</p></li>
+<li><p>A common impurity measure is <strong>entropy</strong>:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
-I(t) = -\sum_{m=1}^{M} P(\omega_{m} \mid t)\log_{2} P(\omega_{m} \mid t)
+I(t) = -\sum_{m=1}^{M} P(\omega_{m}\mid t)\log_{2}P(\omega_{m}\mid t)
 \]</div>
 <figure class="align-center" id="entropy-function-fig">
 <a class="reference internal image-reference" href="_images/entropy_function.png"><img alt="_images/entropy_function.png" src="_images/entropy_function.png" style="width: 600.0px; height: 589.2px;" />
@@ -473,81 +478,50 @@ I(t) = -\sum_{m=1}^{M} P(\omega_{m} \mid t)\log_{2} P(\omega_{m} \mid t)
 <p><span class="caption-number">Fig. 2.3 </span><span class="caption-text">Entropy function <span class="math notranslate nohighlight">\(I(t)\)</span> for binary classification</span><a class="headerlink" href="#entropy-function-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<ul class="simple">
-<li><p>The <em><strong>maximum value of</strong></em> <span class="math notranslate nohighlight">\(I(t)\)</span> <em><strong>occurs when all class probabilities are equal (maximum impurity)</strong></em>, whereas <em><strong>the minimum value, equal to zero, occurs when one probability is one and all others are zero</strong></em>. The probabilities are approximated as</p></li>
-</ul>
+<ul>
+<li><p><strong>Entropy is maximum</strong> when <strong>all class probabilities are equal</strong> and <strong>minimum (0)</strong> when <strong>all samples belong to a single class</strong>, with</p>
 <div class="math notranslate nohighlight" id="equation-random-forest-probs">
 <span class="eqno">(2.1)<a class="headerlink" href="#equation-random-forest-probs" title="Link to this equation">#</a></span>\[
-P(\omega_{m}\mid t)=\frac{N_{t}^{m}}{N_{t}},\quad m=1,2,\dots,M,
-\]</div>
-<ul class="simple">
-<li><p>where <span class="math notranslate nohighlight">\(N_{t}^{m}\)</span> is the <em><strong>number of samples of class</strong></em> <span class="math notranslate nohighlight">\(m\)</span> <em><strong>in</strong></em> <span class="math notranslate nohighlight">\(X_{t}\)</span>, and <span class="math notranslate nohighlight">\(N_{t}\)</span> is the <em><strong>total number of samples in</strong></em> <span class="math notranslate nohighlight">\(X_{t}\)</span>. The <em><strong>reduction in node impurity</strong></em> after splitting the data into two subsets is defined as</p></li>
-</ul>
+    P(\omega_m\mid t)=\frac{N_t^m}{N_t},
+    \]</div>
+<p>where <strong><span class="math notranslate nohighlight">\(N_t^m\)</span></strong> is the <strong>number of samples of class</strong> <span class="math notranslate nohighlight">\(m\)</span>, and <strong><span class="math notranslate nohighlight">\(N_t\)</span></strong> is the <strong>total number of samples</strong> at node <span class="math notranslate nohighlight">\(t\)</span>.</p>
+</li>
+<li><p>The <strong>reduction in node impurity (information gain)</strong> is</p>
 <div class="math notranslate nohighlight">
 \[
-\Delta I(t)=I(t)-\frac{N_{t_{Y}}}{N_{t}}I(t_{Y})-\frac{N_{t_{N}}}{N_{t}}I(t_{N}),
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(I(t_{Y})\)</span> and <span class="math notranslate nohighlight">\(I(t_{N})\)</span> are the <em><strong>impurities associated with the two child nodes</strong></em>, respectively. Thus, the reduction in node impurity is the <em><strong>difference between the entropy of the parent node and the weighted sum of the entropies of its child nodes</strong></em>. This quantity <span class="math notranslate nohighlight">\(\Delta I(t)\)</span> is also known as <em><strong>information gain</strong></em>.</p>
-<div class="tip admonition">
-<p class="admonition-title">Example: Entropy Calculation</p>
-<p>Let us compute the <em><strong>entropy index</strong></em> <span class="math notranslate nohighlight">\(I(t)\)</span> for <em><strong>3 different cases</strong></em> of a set with <em><strong>4 balls</strong></em> of two different colours, <em><strong>red and blue</strong></em>:</p>
-<ul>
-<li><p><span class="math notranslate nohighlight">\(I(t)\approx 0\)</span>: <strong>Low uncertainty</strong>. 4 red balls and 0 blue balls</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \begin{align*}
-    I(t)&amp;=-P(\text{red})\cdot\log_{2}(P(\text{red}))-P(\text{blue})\cdot\log_{2}(P(\text{blue}))\\
-    &amp;=-\frac{4}{4}\cdot\log_{2}\frac{4}{4}-\frac{0}{4}\cdot\log_{2}\frac{0}{4}=0
-    \end{align*}
-    \end{split}\]</div>
-<p>Since the <em><strong>set is completely pure</strong></em> (a single class), the <em><strong>entropy is zero, indicating low uncertainty</strong></em>.</p>
+    \Delta I(t)=I(t)-\frac{N_{t_Y}}{N_t}I(t_Y)-\frac{N_{t_N}}{N_t}I(t_N),
+    \]</div>
+<p>where <strong><span class="math notranslate nohighlight">\(I(t_Y)\)</span></strong> and <strong><span class="math notranslate nohighlight">\(I(t_N)\)</span></strong> are the <strong>impurities of the child nodes</strong>.</p>
 </li>
-<li><p><span class="math notranslate nohighlight">\(I(t)\approx 1\)</span>: <strong>High uncertainty</strong>. 2 red balls and 2 blue balls</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \begin{align*}
-    I(t)&amp;=-P(\text{red})\cdot\log_{2}(P(\text{red}))-P(\text{blue})\cdot\log_{2}(P(\text{blue}))\\
-    &amp;=-\frac{2}{4}\cdot\log_{2}\frac{2}{4}-\frac{2}{4}\cdot\log_{2}\frac{2}{4}=1
-    \end{align*}
-    \end{split}\]</div>
-<p>This indicates <em><strong>maximum uncertainty</strong></em>, since the classes are balanced, and the model has difficulty deciding on a dominant category.</p>
-</li>
-<li><p>3 red balls and 1 blue ball:</p></li>
+<li><p><strong>Information gain</strong> is the <strong>difference between the parent entropy and the weighted entropies of the child nodes</strong>. The <strong>optimal split maximizes information gain</strong>.</p></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-I(t)&amp;=-P(\text{red})\cdot\log_{2}(P(\text{red}))-P(\text{blue})\cdot\log_{2}(P(\text{blue}))\\
-    &amp;=-\frac{3}{4}\cdot\log_{2}\frac{3}{4}-\frac{1}{4}\cdot\log_{2}\frac{1}{4}=0.811
-\end{align*}
-\end{split}\]</div>
-</div>
 <figure class="align-center" id="trees-entropy-fig">
-<a class="reference internal image-reference" href="_images/entropy_decision_tree.png"><img alt="_images/entropy_decision_tree.png" src="_images/entropy_decision_tree.png" style="width: 624.8000000000001px; height: 754.8000000000001px;" />
+<a class="reference internal image-reference" href="_images/trees_entropy_fig.png"><img alt="_images/trees_entropy_fig.png" src="_images/trees_entropy_fig.png" style="width: 819.2px; height: 1228.8000000000002px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Node purity in a decision tree. Source: Towards Data Science.</span><a class="headerlink" href="#trees-entropy-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.4 </span><span class="caption-text">Example of node purity in a decision tree.</span><a class="headerlink" href="#trees-entropy-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
-<li><p>The objective is now to <em><strong>select the specific feature</strong></em> <span class="math notranslate nohighlight">\(x_{i}\)</span> <em><strong>and the threshold</strong></em> <span class="math notranslate nohighlight">\(a_{t}\)</span> such that <span class="math notranslate nohighlight">\(\Delta I(t)\)</span> is maximized. This will then define <em><strong>two new descendant nodes</strong></em> of <span class="math notranslate nohighlight">\(t\)</span>, namely <span class="math notranslate nohighlight">\(t_{N}\)</span> and <span class="math notranslate nohighlight">\(t_{Y}\)</span>; thus, the tree grows by adding two new nodes. One possible approach to <em><strong>search for different threshold values</strong></em> is the following:</p>
+<li><p>The objective is to <strong>select the feature</strong> <span class="math notranslate nohighlight">\(x_i\)</span> <strong>and threshold</strong> <span class="math notranslate nohighlight">\(a_t\)</span> that <strong>maximize information gain</strong> <span class="math notranslate nohighlight">\(\Delta I(t)\)</span>, creating <strong>two child nodes</strong>, <span class="math notranslate nohighlight">\(t_Y\)</span> and <span class="math notranslate nohighlight">\(t_N\)</span>.</p></li>
+<li><p><strong>Threshold selection procedure</strong>:</p>
 <ol class="arabic simple">
-<li><p><em><strong>For each of the features</strong></em> <span class="math notranslate nohighlight">\(x_{i},~i=1,2\dots,l\)</span><em><strong>, rank the values</strong></em> <span class="math notranslate nohighlight">\(x_{in},~n=1,2,\dots,N_{t}\)</span>*** taken by this feature among the points in*** <span class="math notranslate nohighlight">\(X_{t}\)</span>.</p></li>
-<li><p>Next, <em><strong>define a sequence of corresponding threshold values</strong></em>, <span class="math notranslate nohighlight">\(a_{in}\)</span>, <em><strong>located midway between consecutive distinct values of</strong></em> <span class="math notranslate nohighlight">\(x_{in}\)</span>.</p></li>
-<li><p>Then, <em><strong>evaluate the change in impurity produced by each of these threshold values</strong></em> and retain the one that achieves the <em><strong>maximum decrease</strong></em>.</p></li>
-<li><p><em><strong>Repeat the process for all features</strong></em> and finally, <em><strong>retain the combination that results in the greatest maximum decrease</strong></em>.</p></li>
+<li><p><strong>Sort the values of each feature</strong> in <span class="math notranslate nohighlight">\(X_t\)</span>.</p></li>
+<li><p><strong>Define candidate thresholds</strong> midway between consecutive distinct values.</p></li>
+<li><p><strong>Evaluate the information gain</strong> for each threshold and <strong>keep the best</strong>.</p></li>
+<li><p><strong>Repeat for all features</strong> and <strong>select the feature-threshold pair with the highest information gain</strong>.</p></li>
 </ol>
 </li>
 </ul>
 <ul class="simple">
-<li><p>In addition to <em><strong>entropy</strong></em>, other <em><strong>impurity measurement indices</strong></em> can be used. A popular alternative, which results in a <em><strong>slightly higher maximum value than entropy</strong></em>, is the so-called <em><strong>Gini index</strong></em>, defined as</p></li>
+<li><p>Besides <strong>entropy</strong>, another common <strong>impurity measure</strong> is the <strong>Gini index</strong>:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
-I(t)=\sum_{m=1}^{M}P(\omega_{m}|t)(1-P(\omega_{m}|t)).
+I(t)=\sum_{m=1}^{M}P(\omega_m|t)\left(1-P(\omega_m|t)\right).
 \]</div>
 <ul class="simple">
-<li><p>This index is also <em><strong>equal to zero if one of the probability values is equal to 1 and all others are zero</strong></em>, and it reaches its <em><strong>maximum value when all classes are equally probable</strong></em>.</p></li>
+<li><p>Like entropy, the <strong>Gini index is 0 for a pure node</strong> and <strong>maximum when all classes are equally probable</strong>.</p></li>
 </ul>
 <div class="tip admonition">
 <p class="admonition-title">Stop-Splitting Rule</p>
@@ -616,7 +590,7 @@ I(t)=\sum_{m=1}^{M}P(\omega_{m}|t)(1-P(\omega_{m}|t)).
 </div>
 </section>
 <section id="combination-of-classifiers">
-<h2><span class="section-number">2.2. </span>Combination of Classifiers<a class="headerlink" href="#combination-of-classifiers" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.4. </span>Combination of Classifiers<a class="headerlink" href="#combination-of-classifiers" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>So far, we have reviewed a number of classifiers in detail, and further methods will be presented in the following sections, concerning <em><strong>support vector machines</strong></em> and <em><strong>neural networks</strong></em>. The obvious question faced by an inexperienced practitioner/researcher is: <em><strong>which method should I use then? Unfortunately, there is no definitive answer.</strong></em></p></li>
 </ul>
@@ -718,7 +692,7 @@ l_{c}=
 </ul>
 </section>
 <section id="boosting-approach">
-<h2><span class="section-number">2.3. </span>Boosting Approach<a class="headerlink" href="#boosting-approach" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.5. </span>Boosting Approach<a class="headerlink" href="#boosting-approach" title="Link to this heading">#</a></h2>
 <div class="proof observation admonition" id="observation_dt1">
 <p class="admonition-title"><span class="caption-number">Observation 2.2 </span></p>
 <section class="observation-content" id="proof-content">
@@ -914,7 +888,7 @@ a_{i}=\text{argmin}_{a}\{\exp(-a)(1-P_{i})+\exp(a)P_{i}\}.
 </div>
 </section>
 <section id="arboles-boosting">
-<h2><span class="section-number">2.4. </span>Arboles Boosting<a class="headerlink" href="#arboles-boosting" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.6. </span>Arboles Boosting<a class="headerlink" href="#arboles-boosting" title="Link to this heading">#</a></h2>
 <div class="proof observation admonition" id="observation_dt2">
 <p class="admonition-title"><span class="caption-number">Observation 2.3 </span></p>
 <section class="observation-content" id="proof-content">
@@ -1047,10 +1021,10 @@ F_{i}(\cdot)=F_{i-1}(\cdot)+\nu T(\cdot; \boldsymbol{\theta}_{i}).
 </ul>
 </section>
 <section id="implementation">
-<h2><span class="section-number">2.5. </span>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.7. </span>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h2>
 </section>
 <section id="complexity-control">
-<h2><span class="section-number">2.6. </span>Complexity Control<a class="headerlink" href="#complexity-control" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.8. </span>Complexity Control<a class="headerlink" href="#complexity-control" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>By <em><strong>building a tree until all leaves are pure, complex models are obtained that are fitted to the training set, resulting in 100% accuracy</strong></em>. To avoid overfitting, two strategies can be employed: <em><strong>pre-pruning, which stops the tree construction early, or post-pruning, which removes uninformative nodes</strong></em>. Pre-pruning may include limiting the tree depth, the maximum number of leaves, or requiring a minimum number of points in a node to continue splitting.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, decision trees are implemented in the <code class="docutils literal notranslate"><span class="pre">DecisionTreeRegressor</span></code> and <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> classes, and <em><strong>only pre-pruning is offered</strong></em>. To illustrate the effect of this technique, the <code class="docutils literal notranslate"><span class="pre">breast_cancer</span></code> dataset is used, which is split into training and test parts. A model is built with the default configuration, extending the tree until all leaves are pure, setting a <code class="docutils literal notranslate"><span class="pre">random_state</span></code> for data splitting and using <code class="docutils literal notranslate"><span class="pre">stratify=cancer.target</span></code> for a stratified split.</p></li>
@@ -1112,7 +1086,7 @@ Accuracy on test set: 0.951
 </div>
 </section>
 <section id="analysis-of-decision-trees">
-<h2><span class="section-number">2.7. </span>Analysis of Decision Trees<a class="headerlink" href="#analysis-of-decision-trees" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.9. </span>Analysis of Decision Trees<a class="headerlink" href="#analysis-of-decision-trees" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>We can visualise a decision tree using the <code class="docutils literal notranslate"><span class="pre">export_graphviz</span></code> function from the <code class="docutils literal notranslate"><span class="pre">tree</span></code> module, which generates a file in <code class="docutils literal notranslate"><span class="pre">.dot</span></code> format for plotting. We configure the option to <em><strong>colour the nodes according to the majority class and provide class and feature names to correctly label the tree</strong></em>. The <code class="docutils literal notranslate"><span class="pre">impurity</span></code> argument is related to the probability of misclassifying a new data point, <em><strong>typically computed using the Gini impurity metric</strong></em>, as discussed in the previous section.</p></li>
 </ul>
@@ -1176,7 +1150,7 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </ul>
 </section>
 <section id="feature-importance-in-trees">
-<h2><span class="section-number">2.8. </span>Feature Importance in Trees<a class="headerlink" href="#feature-importance-in-trees" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.10. </span>Feature Importance in Trees<a class="headerlink" href="#feature-importance-in-trees" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Instead of looking at the entire tree, which can be exhaustive, there are some <em><strong>useful properties that we can derive to summarise the functioning of the tree</strong></em>. The most commonly used summary is <em><strong>feature importance, which rates how important each feature is to the decision made by the tree</strong></em>. It is a number between 0 and 1 for each feature, where <em><strong>0 means “not used at all”</strong></em> and <em><strong>1 means “perfectly predicts the target”</strong></em>. The importances always sum to 1.</p></li>
 </ul>
@@ -1333,7 +1307,7 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="ensemble-of-decision-trees">
-<h2><span class="section-number">2.9. </span>Ensemble of Decision Trees<a class="headerlink" href="#ensemble-of-decision-trees" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.11. </span>Ensemble of Decision Trees<a class="headerlink" href="#ensemble-of-decision-trees" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><em><strong>Ensembles are methods that combine multiple machine learning models to create more powerful models</strong></em>. There are many models in the machine learning literature that belong to this category, but two ensemble models have proven effective on a wide range of classification and regression datasets, both using decision trees as building blocks: <code class="docutils literal notranslate"><span class="pre">random</span> <span class="pre">forests</span></code> and <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">boosted</span> <span class="pre">decision</span> <span class="pre">trees</span></code>.</p></li>
 </ul>
@@ -44092,14 +44066,16 @@ docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w"> </spa
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">2. Decision Tree-Based Models</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">2.1. Analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combination-of-classifiers">2.2. Combination of Classifiers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boosting-approach">2.3. Boosting Approach</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arboles-boosting">2.4. Arboles Boosting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">2.5. Implementation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complexity-control">2.6. Complexity Control</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-decision-trees">2.7. Analysis of Decision Trees</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance-in-trees">2.8. Feature Importance in Trees</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-of-decision-trees">2.9. Ensemble of Decision Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulation">2.2. Formulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-criterion">2.3. Splitting criterion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combination-of-classifiers">2.4. Combination of Classifiers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boosting-approach">2.5. Boosting Approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arboles-boosting">2.6. Arboles Boosting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">2.7. Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complexity-control">2.8. Complexity Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-decision-trees">2.9. Analysis of Decision Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance-in-trees">2.10. Feature Importance in Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-of-decision-trees">2.11. Ensemble of Decision Trees</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#boston-housing">2. Boston Housing</a><ul class="visible nav section-nav flex-column">
