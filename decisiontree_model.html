@@ -331,14 +331,16 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">2.1. Analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulation">2.2. Formulation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-criterion">2.3. Splitting criterion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combination-of-classifiers">2.4. Combination of Classifiers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boosting-approach">2.5. Boosting Approach</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arboles-boosting">2.6. Arboles Boosting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">2.7. Implementation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complexity-control">2.8. Complexity Control</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-decision-trees">2.9. Analysis of Decision Trees</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance-in-trees">2.10. Feature Importance in Trees</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-of-decision-trees">2.11. Ensemble of Decision Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest">2.4. Random Forest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combination-of-classifiers">2.5. Combination of Classifiers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classifier-combination-schemes">2.6. Classifier Combination Schemes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boosting-approach">2.7. Boosting Approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arboles-boosting">2.8. Arboles Boosting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">2.9. Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complexity-control">2.10. Complexity Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-decision-trees">2.11. Analysis of Decision Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance-in-trees">2.12. Feature Importance in Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-of-decision-trees">2.13. Ensemble of Decision Trees</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#boston-housing">2. Boston Housing</a><ul class="visible nav section-nav flex-column">
@@ -523,217 +525,295 @@ I(t)=\sum_{m=1}^{M}P(\omega_m|t)\left(1-P(\omega_m|t)\right).
 <ul class="simple">
 <li><p>Like entropy, the <strong>Gini index is 0 for a pure node</strong> and <strong>maximum when all classes are equally probable</strong>.</p></li>
 </ul>
-<div class="tip admonition">
+<div class="informaation admonition">
 <p class="admonition-title">Stop-Splitting Rule</p>
 <ul class="simple">
-<li><p>The obvious question when growing a tree is <em><strong>when to stop expanding it</strong></em>. One possible approach is to <em><strong>adopt a threshold value,</strong></em> <span class="math notranslate nohighlight">\(T\)</span><em><strong>, and stop splitting a node once the maximum value of</strong></em> <span class="math notranslate nohighlight">\(\Delta I(t)\)</span><em><strong>, among all possible splits, becomes smaller than</strong></em> <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
-<li><p>Another possibility is to stop when the cardinality of <span class="math notranslate nohighlight">\(X_{t}\)</span> is smaller than a given number or if the <em><strong>node is pure, in the sense that all points composing it belong to a single class</strong></em>.</p></li>
+<li><p><strong>Tree growth stops</strong> when the <strong>maximum information gain</strong> <span class="math notranslate nohighlight">\(\Delta I(t)\)</span> <strong>falls below a threshold</strong> <span class="math notranslate nohighlight">\(T\)</span>.</p></li>
+<li><p>Other stopping criteria include:</p>
+<ul>
+<li><p><strong>The number of samples</strong> in <span class="math notranslate nohighlight">\(X_t\)</span> <strong>is below a predefined minimum</strong>.</p></li>
+<li><p><strong>The node is pure</strong>, i.e., <strong>all samples belong to the same class</strong>.</p></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Tree Pruning</p>
 <ul class="simple">
-<li><p>Experience has shown that <em><strong>growing a tree and using a stopping rule does not always work well in practice</strong></em>; growth may stop too early or may result in trees of very large size.</p></li>
-<li><p>A common practice is to <em><strong>first grow a tree to a large size and then adopt a pruning technique to remove nodes</strong></em>. Different pruning criteria can be used; a very popular approach is to <em><strong>combine an estimate of the error probability with a complexity measurement index</strong></em> <span class="bibtex-citation" id="id3">[<a class="reference internal" href="biblio.html#id2" title="L Breiman, J Friedman, R Olshen, and C Stone. Cart. Classification and Regression Trees, 1984.">Breiman <em>et al.</em>, 1984</a>, <a class="reference internal" href="biblio.html#id3" title="Brian D Ripley. Pattern recognition and neural networks. Cambridge university press, 2007.">Ripley, 2007</a>]</span>.</p></li>
+<li><p><strong>Stopping rules alone are often insufficient</strong>, as they may <strong>stop growth too early</strong> or produce <strong>overly large trees</strong>.</p></li>
+<li><p>A common strategy is to <strong>grow a large tree first</strong> and then <strong>prune unnecessary nodes</strong> using criteria that <strong>balance classification error and model complexity</strong>.</p></li>
 </ul>
 </div>
 <div class="proof observation admonition" id="observation_dt3">
 <p class="admonition-title"><span class="caption-number">Observation 2.1 </span></p>
 <section class="observation-content" id="proof-content">
-<ol class="arabic simple">
-<li><p>Among the notable advantages of decision trees is the fact that they <em><strong>can naturally handle mixtures of numerical and categorical variables</strong></em>. Furthermore, <em><strong>they adapt well to large datasets</strong></em>. <em><strong>They can effectively handle missing data</strong></em>. In many domains, not all feature values are known for every pattern. Values may not have been recorded, or they may be too costly to obtain.</p></li>
-<li><p>Due to their structural simplicity, they are <em><strong>easily interpretable</strong></em>; in other words, <em><strong>it is possible for a human to understand the reasoning behind the output of the learning algorithm</strong></em>. In some areas, such as financial decision-making, this is a legal requirement. On the other hand, <em><strong>the predictive performance of tree classifiers is not as good as that of other methods</strong></em>, such as <em><strong>support vector machines</strong></em> and <em><strong>neural networks</strong></em>, which will be discussed in later chapters.</p></li>
-<li><p>One of the <em><strong>main disadvantages associated with tree classifiers is that they are unstable</strong></em>. That is, a <em><strong>small change in the training dataset may lead to a very different tree</strong></em>. The reason for this lies in the <em><strong>hierarchical nature of tree classifiers</strong></em>. An error occurring at a node at a high level of the tree propagates down to the lower leaves.</p></li>
-</ol>
+<ul class="simple">
+<li><p><strong>Advantages</strong>:</p>
+<ul>
+<li><p><strong>Handle both numerical and categorical features</strong>.</p></li>
+<li><p><strong>Scale well to large datasets</strong>.</p></li>
+<li><p><strong>Naturally handle missing data</strong>.</p></li>
+<li><p><strong>Highly interpretable</strong>, allowing humans to <strong>understand the decision process</strong>.</p></li>
+</ul>
+</li>
+<li><p><strong>Disadvantages</strong>:</p>
+<ul>
+<li><p><strong>Lower predictive performance</strong> than methods such as <strong>support vector machines</strong> and <strong>neural networks</strong>.</p></li>
+<li><p><strong>Unstable</strong>: <strong>small changes in the training data can produce very different trees</strong> due to their <strong>hierarchical structure</strong>, where errors at higher nodes propagate to lower levels.</p></li>
+</ul>
+</li>
+</ul>
 </section>
 </div><div class="tip admonition">
 <p class="admonition-title">Bagging (Bootstrap Aggregating)</p>
-<p><em><strong>Bagging (Bootstrap Aggregating)</strong></em> is a technique that can <em><strong>reduce variance and improve generalization error performance</strong></em>.</p>
+<p><strong>Bagging</strong> <strong>reduces variance</strong> and <strong>improves generalization</strong> by:</p>
 <ul class="simple">
-<li><p>The basic idea is to <em><strong>create a number of variants</strong></em> <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(~X_{1}, X_{2},\dots, X_{B}\)</span><em><strong>, of the training set,</strong></em> <span class="math notranslate nohighlight">\(X\)</span><em><strong>, using bootstrap techniques</strong></em> through uniform sampling from <span class="math notranslate nohighlight">\(X\)</span> with replacement.</p></li>
-<li><p><em><strong>For each of the training set variants,</strong></em> <span class="math notranslate nohighlight">\(X_{i}\)</span><em><strong>, a tree,</strong></em> <span class="math notranslate nohighlight">\(T_{i}\)</span><em><strong>, is constructed.</strong></em></p></li>
-<li><p>The final classification decision for a given point is made in favor of the <em><strong>class predicted by the majority of the sub-classifier trees</strong></em>, <span class="math notranslate nohighlight">\(T_{i}, i = 1, 2,\dots, B\)</span> <span class="bibtex-citation" id="id4">[<a class="reference internal" href="biblio.html#id4" title="Leo Breiman. Bagging predictors. Machine learning, 24(2):123–140, 1996.">Breiman, 1996</a>]</span>.</p></li>
+<li><p><strong>Generating</strong> <span class="math notranslate nohighlight">\(B\)</span> <strong>bootstrap training sets</strong> from the original dataset (sampling <strong>with replacement</strong>).</p></li>
+<li><p><strong>Training one decision tree</strong> on <strong>each bootstrap dataset</strong>.</p></li>
+<li><p><strong>Predicting by majority voting</strong> among all trees.</p></li>
 </ul>
 </div>
+<figure class="align-center" id="bagging-fig">
+<img alt="_images/bagging_fig.png" src="_images/bagging_fig.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 2.5 </span><span class="caption-text">Bagging Methodology.</span><a class="headerlink" href="#bagging-fig" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="random-forest">
+<h2><span class="section-number">2.4. </span>Random Forest<a class="headerlink" href="#random-forest" title="Link to this heading">#</a></h2>
 <div class="tip admonition">
-<p class="admonition-title">Random Forests id=”3m84rk”</p>
-<p><em><strong>Random Forests use the idea of bagging together with random feature selection</strong></em> <span class="bibtex-citation" id="id5">[<a class="reference internal" href="biblio.html#id5" title="Leo Breiman. Random forests. Machine learning, 45(1):5–32, 2001.">Breiman, 2001</a>]</span>. The difference from bagging lies in the way decision trees are constructed.</p>
+<p class="admonition-title">Random Forests</p>
+<p><strong>Random Forests</strong> combine <strong>bagging</strong> with <strong>random feature selection</strong>.</p>
 <ul class="simple">
-<li><p>The <em><strong>feature used for splitting at each node is selected as the best among a set of</strong></em> <span class="math notranslate nohighlight">\(F\)</span> <em><strong>randomly chosen features</strong></em>, where <span class="math notranslate nohighlight">\(F\)</span> is a user-defined parameter.</p></li>
-<li><p>This <em><strong>additional randomness introduced has a substantial effect on performance improvement</strong></em>. Random forests typically exhibit <em><strong>very good predictive accuracy</strong></em> and have been applied in a variety of applications, such as <em><strong>human body pose recognition using the popular Microsoft Kinect sensor</strong></em> <span class="bibtex-citation" id="id6">[<a class="reference internal" href="biblio.html#id6" title="Jamie Shotton, Andrew Fitzgibbon, Mat Cook, Toby Sharp, Mark Finocchio, Richard Moore, Alex Kipman, and Andrew Blake. Real-time human pose recognition in parts from single depth images. In CVPR 2011, 1297–1304. Ieee, 2011.">Shotton <em>et al.</em>, 2011</a>]</span>.</p></li>
+<li><p>At each node, the split is chosen from only <strong><span class="math notranslate nohighlight">\(F\)</span> randomly selected features</strong>.</p></li>
+<li><p>This <strong>additional randomness improves performance</strong>, giving <strong>high predictive accuracy</strong> across many applications.</p></li>
 </ul>
 </div>
 <ul class="simple">
-<li><p>In addition to the aforementioned methods, recently, <em><strong>Bayesian techniques used to stabilize the performance of trees</strong></em> have also been proposed; see <span class="bibtex-citation" id="id7">[<a class="reference internal" href="biblio.html#id7" title="Hugh A Chipman, Edward I George, and Robert E McCulloch. Bart: bayesian additive regression trees. The Annals of Applied Statistics, 4(1):266–298, 2010.">Chipman <em>et al.</em>, 2010</a>, <a class="reference internal" href="biblio.html#id8" title="Yuhong Wu, Håkon Tjelmeland, and Mike West. Bayesian cart: prior specification and posterior simulation. Journal of Computational and Graphical Statistics, 16(1):44–66, 2007.">Wu <em>et al.</em>, 2007</a>]</span>. Of course, <em><strong>the effect of using multiple trees is to lose one of the main advantages of trees: their ease of interpretation.</strong></em></p></li>
+<li><p><strong>Bayesian methods</strong> have also been proposed to <strong>improve tree stability</strong>.</p></li>
+<li><p>However, <strong>using multiple trees</strong> (e.g., ensembles) <strong>reduces one of the main advantages of decision trees: interpretability</strong>.</p></li>
 </ul>
 <div class="important admonition">
-<p class="admonition-title">Regla de asignación de clase</p>
+<p class="admonition-title">Class assignment rule</p>
 <ul class="simple">
-<li><p>Once a <em><strong>node <span class="math notranslate nohighlight">\(t\)</span> is declared a leaf node, it is assigned a class label</strong></em>; typically by majority vote. That is, <em><strong>it is assigned the label of the class to which the majority of the data in</strong></em> <span class="math notranslate nohighlight">\(X_{t}\)</span> belong.</p></li>
-<li><p>Solution to <strong>tie situations</strong>: <code class="docutils literal notranslate"><span class="pre">Random</span> <span class="pre">Forest</span></code> makes predictions by aggregating the decisions of many trees:</p>
+<li><p>A <strong>leaf node</strong> is <strong>assigned the majority class</strong> of the samples in <span class="math notranslate nohighlight">\(X_t\)</span>.</p></li>
+<li><p><strong>Random Forest prediction</strong>:</p>
 <ul>
-<li><p>Each tree <strong>assigns a class (hard vote) or a probability distribution (see Equation <a class="reference internal" href="#equation-random-forest-probs">(2.1)</a>) per class (soft vote</strong> -&gt; <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code>).</p></li>
-<li><p>The usual logic of <code class="docutils literal notranslate"><span class="pre">RandomForestClassifier.predict</span></code> uses the <strong>average probabilities</strong> (average of each tree’s <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code>) and <strong>then takes the index with <code class="docutils literal notranslate"><span class="pre">argmax</span></code></strong>.</p></li>
-<li><p>A <strong>“perfect tie” in the vote count (e.g., 50 trees vote 0 and 50 vote 1) does not necessarily imply a tie in the average probability</strong>; the average of probabilities usually breaks it.</p></li>
-<li><p>If <strong>also</strong> the <strong>average probabilities are exactly equal (extreme case), <code class="docutils literal notranslate"><span class="pre">np.argmax</span></code> returns the first index with the maximum</strong> — that is, the class with the lowest index in <code class="docutils literal notranslate"><span class="pre">clf.classes_</span></code>.</p></li>
+<li><p>Each tree outputs a <strong>class</strong> or <strong>class probabilities</strong> (Equation <a class="reference internal" href="#equation-random-forest-probs">(2.1)</a>).</p></li>
+<li><p>The forest <strong>averages the probabilities</strong> (<code class="docutils literal notranslate"><span class="pre">predict_proba</span></code>).</p></li>
+<li><p>The final prediction is the <strong>class with the highest average probability</strong> (<code class="docutils literal notranslate"><span class="pre">argmax</span></code>).</p></li>
 </ul>
 </li>
-<li><p><strong>How does scikit-learn do it internally?</strong></p></li>
+<li><p><strong>Tie handling</strong>:</p>
+<ul>
+<li><p>A <strong>vote tie</strong> is usually resolved by the <strong>average probabilities</strong>.</p></li>
+<li><p>If probabilities are <strong>also exactly equal</strong> (rare), <strong><code class="docutils literal notranslate"><span class="pre">np.argmax</span></code> selects the class with the lowest index</strong> in <code class="docutils literal notranslate"><span class="pre">clf.classes_</span></code>.</p></li>
 </ul>
-<p><em>Simplified flow</em>:</p>
-<ol class="arabic simple">
-<li><p>Each tree computes <code class="docutils literal notranslate"><span class="pre">proba_i(x)</span></code> (probability vector per class for sample <code class="docutils literal notranslate"><span class="pre">x</span></code>), typically the normalized class distribution in the leaf.</p></li>
-<li><p>Random Forest computes <code class="docutils literal notranslate"><span class="pre">avg_proba(x)</span> <span class="pre">=</span> <span class="pre">mean_i</span> <span class="pre">proba_i(x)</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">predict(x)</span></code> does <code class="docutils literal notranslate"><span class="pre">argmax(avg_proba(x))</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">np.argmax</span></code> returns the first index with the maximum value — that deterministically breaks ties (lowest-index class).</p></li>
-</ol>
+</li>
+</ul>
 </div>
 </section>
 <section id="combination-of-classifiers">
-<h2><span class="section-number">2.4. </span>Combination of Classifiers<a class="headerlink" href="#combination-of-classifiers" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.5. </span>Combination of Classifiers<a class="headerlink" href="#combination-of-classifiers" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>So far, we have reviewed a number of classifiers in detail, and further methods will be presented in the following sections, concerning <em><strong>support vector machines</strong></em> and <em><strong>neural networks</strong></em>. The obvious question faced by an inexperienced practitioner/researcher is: <em><strong>which method should I use then? Unfortunately, there is no definitive answer.</strong></em></p></li>
+<li><p><strong>There is no universally best classifier</strong>. The choice of method (e.g., <strong>decision trees</strong>, <strong>support vector machines</strong>, or <strong>neural networks</strong>) <strong>depends on the problem and the data</strong>.</p></li>
 </ul>
 <div class="admonition-no-free-lunch-theorem admonition">
 <p class="admonition-title">No free lunch theorem</p>
 <ul class="simple">
-<li><p>The goal of designing any classifier, and indeed any learning scheme in general, is to <em><strong>provide good generalization performance</strong></em>. However, there are no context-independent or use-case-independent reasons to favour one learning technique over another.</p></li>
-<li><p><em><strong>Every learning task, as represented by the available dataset, will exhibit a preference for a specific learning scheme</strong></em> that fits the particularities of the problem at hand.</p></li>
-<li><p><em><strong>An algorithm that achieves the highest score on one problem may perform poorly on another</strong></em>. This is sometimes summarised as the <strong><code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">free</span> <span class="pre">lunch</span> <span class="pre">theorem</span></code></strong>.</p></li>
+<li><p>The objective of any learning algorithm is <strong>good generalization</strong>, but <strong>no single method is best for every problem</strong>.</p></li>
+<li><p><strong>Each dataset favors different learning algorithms</strong> depending on its characteristics.</p></li>
+<li><p><strong>An algorithm that performs best on one task may perform poorly on another</strong> (<strong>No Free Lunch Theorem</strong>).</p></li>
 </ul>
 </div>
 <ul class="simple">
-<li><p>In practice, one must <em><strong>test different learning methods among those available</strong></em>, each optimised for the specific task, and <em><strong>evaluate their generalisation performance</strong></em> on an independent dataset distinct from that used for training, using, for example, the hold-out method or any of its variants.</p></li>
-<li><p>Subsequently, <em><strong>the method that achieved the best score for the specific task is retained and used</strong></em>. To this end, there are important efforts to compare different classifiers against different datasets and to <em><strong>measure “average” performance, by using various statistical indices to quantify the overall performance of each classifier</strong></em> across the datasets.</p></li>
+<li><p><strong>Evaluate multiple learning algorithms</strong> on the task using an <strong>independent test set</strong> (e.g., <strong>hold-out</strong>).</p></li>
+<li><p><strong>Select the model with the best generalization performance</strong> for the specific problem, often based on <strong>statistical comparisons across datasets</strong>.</p></li>
 </ul>
-<p><strong><code class="docutils literal notranslate"><span class="pre">Classifier</span> <span class="pre">Combination</span> <span class="pre">Schemes</span></code></strong></p>
+</section>
+<section id="classifier-combination-schemes">
+<h2><span class="section-number">2.6. </span>Classifier Combination Schemes<a class="headerlink" href="#classifier-combination-schemes" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>One trend to <em><strong>improve performance</strong></em> is to <em><strong>combine different classifiers and exploit their individual advantages</strong></em>. An observation that justifies this approach is that, during testing, <em><strong>there are patterns for which even the best classifier for a given task fails to predict their true class</strong></em>. Instead, <em><strong>the same patterns can be correctly classified by other classifiers with an overall lower performance</strong></em>.</p></li>
-<li><p>This shows that there may be some <em><strong>complementarity among different classifiers</strong></em>, and the combination can lead to <em><strong>higher performance compared with that obtained by the best (single) classifier</strong></em>. Recall that <em><strong>bagging mentioned above is a type of classifier combination</strong></em>. The question that now arises is how to select a <em><strong>combination scheme</strong></em>. There are different schemes, and the results they provide may differ. Below, we <em><strong>summarise the most popular combination schemes</strong></em>.</p></li>
+<li><p><strong>Combining multiple classifiers</strong> can <strong>improve performance</strong> by <strong>leveraging their complementary strengths</strong>.</p></li>
+<li><p><strong>Different classifiers may correctly classify samples that the best single classifier misclassifies</strong>, leading to <strong>better overall performance</strong>.</p></li>
+<li><p><strong>Bagging is one example of classifier combination</strong>, and <strong>different combination schemes</strong> may produce different results.</p></li>
 </ul>
-<div class="admonition-regla-de-la-media-aritmetica admonition">
-<p class="admonition-title">Regla de la media aritmética</p>
-<p>Suponiendo que utilizamos <span class="math notranslate nohighlight">\(L\)</span> clasificadores, en los que <em><strong>cada uno da un valor de probabilidad posterior</strong></em>, <span class="math notranslate nohighlight">\(P_{j}(\omega_{i}|\boldsymbol{x}), i = 1,2,\dots,M,~j = 1, 2, . . . L\)</span>, la decisión sobre <em><strong>la asignación de la clase se basa en la siguiente regla</strong></em>:</p>
+<div class="admonition-arithmetic-mean-rule admonition">
+<p class="admonition-title">Arithmetic mean rule</p>
+<ul class="simple">
+<li><p>Given <strong><span class="math notranslate nohighlight">\(L\)</span> classifiers</strong>, each providing <strong>posterior probabilities</strong> <span class="math notranslate nohighlight">\(P_j(\omega_i|\boldsymbol{x})\)</span>, the predicted class is the one with the <strong>highest average posterior probability</strong>:</p></li>
+</ul>
 <div class="math notranslate nohighlight">
 \[
-\text{Asignar}~\boldsymbol{x}~\text{a la clase}~\omega_{i}=\textrm{arg}\max_{k}\frac{1}{L}\sum_{j=1}^{L}P_{j}(\omega_{k}|\boldsymbol{x}),\quad k=1,2,\dots,M.
+\text{Assign}~\boldsymbol{x}~\text{to}~
+\omega_i=\arg\max_k
+\frac{1}{L}\sum_{j=1}^{L}
+P_j(\omega_k|\boldsymbol{x}).
 \]</div>
-<p>Esta regla equivale a calcular la <em><strong>probabilidad posterior “final”</strong></em>, <span class="math notranslate nohighlight">\(P(\omega_{i}|\boldsymbol{x})\)</span>, por medio de <em><strong>minimización de la distancia media de Kullback-Leibler</strong></em></p>
+<ul class="simple">
+<li><p>This rule computes the <strong>final posterior probability</strong> by <strong>minimizing the average Kullback–Leibler divergence</strong>:</p></li>
+</ul>
 <div class="math notranslate nohighlight">
 \[
-D_{av}=\frac{1}{L}\sum_{j=1}^{L}D_{j},~\text{donde}~D_{j}=\sum_{i=1}^{M}P_{j}(\omega_{i}|\boldsymbol{x})\ln\frac{P_{j}(\omega_{i}|\boldsymbol{x})}{P(\omega_{i}|\boldsymbol{x})}.
+D_{av}=\frac{1}{L}\sum_{j=1}^{L}D_j,
+\qquad
+D_j=\sum_{i=1}^{M}
+P_j(\omega_i|\boldsymbol{x})
+\ln
+\frac{P_j(\omega_i|\boldsymbol{x})}
+{P(\omega_i|\boldsymbol{x})}.
 \]</div>
 </div>
-<div class="admonition-regla-de-promedio-geometrica admonition">
-<p class="admonition-title">Regla de promedio geométrica</p>
-<p>Esta regla es el resultado de <em><strong>minimizar la formulación alternativa de distancia de Kullback-Leibler</strong></em> (nótese que esta distancia no es simétrica); en otras palabras</p>
+<div class="admonition-geometric-mean-rule admonition">
+<p class="admonition-title">Geometric mean rule</p>
+<ul class="simple">
+<li><p>The <strong>geometric mean rule</strong> is obtained by <strong>minimizing an alternative Kullback–Leibler divergence</strong>:</p></li>
+</ul>
 <div class="math notranslate nohighlight">
 \[
-D_{j}=\sum_{i=1}^{M}P(\omega_{i}|\boldsymbol{x})\ln\frac{P(\omega_{i}|\boldsymbol{x})}{P_{j}(\omega_{i}|\boldsymbol{x})},
+D_j=\sum_{i=1}^{M}
+P(\omega_i|\boldsymbol{x})
+\ln
+\frac{P(\omega_i|\boldsymbol{x})}
+{P_j(\omega_i|\boldsymbol{x})}.
 \]</div>
-<p>lo que da lugar a</p>
+<ul class="simple">
+<li><p>The predicted class is the one with the <strong>largest product of posterior probabilities</strong>:</p></li>
+</ul>
 <div class="math notranslate nohighlight">
 \[
-\text{Asignar}~\boldsymbol{x}~\text{a la clase}~\omega_{i}=\textrm{arg}\max_{k}\prod_{j=1}^{L} P_{j}(\omega_{k}|\boldsymbol{x}),\quad k=1,2,\dots,M.
+\text{Assign}~\boldsymbol{x}~\text{to}~
+\omega_i=\arg\max_k
+\prod_{j=1}^{L}
+P_j(\omega_k|\boldsymbol{x}),
+\quad k=1,2,\dots,M.
 \]</div>
 </div>
 <div class="admonition-stacking admonition">
 <p class="admonition-title">Stacking</p>
-<p>An alternative approach is to use a <em><strong>weighted average of the outputs of the individual classifiers</strong></em>, where <em><strong>the combination weights are optimally obtained using the training data</strong></em>. Suppose that the output of each <em><strong>individual classifier</strong></em>, <span class="math notranslate nohighlight">\(f_{j}(x)\)</span>, is of a smooth type (<em><strong>infinitely differentiable</strong></em>); for example, a posterior probability estimate, as before. Then, <em><strong>the combined output is given by</strong></em></p>
-<div class="math notranslate nohighlight">
-\[
-f(\boldsymbol{x})=\sum_{j=1}^{L}\omega_{j}f_{j}(\boldsymbol{x}),
-\]</div>
-<p>where <em><strong>the weights are estimated via the following optimisation task</strong></em>:</p>
-<div class="math notranslate nohighlight">
-\[
-\hat{\boldsymbol{\omega}}=\textrm{arg}\min_{\boldsymbol{\omega}}\sum_{n=1}^{N}\mathcal{L}(y_{n}, f(\boldsymbol{x}_{n}))=\textrm{arg}\min_{\boldsymbol{\omega}}\sum_{n=1}^{N}\mathcal{L}\left(y_{n}, \sum_{j=1}^{L}\omega_{j}f_{j}(\boldsymbol{x}_{n})\right)
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathcal{L}(\cdot,\cdot)\)</span> is a <em><strong>loss function</strong></em>; for example, the <em><strong>squared error</strong></em>.</p>
-</div>
 <ul class="simple">
-<li><p>However, <em><strong>adopting the above optimisation based on the training dataset may lead to overfitting</strong></em>. According to stacking <span class="bibtex-citation" id="id8">[<a class="reference internal" href="biblio.html#id23" title="David H Wolpert. Stacked generalization. Neural networks, 5(2):241–259, 1992.">Wolpert, 1992</a>]</span>, a <em><strong>cross-validation rationale</strong></em> is adopted and, instead of <span class="math notranslate nohighlight">\(f_{j}(\boldsymbol{x}_{n})\)</span>, we employ <span class="math notranslate nohighlight">\(f_{j}^{(-n)}(\boldsymbol{x}_{n})\)</span>, where the latter is the <em><strong>output of the</strong></em> <span class="math notranslate nohighlight">\(j\)</span><em><strong>-th classifier trained on the data after excluding the pair</strong></em> <span class="math notranslate nohighlight">\((y_{n}, x_{n})\)</span>. In other words, the weights are estimated by</p></li>
+<li><p><strong>Stacking</strong> combines classifiers using a <strong>weighted average</strong>, where the <strong>weights are learned from the training data</strong>:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
 \[
-\hat{\boldsymbol{\omega}}=\text{argmin}_{\boldsymbol{\omega}}\sum_{n=1}^{N}\mathcal{L}\left(y_{n}, \sum_{j=1}^{L}\omega_{j}f_{j}^{(-n)}(\boldsymbol{x}_{n})\right).
+f(\boldsymbol{x})=\sum_{j=1}^{L}\omega_jf_j(\boldsymbol{x}).
 \]</div>
 <ul class="simple">
-<li><p>Sometimes, <em><strong>the weights are required to be positive and sum to one</strong></em>, which gives rise to a <em><strong>constrained optimisation</strong></em> task.</p></li>
+<li><p>The <strong>optimal weights</strong> are obtained by <strong>minimizing a loss function</strong> (e.g., <strong>squared error</strong>):</p></li>
 </ul>
-<div class="admonition-majority-voting-rule admonition">
-<p class="admonition-title">Majority Voting Rule</p>
-<p>The above methods belong to the family of <em><strong>soft-type</strong></em> rules. A popular alternative is a <em><strong>hard-type</strong></em> rule, which is based on a <em><strong>voting scheme</strong></em>. <em><strong>A decision is made in favour of the class for which there is a consensus or at least</strong></em> <span class="math notranslate nohighlight">\(l_{c}\)</span> <em><strong>classifiers agree on the class label</strong></em>, where</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-l_{c}=
-\begin{cases}
-\displaystyle{\frac{L}{2}+1}, &amp; L~\text{is even}\\
-\displaystyle{\frac{L+1}{2}}, &amp; L~\text{is odd}
-\end{cases}
-\end{split}\]</div>
-<p><em><strong>Otherwise, the decision is rejection</strong></em> (i.e., no decision is made).</p>
-</div>
-<div class="tip admonition">
-<p class="admonition-title">Reglas del Tipo: Hard-Soft</p>
-<p>A <em><strong>soft classification rule</strong></em> generally <em><strong>explicitly estimates the conditional class probabilities and then performs class prediction based on the largest estimated probability</strong></em>. In contrast, <em><strong>hard classification</strong></em> bypasses the requirement of estimating the class probability and <em><strong>directly estimates the classification boundary</strong></em>.</p>
-</div>
-<div class="admonition-regla-de-la-mediana admonition">
-<p class="admonition-title">Regla de la mediana</p>
-<p>When <em><strong>outliers are present</strong></em>, the <em><strong>median</strong></em> value can be used instead:</p>
 <div class="math notranslate nohighlight">
 \[
-\text{Asignar}~\boldsymbol{x}~\text{a la clase}~\omega_{i}=\textrm{arg}\max_{k}\textrm{median}\{P_{j}(\omega_{k}|\boldsymbol{x})\},~k=1,2,\dots,M.
+\hat{\boldsymbol{\omega}}
+=
+\arg\min_{\boldsymbol{\omega}}
+\sum_{n=1}^{N}
+\mathcal{L}
+\left(
+y_n,
+\sum_{j=1}^{L}
+\omega_jf_j(\boldsymbol{x}_n)
+\right).
+\]</div>
+</div>
+<div class="admonition-stacking-training admonition">
+<p class="admonition-title">Stacking (training)</p>
+<ul class="simple">
+<li><p>To <strong>avoid overfitting</strong>, stacking <strong>learns the weights using cross-validation</strong>, replacing <span class="math notranslate nohighlight">\(f_j(\boldsymbol{x}_n)\)</span> with <strong>out-of-fold predictions</strong> <span class="math notranslate nohighlight">\(f_j^{(-n)}(\boldsymbol{x}_n)\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\hat{\boldsymbol{\omega}}
+=
+\arg\min_{\boldsymbol{\omega}}
+\sum_{n=1}^{N}
+\mathcal{L}
+\left(
+y_n,
+\sum_{j=1}^{L}
+\omega_j
+f_j^{(-n)}(\boldsymbol{x}_n)
+\right).
+\]</div>
+<ul class="simple">
+<li><p>The weights are often <strong>constrained to be positive and sum to one</strong>.</p></li>
+</ul>
+</div>
+<div class="admonition-median-rule admonition">
+<p class="admonition-title">Median rule</p>
+<ul class="simple">
+<li><p>When <strong>outliers</strong> are present, combine classifiers using the <strong>median posterior probability</strong> instead of the mean:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+\text{Assign}~\boldsymbol{x}~\text{to}~
+\omega_i=
+\arg\max_k
+\operatorname{median}
+\{P_j(\omega_k|\boldsymbol{x})\},
+\quad k=1,2,\dots,M.
 \]</div>
 </div>
 <ul class="simple">
-<li><p>It turns out that the <em><strong>no free lunch theorem</strong></em> also holds for combination rules; <em><strong>there is no universally optimal rule</strong></em>. It all depends on the available data; see <span class="bibtex-citation" id="id9">[<a class="reference internal" href="biblio.html#id9" title="Anil K Jain, Robert P. W. Duin, and Jianchang Mao. Statistical pattern recognition: a review. IEEE Transactions on pattern analysis and machine intelligence, 22(1):4–37, 2000.">Jain <em>et al.</em>, 2000</a>]</span>. There are other issues related to the theory of classifier combination; for example, <em><strong>how are the classifiers to be combined chosen? Should they be dependent or independent?</strong></em>.</p></li>
-<li><p>Furthermore, <em><strong>combination does not necessarily imply performance improvement; in some cases, a performance loss (higher error rate) may be experienced compared with the best (single) classifier</strong></em>. Therefore, <em><strong>combination should be carried out with care</strong></em> <span class="bibtex-citation" id="id10">[<a class="reference internal" href="biblio.html#id19" title="Konstantinos Koutroumbas and Sergios Theodoridis. Pattern recognition. Academic Press, 2008.">Koutroumbas and Theodoridis, 2008</a>, <a class="reference internal" href="biblio.html#id24" title="Ludmila I Kuncheva. Combining pattern classifiers: methods and algorithms. John Wiley &amp; Sons, 2014.">Kuncheva, 2014</a>]</span>.</p></li>
+<li><p><strong>There is no universally optimal classifier combination rule</strong> (<strong>No Free Lunch Theorem</strong>); the <strong>best rule depends on the data</strong>.</p></li>
+<li><p>The choice of <strong>which classifiers to combine</strong> and <strong>their dependence/independence</strong> also affects performance.</p></li>
+<li><p><strong>Combining classifiers does not always improve accuracy</strong>; it can <strong>perform worse than the best single classifier</strong>, so <strong>classifier combination must be applied carefully</strong>.</p></li>
 </ul>
 </section>
 <section id="boosting-approach">
-<h2><span class="section-number">2.5. </span>Boosting Approach<a class="headerlink" href="#boosting-approach" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.7. </span>Boosting Approach<a class="headerlink" href="#boosting-approach" title="Link to this heading">#</a></h2>
 <div class="proof observation admonition" id="observation_dt1">
 <p class="admonition-title"><span class="caption-number">Observation 2.2 </span></p>
 <section class="observation-content" id="proof-content">
-<p>Can a <em><strong>weak learning algorithm</strong></em>, i.e., one that performs slightly better than random guessing, be turned into a strong one with a good performance rate?</p>
+<p>Can a <strong>weak learning algorithm</strong> (slightly better than random guessing) be <strong>turned into a strong learner with high performance</strong>?</p>
 </section>
 </div><ul class="simple">
-<li><p>The <em><strong>boosting approach</strong></em> is a procedure for <em><strong>combining or “boosting” the performance of weak classifiers</strong></em> (classifiers whose parameter estimates are typically imprecise and offer poor performance) in order to <em><strong>obtain a better classifier</strong></em>. It differs from <em><strong>bagging</strong></em> in that it is a <em>deterministic procedure and generates training sets and classifiers sequentially, based on the results of the previous iteration</em>. In contrast, bagging generates the training sets randomly and can generate the classifiers in parallel.</p></li>
+<li><p>The <strong>boosting approach</strong> is a method for <strong>combining weak classifiers to obtain a stronger classifier with improved performance</strong>.</p></li>
+<li><p>Unlike <strong>bagging</strong>, boosting is a <strong>deterministic and sequential procedure</strong>, where each classifier is trained using the <strong>results of the previous iteration</strong>.</p></li>
+<li><p>In contrast, <strong>bagging uses random resampling and allows parallel training of classifiers</strong>.</p></li>
 </ul>
 <div class="tip admonition">
 <p class="admonition-title">Observation</p>
 <ul class="simple">
-<li><p><strong>Boosting</strong> <em>assigns a weight to each pattern in the training set, reflecting its importance</em>, and <em>builds a classifier using the training set and the weight set</em>. Therefore, it <strong>requires a classifier that can handle weights in the training samples</strong> (some classifiers may be unable to support weighted patterns).</p></li>
-<li><p>In this case, one can <em><strong>sample a subset of the training examples according to the weight distribution</strong></em> (training sample weighting) and <em><strong>use these examples to train the classifier in the next stage of the iteration</strong></em>. The final learner is obtained via a <em><strong>weighted average of all hierarchically designed base (weak) learners</strong></em>. Thus, boosting can also be regarded as a <em><strong>scheme for combining different learners</strong></em>.</p></li>
+<li><p><strong>Boosting assigns a weight to each training sample</strong>, indicating its <strong>importance</strong>, and trains classifiers using these <strong>weighted datasets</strong>. It therefore requires <strong>learning algorithms that can handle weighted samples</strong>.</p></li>
+<li><p>Alternatively, training data can be <strong>resampled according to the weight distribution</strong>, and used to train the next classifier in the sequence.</p></li>
+<li><p>The final model is obtained by a <strong>weighted combination of all weak learners</strong>, making boosting a <strong>sequential ensemble method for combining classifiers</strong>.</p></li>
 </ul>
 </div>
 <ul class="simple">
-<li><p>Given a <em><strong>sufficient number of iterations, the (poor) performance of the weak learner can be significantly improved</strong></em>. For example, in some classification cases, the <em><strong>training error can tend to zero as the number of iterations increases</strong></em>. By training a classifier <em><strong>through an appropriate manipulation of the training data</strong></em> (indeed, <em><strong>the weighting mechanism identifies the difficult samples, those that continue to fail, and places more emphasis on them</strong></em>), <em><strong>a strong classifier can be obtained</strong></em>. Of course, as we shall see later, the fact that the training error tends to zero does not necessarily mean that the test error also reaches zero.</p></li>
+<li><p>With a <strong>sufficient number of boosting iterations</strong>, the performance of a <strong>weak learner can be significantly improved</strong>, and in some cases the <strong>training error can approach zero</strong>.</p></li>
+<li><p>This is achieved by <strong>reweighting the training data to emphasize difficult (misclassified) samples</strong>, forcing the model to focus on cases it previously failed to classify correctly.</p></li>
+<li><p>However, <strong>a training error of zero does not guarantee zero test error</strong>, since <strong>generalization performance may still be limited</strong>.</p></li>
 </ul>
 <figure class="align-center" id="boosted-tree-numref">
-<a class="reference internal image-reference" href="_images/boosted_tree.jpg"><img alt="_images/boosted_tree.jpg" src="_images/boosted_tree.jpg" style="width: 508.5px; height: 210.6px;" />
-</a>
+<img alt="_images/adaboost_algo_fig.png" src="_images/adaboost_algo_fig.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.5 </span><span class="caption-text">Illustration of <em><strong>Tree Boosting</strong></em>: Source <span class="bibtex-citation" id="id11">[<a class="reference internal" href="biblio.html#id26" title="Sonia Kahiomba Kiangala and Zenghui Wang. An effective adaptive customization framework for small manufacturing plants using extreme gradient boosting-xgboost and random forest ensemble learning algorithms in an industry 4.0 environment. Machine Learning with Applications, 4:100024, 2021.">Kiangala and Wang, 2021</a>]</span>.</span><a class="headerlink" href="#boosted-tree-numref" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.6 </span><span class="caption-text">Illustration of <em><strong>Tree Boosting</strong></em> methodology.</span><a class="headerlink" href="#boosted-tree-numref" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="admonition-adaboost-algorithm-adaptive-boosting admonition">
 <p class="admonition-title">AdaBoost Algorithm (Adaptive Boosting)</p>
-<p>Consider a <em><strong>two-class classification task</strong></em> and suppose we are given a set of <span class="math notranslate nohighlight">\(N\)</span> <em><strong>training observations</strong></em>, <span class="math notranslate nohighlight">\((y_{n}, \boldsymbol{x}_{n}),~n=1,2,\dots,N\)</span>, with <span class="math notranslate nohighlight">\(y_{n}\in\{-1, 1\}\)</span>. Our goal is to <em><strong>design a binary classifier</strong></em>,</p>
+<ul>
+<li><p>We consider a <strong>binary classification problem</strong> with training data <span class="math notranslate nohighlight">\((y_n, \boldsymbol{x}_n)\)</span>, where <span class="math notranslate nohighlight">\(y_n \in \{-1,1\}\)</span>, and we aim to construct a classifier:</p>
 <div class="math notranslate nohighlight" id="equation-sign-fn-adaboost-eq">
 <span class="eqno">(2.2)<a class="headerlink" href="#equation-sign-fn-adaboost-eq" title="Link to this equation">#</a></span>\[
-f(\boldsymbol{x})=\text{sgn}\{F(\boldsymbol{x})\}
-\]</div>
-<p>where</p>
+    f(\boldsymbol{x})=\text{sgn}\{F(\boldsymbol{x})\}
+    \]</div>
+<p>where the model is a <strong>weighted combination of weak classifiers</strong>:</p>
 <div class="math notranslate nohighlight" id="equation-adaboosting-model-eq">
 <span class="eqno">(2.3)<a class="headerlink" href="#equation-adaboosting-model-eq" title="Link to this equation">#</a></span>\[
-F(\boldsymbol{x}):=\sum_{k=1}^{K}a_{k}\phi(\boldsymbol{x};\boldsymbol{\theta}_{k}),
-\]</div>
-<p>and <span class="math notranslate nohighlight">\(\phi(\boldsymbol{x}; \boldsymbol{\theta}_{k})\in\{-1, 1\}\)</span>, is the <em><strong>base classifier at iteration</strong></em> <span class="math notranslate nohighlight">\(k\)</span>, defined in terms of a <em><strong>set of parameters</strong></em>, <span class="math notranslate nohighlight">\(\boldsymbol{\theta}_{k},~k=1,2,\dots, K\)</span> <em><strong>to be estimated</strong></em>.</p>
+    F(\boldsymbol{x})=\sum_{k=1}^{K} a_k \phi(\boldsymbol{x};\boldsymbol{\theta}_k),
+    \]</div>
+<p>with <strong>base classifiers</strong> <span class="math notranslate nohighlight">\(\phi(\boldsymbol{x};\boldsymbol{\theta}_k) \in \{-1,1\}\)</span>.</p>
+</li>
+<li><p>The parameters are learned <strong>sequentially (greedy optimization)</strong>:</p>
 <ul class="simple">
-<li><p>The base classifier is selected as a binary one. The set of <em><strong>unknown parameters is obtained in a step-wise and greedy fashion</strong></em>; that is, at each iteration <span class="math notranslate nohighlight">\(i\)</span>, <em><strong>we only optimise with respect to a single pair</strong></em>, <span class="math notranslate nohighlight">\((a_{i}, \boldsymbol{\theta}_{i})\)</span> <em><strong>keeping the parameters</strong></em> <span class="math notranslate nohighlight">\(a_{k}, \boldsymbol{\theta}_{k},~k=1,2,\dots,i-1\)</span>, <em><strong>obtained in the previous steps, fixed</strong></em>.</p></li>
-<li><p>Note that <em><strong>ideally one would optimise with respect to all unknown parameters</strong></em>, <span class="math notranslate nohighlight">\(a_{k}\)</span>, <span class="math notranslate nohighlight">\(k=1,2,\dots,K\)</span>, <em><strong>simultaneously</strong></em>; however, this would lead to a <em><strong>computationally very demanding optimisation task</strong></em>. <em><strong>Greedy</strong></em> algorithms are very popular due to their <em><strong>computational simplicity</strong></em>, and lead to very <em><strong>good performance across a wide range of learning tasks</strong></em>.</p></li>
+<li><p>At each iteration, only <strong><span class="math notranslate nohighlight">\((a_i, \boldsymbol{\theta}_i)\)</span> is optimized</strong>.</p></li>
+<li><p>Previously learned parameters are <strong>kept fixed</strong>.</p></li>
+</ul>
+</li>
+<li><p>Although a <strong>joint optimization over all parameters would be ideal</strong>, it is <strong>computationally infeasible</strong>.</p></li>
+<li><p>Therefore, <strong>greedy learning is used for efficiency</strong>, and it typically yields <strong>strong practical performance across many tasks</strong>.</p></li>
 </ul>
 </div>
 <ul class="simple">
@@ -765,11 +845,11 @@ F_{i}(\cdot)=\sum_{k=1}^{i}a_{k}\phi(\cdot; \boldsymbol{\theta}_{k}).
 <a class="reference internal image-reference" href="_images/loss_fn_adaboost.png"><img alt="_images/loss_fn_adaboost.png" src="_images/loss_fn_adaboost.png" style="width: 430.40000000000003px; height: 262.40000000000003px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.6 </span><span class="caption-text">0-1 loss, exponential loss, log-loss, and squared error. Source <span class="bibtex-citation" id="id12">[<a class="reference internal" href="biblio.html#id17" title="S. Theodoridis. Machine Learning: A Bayesian and Optimization Perspective. Elsevier Science, 2020. ISBN 9780128188040. URL: https://books.google.com.co/books?id=l-nEDwAAQBAJ.">Theodoridis, 2020</a>]</span>.</span><a class="headerlink" href="#loss-fn-adaboost-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.7 </span><span class="caption-text">0-1 loss, exponential loss, log-loss, and squared error. Source <span class="bibtex-citation" id="id3">[<a class="reference internal" href="biblio.html#id17" title="S. Theodoridis. Machine Learning: A Bayesian and Optimization Perspective. Elsevier Science, 2020. ISBN 9780128188040. URL: https://books.google.com.co/books?id=l-nEDwAAQBAJ.">Theodoridis, 2020</a>]</span>.</span><a class="headerlink" href="#loss-fn-adaboost-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <ul class="simple">
-<li><p>The <em><strong>exponential loss function</strong></em>, together with the <em><strong>0-1 loss function</strong></em>, is shown in <a class="reference internal" href="#loss-fn-adaboost-fig"><span class="std std-numref">Fig. 2.6</span></a>. <em><strong>The former can be considered a (differentiable) upper bound of the (non-differentiable) 0-1 loss function</strong></em>.</p></li>
+<li><p>The <em><strong>exponential loss function</strong></em>, together with the <em><strong>0-1 loss function</strong></em>, is shown in <a class="reference internal" href="#loss-fn-adaboost-fig"><span class="std std-numref">Fig. 2.7</span></a>. <em><strong>The former can be considered a (differentiable) upper bound of the (non-differentiable) 0-1 loss function</strong></em>.</p></li>
 <li><p>Note that <strong>the exponential loss places more weight on misclassifications</strong> <span class="math notranslate nohighlight">\((yF(\boldsymbol{x}) &lt; 0)\)</span> <strong>compared with correctly identified ones</strong> <span class="math notranslate nohighlight">\((yF(\boldsymbol{x}) &gt; 0)\)</span>. Employing the <em><strong>exponential loss function</strong></em>, the set <span class="math notranslate nohighlight">\(a_{i},\boldsymbol{\theta}_{i}\)</span> is obtained via the respective <strong>empirical cost function</strong>, as follows:</p></li>
 </ul>
 <div class="math notranslate nohighlight" id="equation-costfn-adaboost-eq">
@@ -888,7 +968,7 @@ a_{i}=\text{argmin}_{a}\{\exp(-a)(1-P_{i})+\exp(a)P_{i}\}.
 </div>
 </section>
 <section id="arboles-boosting">
-<h2><span class="section-number">2.6. </span>Arboles Boosting<a class="headerlink" href="#arboles-boosting" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.8. </span>Arboles Boosting<a class="headerlink" href="#arboles-boosting" title="Link to this heading">#</a></h2>
 <div class="proof observation admonition" id="observation_dt2">
 <p class="admonition-title"><span class="caption-number">Observation 2.3 </span></p>
 <section class="observation-content" id="proof-content">
@@ -1021,10 +1101,10 @@ F_{i}(\cdot)=F_{i-1}(\cdot)+\nu T(\cdot; \boldsymbol{\theta}_{i}).
 </ul>
 </section>
 <section id="implementation">
-<h2><span class="section-number">2.7. </span>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.9. </span>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h2>
 </section>
 <section id="complexity-control">
-<h2><span class="section-number">2.8. </span>Complexity Control<a class="headerlink" href="#complexity-control" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.10. </span>Complexity Control<a class="headerlink" href="#complexity-control" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>By <em><strong>building a tree until all leaves are pure, complex models are obtained that are fitted to the training set, resulting in 100% accuracy</strong></em>. To avoid overfitting, two strategies can be employed: <em><strong>pre-pruning, which stops the tree construction early, or post-pruning, which removes uninformative nodes</strong></em>. Pre-pruning may include limiting the tree depth, the maximum number of leaves, or requiring a minimum number of points in a node to continue splitting.</p></li>
 <li><p>In <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>, decision trees are implemented in the <code class="docutils literal notranslate"><span class="pre">DecisionTreeRegressor</span></code> and <code class="docutils literal notranslate"><span class="pre">DecisionTreeClassifier</span></code> classes, and <em><strong>only pre-pruning is offered</strong></em>. To illustrate the effect of this technique, the <code class="docutils literal notranslate"><span class="pre">breast_cancer</span></code> dataset is used, which is split into training and test parts. A model is built with the default configuration, extending the tree until all leaves are pure, setting a <code class="docutils literal notranslate"><span class="pre">random_state</span></code> for data splitting and using <code class="docutils literal notranslate"><span class="pre">stratify=cancer.target</span></code> for a stratified split.</p></li>
@@ -1086,7 +1166,7 @@ Accuracy on test set: 0.951
 </div>
 </section>
 <section id="analysis-of-decision-trees">
-<h2><span class="section-number">2.9. </span>Analysis of Decision Trees<a class="headerlink" href="#analysis-of-decision-trees" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.11. </span>Analysis of Decision Trees<a class="headerlink" href="#analysis-of-decision-trees" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>We can visualise a decision tree using the <code class="docutils literal notranslate"><span class="pre">export_graphviz</span></code> function from the <code class="docutils literal notranslate"><span class="pre">tree</span></code> module, which generates a file in <code class="docutils literal notranslate"><span class="pre">.dot</span></code> format for plotting. We configure the option to <em><strong>colour the nodes according to the majority class and provide class and feature names to correctly label the tree</strong></em>. The <code class="docutils literal notranslate"><span class="pre">impurity</span></code> argument is related to the probability of misclassifying a new data point, <em><strong>typically computed using the Gini impurity metric</strong></em>, as discussed in the previous section.</p></li>
 </ul>
@@ -1150,7 +1230,7 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </ul>
 </section>
 <section id="feature-importance-in-trees">
-<h2><span class="section-number">2.10. </span>Feature Importance in Trees<a class="headerlink" href="#feature-importance-in-trees" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.12. </span>Feature Importance in Trees<a class="headerlink" href="#feature-importance-in-trees" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Instead of looking at the entire tree, which can be exhaustive, there are some <em><strong>useful properties that we can derive to summarise the functioning of the tree</strong></em>. The most commonly used summary is <em><strong>feature importance, which rates how important each feature is to the decision made by the tree</strong></em>. It is a number between 0 and 1 for each feature, where <em><strong>0 means “not used at all”</strong></em> and <em><strong>1 means “perfectly predicts the target”</strong></em>. The importances always sum to 1.</p></li>
 </ul>
@@ -1307,7 +1387,7 @@ conda<span class="w"> </span>install<span class="w"> </span>-c<span class="w"> <
 </div>
 </section>
 <section id="ensemble-of-decision-trees">
-<h2><span class="section-number">2.11. </span>Ensemble of Decision Trees<a class="headerlink" href="#ensemble-of-decision-trees" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">2.13. </span>Ensemble of Decision Trees<a class="headerlink" href="#ensemble-of-decision-trees" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><em><strong>Ensembles are methods that combine multiple machine learning models to create more powerful models</strong></em>. There are many models in the machine learning literature that belong to this category, but two ensemble models have proven effective on a wide range of classification and regression datasets, both using decision trees as building blocks: <code class="docutils literal notranslate"><span class="pre">random</span> <span class="pre">forests</span></code> and <code class="docutils literal notranslate"><span class="pre">gradient</span> <span class="pre">boosted</span> <span class="pre">decision</span> <span class="pre">trees</span></code>.</p></li>
 </ul>
@@ -41275,7 +41355,7 @@ Model saved as best_xgboost_model.pkl
 <a class="reference internal image-reference" href="_images/gpu_xgboost.png"><img alt="_images/gpu_xgboost.png" src="_images/gpu_xgboost.png" style="width: 672.0px; height: 356.29999999999995px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Fig. 2.7 </span><span class="caption-text">Use of GPU during the training phase using <code class="docutils literal notranslate"><span class="pre">XGBoost</span> <span class="pre">GPU</span> <span class="pre">Support</span></code>.</span><a class="headerlink" href="#gpu-xgboost-fig" title="Link to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.8 </span><span class="caption-text">Use of GPU during the training phase using <code class="docutils literal notranslate"><span class="pre">XGBoost</span> <span class="pre">GPU</span> <span class="pre">Support</span></code>.</span><a class="headerlink" href="#gpu-xgboost-fig" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="cell docutils container">
@@ -44068,14 +44148,16 @@ docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w"> </spa
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis">2.1. Analysis</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulation">2.2. Formulation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#splitting-criterion">2.3. Splitting criterion</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combination-of-classifiers">2.4. Combination of Classifiers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boosting-approach">2.5. Boosting Approach</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arboles-boosting">2.6. Arboles Boosting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">2.7. Implementation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complexity-control">2.8. Complexity Control</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-decision-trees">2.9. Analysis of Decision Trees</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance-in-trees">2.10. Feature Importance in Trees</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-of-decision-trees">2.11. Ensemble of Decision Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-forest">2.4. Random Forest</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#combination-of-classifiers">2.5. Combination of Classifiers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classifier-combination-schemes">2.6. Classifier Combination Schemes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boosting-approach">2.7. Boosting Approach</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#arboles-boosting">2.8. Arboles Boosting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#implementation">2.9. Implementation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#complexity-control">2.10. Complexity Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analysis-of-decision-trees">2.11. Analysis of Decision Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-importance-in-trees">2.12. Feature Importance in Trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ensemble-of-decision-trees">2.13. Ensemble of Decision Trees</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#boston-housing">2. Boston Housing</a><ul class="visible nav section-nav flex-column">
